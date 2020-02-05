@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4742689485516369827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61f3ec50bf3bc7d478c88bd3420b36c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 57746aadffa5217418da0e0f59a60286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minDist: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4742689485516369827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05bcecd22277e0642a8d1a457a9eabf0, type: 3}
+  m_Script: {fileID: 11500000, guid: e14587c784ab2c8478930a6dc38b0746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   captureDistance: 35
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4742689485516369827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d2cf41d30c65f42b133bb2ba1c9460, type: 3}
+  m_Script: {fileID: 11500000, guid: 342a58146c8efae44b5f25176b61d8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   verticalClamp: 90
@@ -149,7 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: af35c41df4d24a14581335dc6da39136, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 46fbdcd8d885ffd4281bcb40c9c98a5c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4742689487384526898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e688d9ad6cb654ca8dfcba1fe6dca2, type: 3}
+  m_Script: {fileID: 11500000, guid: 22088984571e34a46aa1d5f69faa66b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
