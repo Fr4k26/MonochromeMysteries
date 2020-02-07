@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
 {
 	public float captureDistance = 500;
 	public GameObject cameraUI, textUI, rain;
+
     public Text victim, weapon, dumpster, crates, notepad;
     public AudioSource shutter;
 
@@ -22,8 +23,14 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        cameraUI.SetActive(false);
-        winText.SetActive(false);
+        if (cameraUI != null)
+        {
+            cameraUI.SetActive(false);
+        }
+        if (winText != null)
+        {
+            winText.SetActive(false);
+        }
         Invoke("Rain",.1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
 
 	}
@@ -37,14 +44,26 @@ public class CameraController : MonoBehaviour
 		if (Input.GetMouseButtonDown(1))
         {
 			rain.SetActive(true);
-			cameraUI.SetActive(true);
-            textUI.SetActive(false);
+            if (cameraUI != null)
+            {
+                cameraUI.SetActive(true);
+            }
+            if (textUI != null)
+            {
+                textUI.SetActive(false);
+            }
 		}
 		if (Input.GetMouseButtonUp(1))
         {
 			rain.SetActive(false);
-			cameraUI.SetActive(false);
-            textUI.SetActive(true);
+            if (cameraUI != null)
+            {
+                cameraUI.SetActive(false);
+            }
+            if (cameraUI != null)
+            {
+                textUI.SetActive(true);
+            }
         }
         if (batBool && cratesBool && corpseBool && dumpsterBool && notepadBool)
         {
