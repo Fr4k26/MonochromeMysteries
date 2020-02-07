@@ -333,9 +333,9 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 15
   jumpSpeed: 8
-  xMin: -18
+  xMin: -100
   xMax: 300
-  zMin: 0
+  zMin: -200
   zMax: 420
   linearDrag: 5
 --- !u!54 &4742689487384526888
