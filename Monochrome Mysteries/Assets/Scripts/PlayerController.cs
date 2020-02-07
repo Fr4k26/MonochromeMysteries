@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-
+        //test
 		//Jump
 		if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
 		{
