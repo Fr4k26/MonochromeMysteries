@@ -115,7 +115,8 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, bodyShotTexture.width, bodyShotTexture.height);
                             Sprite bodyshot = Sprite.Create(bodyShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = bodyshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
+
                         }
                         else if (name.Equals("Practice Paperboy"))
                         {
@@ -129,7 +130,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                             Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = papershot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Practice Reciept"))
                         {
@@ -143,7 +144,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, recieptShotTexture.width, recieptShotTexture.height);
                             Sprite recieptshot = Sprite.Create(recieptShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = recieptshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Practice Pinkslip"))
                         {
@@ -157,7 +158,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, pinkShotTexture.width, pinkShotTexture.height);
                             Sprite pinkshot = Sprite.Create(pinkShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = pinkshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Practice Knife"))
                         {
@@ -171,7 +172,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, knifeShotTexture.width, knifeShotTexture.height);
                             Sprite knifeshot = Sprite.Create(knifeShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = knifeshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Practice Gun"))
                         {
@@ -185,7 +186,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, gunShotTexture.width, gunShotTexture.height);
                             Sprite gunshot = Sprite.Create(gunShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = gunshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
@@ -199,7 +200,7 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, bloodShotTexture.width, bloodShotTexture.height);
                             Sprite bloodshot = Sprite.Create(bloodShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = bloodshot;
-                            canvas.GetComponent<Canvas>().enabled = true;
+                            StartCoroutine(WaitRoutine());
                         }
                     }
                 }
@@ -209,7 +210,19 @@ public class CameraController : MonoBehaviour
 
 	}
 
-	void Rain()
+    IEnumerator WaitRoutine()
+    {
+
+
+
+
+        yield return new WaitForSeconds(0.1f);
+
+
+        canvas.GetComponent<Canvas>().enabled = true;
+    }
+
+    void Rain()
 	{
 		rain.SetActive(false);
 
