@@ -485,7 +485,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20342
+  m_Name: pb_Mesh21418
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -697,6 +697,117 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "\"EXTRA FROM THE HERALD. EXTRA. READ ALL ABOUT IT. EXCLUSIVE ON THE
+        LATEST SCANDAL...\" \nThe teen surveys the policemen down the street, tending
+        to a far more interesting piece of news than he can muster today. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: '[You approach]
+
+        "Ah, good day sir. Extra special from the Herald
+        today, glad to see people still keep up with politics."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "As soon as you approach his voice drops several decibels and takes
+        on a certain confidence: He thinks that he's secured the sale at this point.
+        \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: He's maybe 16 years old, but his clothes are that of someone half his
+        age-- they're ragged from overuse but clean, well maintained. He's obviously
+        been at the gig for a while.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: '["You''ve been working this box for a while?"]
+
+        "Yeah... They
+        were promisin'' a promotion all throughout the war. I was peddling the big
+        headlines-- ''Greatest Military Operation in History Begin in France,'' ''Japan
+        Surrenders, End of War!'' he rattles off several more effortlessly...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: '"And then it all wraps up, and some war hero stumbles back, buys up
+        the printing company, and here I am still." he gestures at his general existence.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: '["What do you know about the deceased?"]
+
+        His smile grows taut,
+        as he eyes you over with newfound interest, "Ah so you''re a cop, eh?"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[7]
+      value: '["No, I''m an investigative journalist."]
+
+        "Oy, why didn''t
+        you just say so, eh?" his suspicion subsides once he realizes you''re with
+        the press, "What''s your name then, could''ve peddled a headline of yours."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[8]
+      value: '["My name is Quincy Redmond, what''s yours?"]
+
+        He immediately
+        is rustling through his own paper, looking for your name, which you''re sure
+        he won''t find, "Everyone calls me Reggie or uh... Reg," he says without
+        fanfare.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[9]
+      value: '["So-- know anything about the dead man?"]
+
+        "Oh uh-- yeah uh,"
+        Reggie seems to remember where he is, "he''s actually my boss. Or he was.
+        That war hero I was talking about, bought up the paper." he slaps the front
+        page of the Herald without humor.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[10]
+      value: '["And you''re still working?"]
+
+        "Uh yeah I mean-- won''t get
+        that promotion just standing here gawking, eh?" there seems to be a certain
+        truth in what he''s saying.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[11]
+      value: '["And did you hear anything? Or see anything?"]
+
+        He whistles
+        loudly, "No sirree-- not a peep!" This question was easy for him.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[12]
+      value: '["Alright, thank you for your time."]
+
+        "Seeya, Mister."'
+      objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288990, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: m_Name
@@ -862,7 +973,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20354
+  m_Name: pb_Mesh21430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1025,7 +1136,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20272
+  m_Name: pb_Mesh21348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1194,7 +1305,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20288
+  m_Name: pb_Mesh21364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1357,7 +1468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20528
+  m_Name: pb_Mesh21610
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1520,7 +1631,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20584
+  m_Name: pb_Mesh21668
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1683,7 +1794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20624
+  m_Name: pb_Mesh21710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2063,7 +2174,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20648
+  m_Name: pb_Mesh21734
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2226,7 +2337,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20256
+  m_Name: pb_Mesh21332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2596,7 +2707,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20542
+  m_Name: pb_Mesh21624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2887,7 +2998,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20214
+  m_Name: pb_Mesh21288
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3803,7 +3914,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20450
+  m_Name: pb_Mesh21530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4163,7 +4274,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20432
+  m_Name: pb_Mesh21512
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4468,7 +4579,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20496
+  m_Name: pb_Mesh21578
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4649,7 +4760,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20384
+  m_Name: pb_Mesh21460
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5824,7 +5935,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20636
+  m_Name: pb_Mesh21722
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6056,7 +6167,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20314
+  m_Name: pb_Mesh21390
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6296,7 +6407,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20462
+  m_Name: pb_Mesh21542
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6468,12 +6579,13 @@ PrefabInstance:
     - target: {fileID: -6927153958260307370, guid: 2377c647e9a60c048ab9c9fb383251f1,
         type: 3}
       propertyPath: dialogue.name
-      value: John
+      value: Paper Boy
       objectReference: {fileID: 0}
     - target: {fileID: -6927153958260307370, guid: 2377c647e9a60c048ab9c9fb383251f1,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Hi!
+      value: '"Already told you sir, I didn''t see nothing. Unless you''re here to
+        buy?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1760071631509305511, guid: 2377c647e9a60c048ab9c9fb383251f1,
         type: 3}
@@ -6628,7 +6740,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20570
+  m_Name: pb_Mesh21652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8434,7 +8546,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20602
+  m_Name: pb_Mesh21688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8699,7 +8811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20330
+  m_Name: pb_Mesh21406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
