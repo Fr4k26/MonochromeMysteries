@@ -9032,7 +9032,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b65cfdf47451ccc408aebc805de12c43,
         type: 3}
       propertyPath: m_Name
-      value: Holding Idle
+      value: Practice Paperboy
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b65cfdf47451ccc408aebc805de12c43,
+        type: 3}
+      propertyPath: m_TagString
+      value: Objective
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b65cfdf47451ccc408aebc805de12c43, type: 3}
@@ -12457,6 +12462,11 @@ PrefabInstance:
       propertyPath: blood
       value: 
       objectReference: {fileID: 1312770185945777923}
+    - target: {fileID: 4742689485516369881, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1649475918}
     - target: {fileID: 4742689487384526894, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
         type: 3}
       propertyPath: m_LocalPosition.x

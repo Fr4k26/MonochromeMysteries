@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     public Text body, paperboy, reciept, pinkslip, knife, gun, blood;
     public AudioSource shutter;
 
+    public GameObject canvas;
+
 	private Flash flash;
     public Texture2D bodyShotTexture;
     public Texture2D paperShotTexture;
@@ -106,84 +108,98 @@ public class CameraController : MonoBehaviour
                             if (bodyShotTexture != null)
                             { bodyShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             body.GetComponent<Text>().color = Color.green;
                             bodyBool = true;
                             bodyShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, bodyShotTexture.width, bodyShotTexture.height);
                             Sprite bodyshot = Sprite.Create(bodyShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = bodyshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Paperboy"))
                         {
                             if (paperShotTexture != null)
                             { paperShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             paperboy.GetComponent<Text>().color = Color.green;
                             paperboyBool = true;
                             paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                             Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = papershot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Reciept"))
                         {
                             if (recieptShotTexture != null)
                             { bodyShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             reciept.GetComponent<Text>().color = Color.green;
                             recieptBool = true;
                             recieptShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, recieptShotTexture.width, recieptShotTexture.height);
                             Sprite recieptshot = Sprite.Create(recieptShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = recieptshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Pinkslip"))
                         {
                             if (pinkShotTexture != null)
                             { pinkShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             pinkslip.GetComponent<Text>().color = Color.green;
                             pinkslipBool = true;
                             pinkShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, pinkShotTexture.width, pinkShotTexture.height);
                             Sprite pinkshot = Sprite.Create(pinkShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = pinkshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Knife"))
                         {
                             if (knifeShotTexture != null)
                             { knifeShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             knife.GetComponent<Text>().color = Color.green;
                             knifeBool = true;
                             knifeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, knifeShotTexture.width, knifeShotTexture.height);
                             Sprite knifeshot = Sprite.Create(knifeShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = knifeshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Gun"))
                         {
                             if (gunShotTexture != null)
                             { gunShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             gun.GetComponent<Text>().color = Color.green;
                             gunBool = true;
                             gunShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, gunShotTexture.width, gunShotTexture.height);
                             Sprite gunshot = Sprite.Create(gunShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = gunshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
                             if (bloodShotTexture != null)
                             { bloodShotTexture = null; }
 
+                            canvas.GetComponent<Canvas>().enabled = false;
                             blood.GetComponent<Text>().color = Color.green;
                             bloodBool = true;
                             bloodShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, bloodShotTexture.width, bloodShotTexture.height);
                             Sprite bloodshot = Sprite.Create(bloodShotTexture, rec, new Vector2(0.5f, 0.5f));
                             test.GetComponent<Image>().sprite = bloodshot;
+                            canvas.GetComponent<Canvas>().enabled = true;
                         }
                     }
                 }
