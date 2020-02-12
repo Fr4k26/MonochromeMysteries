@@ -6992,6 +6992,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4742689487384526895, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742689487384526895, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742689487384526895, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4742689487384526898, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
         type: 3}
       propertyPath: m_Name
