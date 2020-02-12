@@ -12467,6 +12467,11 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1649475918}
+    - target: {fileID: 4742689485516369881, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1176252749}
     - target: {fileID: 4742689487384526894, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12559,6 +12564,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1705eeb0422b0474a8914e57a0f5dfb7, type: 3}
+--- !u!20 &1176252749 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4742689485516369885, guid: 1705eeb0422b0474a8914e57a0f5dfb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1176252748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1177408013
 PrefabInstance:
   m_ObjectHideFlags: 0

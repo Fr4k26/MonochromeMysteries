@@ -32,6 +32,9 @@ public class CameraController : MonoBehaviour
     private bool gunBool = false;
     private bool bloodBool = false;
 
+    public Camera camera;
+    
+
     public GameObject winText;
 
     void Start()
@@ -46,7 +49,7 @@ public class CameraController : MonoBehaviour
         }
         Invoke("Rain",.1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
 
-
+        
 
 
 	}
@@ -86,6 +89,7 @@ public class CameraController : MonoBehaviour
 
 	private void Zoom()
 	{
+        int oldMask = camera.cullingMask;
 		RaycastHit hit;
 		if (Input.GetMouseButtonDown(0))
 		{
