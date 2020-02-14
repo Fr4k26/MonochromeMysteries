@@ -21,14 +21,23 @@ public class DialgoueManager : MonoBehaviour
 
     public int buttonAmount;
 
-    
+
+    //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
+    public AudioSource playerAudio;
+    public AudioClip [] paperBoy;
+    public AudioClip[] femmeFatale;
+    public AudioClip[] policeMan;
+    public AudioClip[] businessMan;
+    public AudioClip[] mobster;
 
     void Start()
     {
         //buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
-        
+
+        //Establish Connection to Audio Source Attached to Camera to play Sound Effects
+        playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     public void StartDialogue (Dialogue dialogue)
@@ -51,7 +60,7 @@ public class DialgoueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
@@ -72,8 +81,9 @@ public class DialgoueManager : MonoBehaviour
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.7F);
 
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
