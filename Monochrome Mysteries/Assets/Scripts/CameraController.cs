@@ -14,8 +14,9 @@ public class CameraController : MonoBehaviour
     public AudioSource shutter;
 
     public GameObject canvas;
+    public GameObject journalUI;
 
-	private Flash flash;
+    private Flash flash;
     public Texture2D bodyShotTexture;
     public Texture2D paperShotTexture;
     public Texture2D recieptShotTexture;
@@ -49,9 +50,9 @@ public class CameraController : MonoBehaviour
         }
         Invoke("Rain",.1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
 
+        journalUI.GetComponent<Canvas>().enabled = false;
+
         
-
-
 	}
 
 	void Update()
@@ -74,6 +75,8 @@ public class CameraController : MonoBehaviour
 		}
 		if (Input.GetMouseButtonUp(1))
         {
+
+
 			rain.SetActive(false);
             if (cameraUI != null)
             {
@@ -85,6 +88,14 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("TOGGLE UI");
+            if (journalUI.GetComponent<Canvas>().enabled == false)
+            { journalUI.gameObject.SetActive(true); }
+            if (journalUI.GetComponent<Canvas>().enabled == true)
+            { journalUI.gameObject.SetActive(false); }
+        }
     }
 
 	private void Zoom()
