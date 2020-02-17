@@ -4512,7 +4512,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 6d8f37bf6d640874f838248e4f405db4,
         type: 3}
       propertyPath: m_Name
-      value: M16A1_LP
+      value: Practice Gun
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 6d8f37bf6d640874f838248e4f405db4,
         type: 3}
