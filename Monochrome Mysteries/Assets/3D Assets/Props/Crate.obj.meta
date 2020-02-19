@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 50a8d3db7c5a0e94899f76ed249e06c3
+guid: 946a680b5e4b65046bc0ee83d817dbcb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Building_A_Rooftop
+    100000: Crate
     100002: //RootNode
-    400000: Building_A_Rooftop
+    400000: Crate
     400002: //RootNode
-    2100000: Building_A_RooftopMat
-    2300000: Building_A_Rooftop
-    3300000: Building_A_Rooftop
-    4300000: Building_A_Rooftop
-    9500000: //RootNode
+    2100000: CrateMat
+    2300000: Crate
+    3300000: Crate
+    4300000: Crate
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -40,7 +39,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -65,7 +64,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -92,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
