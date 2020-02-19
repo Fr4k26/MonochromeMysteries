@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Monochrome Mysteries/Assets/Audio/Sound Effects/UI SFX/Journal UI.meta
 guid: 3471be5742cf1314c817fa9d010fe036
+=======
+guid: 723ea081fe782324390810de77179506
+>>>>>>> eb3d01876ef8b81067164ea1cc02d9ced41e021c:Monochrome Mysteries/Assets/3D Assets/Characters/Paperboy/Textures.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
