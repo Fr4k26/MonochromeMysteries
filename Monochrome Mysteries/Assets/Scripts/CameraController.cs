@@ -111,7 +111,7 @@ public class CameraController : MonoBehaviour
 	{
         int oldMask = camera.cullingMask;
 		RaycastHit hit;
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetKeyDown(KeyCode.LeftShift))
 		{
 			//test comment
 			shutter = GetComponent<AudioSource>();
@@ -133,6 +133,8 @@ public class CameraController : MonoBehaviour
                             { bodyShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             body.GetComponent<Text>().color = Color.green;
                             bodyBool = true;
                             bodyShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -148,6 +150,8 @@ public class CameraController : MonoBehaviour
                             { paperShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             paperboy.GetComponent<Text>().color = Color.green;
                             paperboyBool = true;
                             paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -162,6 +166,8 @@ public class CameraController : MonoBehaviour
                             { bodyShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             reciept.GetComponent<Text>().color = Color.green;
                             recieptBool = true;
                             recieptShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -176,6 +182,8 @@ public class CameraController : MonoBehaviour
                             { pinkShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             pinkslip.GetComponent<Text>().color = Color.green;
                             pinkslipBool = true;
                             pinkShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -190,6 +198,8 @@ public class CameraController : MonoBehaviour
                             { knifeShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             knife.GetComponent<Text>().color = Color.green;
                             knifeBool = true;
                             knifeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -204,6 +214,8 @@ public class CameraController : MonoBehaviour
                             { gunShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             gun.GetComponent<Text>().color = Color.green;
                             gunBool = true;
                             gunShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -218,6 +230,8 @@ public class CameraController : MonoBehaviour
                             { bloodShotTexture = null; }
 
                             canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
                             blood.GetComponent<Text>().color = Color.green;
                             bloodBool = true;
                             bloodShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
@@ -244,6 +258,12 @@ public class CameraController : MonoBehaviour
 
 
         canvas.SetActive(true);
+        cameraUI.SetActive(true);
+    }
+
+    IEnumerator WaitBeforeScreenshotRoutine()
+    {
+        yield return new WaitForSeconds(0.1f);
     }
 
     void Rain()
