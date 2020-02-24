@@ -29,6 +29,7 @@ public class LadderBehaviour : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
+                canClimb = false;
                 player.GetComponent<PlayerController>().canmove = true;
                 player.GetComponent<Rigidbody>().useGravity = true;
             }
