@@ -356,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 1138042426575921619, guid: 26029c54152a2a742ac6d285a3fe0394,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1138042426575921619, guid: 26029c54152a2a742ac6d285a3fe0394,
         type: 3}
@@ -770,7 +770,7 @@ PrefabInstance:
     - target: {fileID: 5361138798954762215, guid: d6057d2f7df64994d91e21498f1cd16e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5361138798954762215, guid: d6057d2f7df64994d91e21498f1cd16e,
         type: 3}
@@ -1384,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: -7280906422377077566, guid: 6fbb177ed740c87468ec9c8d4bb9347f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -7280906422377077566, guid: 6fbb177ed740c87468ec9c8d4bb9347f,
         type: 3}
@@ -11023,7 +11023,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1217824441
 Mesh:
@@ -12376,7 +12376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!82 &1962212857 stripped
 AudioSource:
@@ -12994,7 +12994,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.1, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!1001 &4369711908353569859
 PrefabInstance:
