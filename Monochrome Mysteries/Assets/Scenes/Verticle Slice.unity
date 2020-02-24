@@ -3346,6 +3346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Practice Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6d8f37bf6d640874f838248e4f405db4, type: 3}
+      propertyPath: m_TagString
+      value: Objective
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d8f37bf6d640874f838248e4f405db4, type: 3}
       propertyPath: m_RootOrder
       value: 11
