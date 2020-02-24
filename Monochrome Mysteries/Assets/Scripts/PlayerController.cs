@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	float distToGround = 2f;
 	public float jumpSpeed;
     float lastYPos;
+    public bool canmove = true;
 
     // Min and max values for player position -- use for boundaries regarding where you want the player to go.
     public float xMin, xMax, zMin, zMax;
@@ -66,27 +67,30 @@ public class PlayerController : MonoBehaviour
 	// Handle player movement
 	private void Move()
     {
-        // Determine whether player is pressing W/A/S/D
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-		
-		if (moveVertical > 0f || moveVertical < 0f || moveHorizontal > 0f || moveHorizontal < 0f)
+        if (canmove)
         {
-            float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
-            // Move player using transform
-            transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
-            
-            // Clamp the player's position so they can't go out of bounds.
-            Vector3 clampedPosition = transform.position;
-            clampedPosition.x = Mathf.Clamp(clampedPosition.x, xMin, xMax);
-            clampedPosition.z = Mathf.Clamp(clampedPosition.z, zMin, zMax);
-            transform.position = clampedPosition;
+            // Determine whether player is pressing W/A/S/D
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+
+
+            if (moveVertical > 0f || moveVertical < 0f || moveHorizontal > 0f || moveHorizontal < 0f)
+            {
+                float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
+                                                                 // Move player using transform
+                transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
+
+                // Clamp the player's position so they can't go out of bounds.
+                Vector3 clampedPosition = transform.position;
+                clampedPosition.x = Mathf.Clamp(clampedPosition.x, xMin, xMax);
+                clampedPosition.z = Mathf.Clamp(clampedPosition.z, zMin, zMax);
+                transform.position = clampedPosition;
+            }
+            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(0 * 0, 0f, 0 * 0);
+            }
         }
-		else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W))
-		{
-			transform.Translate(0 * 0, 0f, 0 * 0);
-		}
 	}
 
     // Handle player's ability to flip
