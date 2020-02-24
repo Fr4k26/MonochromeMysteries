@@ -463,9 +463,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.7
-  m_Text: "Move - W A S D\n\nSpace - Jump\n\nRghtClck - Ready Camera\n\nLftShft/LftClck
-    - Take Photo \n\t(when camera is readied)\n\nLftClck - Talk\n\t(when dialogue
-    prompt is present)\n\nTab - Open/Close Journal\n\nEsc - Pause/Unpause Game\n\n\n"
+  m_Text: "Move - W A S D\n\nSpace - Jump\n\nRghtClck - Ready Camera\n\nLftShft -
+    Take Photo \n\t(when camera is readied)\n\nLftClck - Talk\n\t(when dialogue prompt
+    is present)\n\nTab - Open/Close Journal\n\nEsc - Pause/Unpause Game\n\n\n"
 --- !u!222 &901988901
 CanvasRenderer:
   m_ObjectHideFlags: 0
