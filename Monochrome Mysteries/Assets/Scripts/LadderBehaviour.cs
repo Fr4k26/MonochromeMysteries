@@ -29,7 +29,8 @@ public class LadderBehaviour : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
-                player.transform.Translate(down * Time.deltaTime * climbSpeed);
+                player.GetComponent<PlayerController>().canmove = true;
+                player.GetComponent<Rigidbody>().useGravity = true;
             }
         }
     }
