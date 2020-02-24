@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
 	
     // Handle frame-based events
-    void Update()
+    void FixedUpdate()
     {
         Move();
         
@@ -78,7 +78,8 @@ public class PlayerController : MonoBehaviour
             {
                 float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
                                                                  // Move player using transform
-                transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
+                                                                 //transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
+                playerRB.MovePosition(playerRB.position + new Vector3(moveHorizontal, 0, moveVertical) * newMoveSpeed);
 
                 // Clamp the player's position so they can't go out of bounds.
                 Vector3 clampedPosition = transform.position;
