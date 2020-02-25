@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 		playerController = GetComponent<PlayerController>();
         lastYPos = GetComponent<Rigidbody>().transform.position.y;
-        camera = gameObject.transform.GetChild(0).gameObject;
+        //camera = gameObject.transform.GetChild(0).gameObject;
+        camera = FindObjectOfType<CameraCollision>().gameObject;
     }
 
     // Handle frame-based events

@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22088984571e34a46aa1d5f69faa66b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 8
-  sprintSpeed: 9
+  walkSpeed: 6
+  sprintSpeed: 8
   jumpSpeed: 4
+  canmove: 1
   xMin: -100
   xMax: 300
   zMin: -200
