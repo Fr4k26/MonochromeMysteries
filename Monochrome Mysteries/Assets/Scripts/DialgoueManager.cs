@@ -11,6 +11,7 @@ public class DialgoueManager : MonoBehaviour
     public GameObject canvasPrefab;
 
     public bool endDia;
+    private bool stillTalking;
 
     public Text nameText;
     public Text dialogueText;
@@ -24,7 +25,7 @@ public class DialgoueManager : MonoBehaviour
 
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
     public AudioSource playerAudio;
-    public AudioClip [] paperBoy;
+    public AudioClip[] paperBoy;
     public AudioClip[] femmeFatale;
     public AudioClip[] policeMan;
     public AudioClip[] businessMan;
@@ -35,6 +36,7 @@ public class DialgoueManager : MonoBehaviour
         //buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
+        stillTalking = true;
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
         playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
@@ -69,6 +71,7 @@ public class DialgoueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        //stillTalking = false;
     }
 
     public void DisplayOptions()
@@ -82,6 +85,12 @@ public class DialgoueManager : MonoBehaviour
     {
         dialogueText.text = "";
         playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.7F);
+
+        if(stillTalking == true)
+        {
+            print("sound");
+            //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.7F);
+        }
 
         foreach (char letter in sentence.ToCharArray())
         {
