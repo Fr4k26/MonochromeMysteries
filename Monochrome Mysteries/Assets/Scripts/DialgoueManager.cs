@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DialgoueManager : MonoBehaviour
 {
     
-    //public List<GameObject> buttonList;
+    public List<GameObject> buttonList;
     public GameObject buttonOption;
     public GameObject canvasPrefab;
 
@@ -32,7 +32,7 @@ public class DialgoueManager : MonoBehaviour
 
     void Start()
     {
-        //buttonList = new List<GameObject>();
+        buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
 
