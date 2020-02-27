@@ -525,57 +525,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &891728151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668867700765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96769461d35428a4287aff8a6c109881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonOption: {fileID: 0}
-  canvasPrefab: {fileID: 8546253281799615425, guid: e65b281b034e0384fa37c680b1cf26ce,
-    type: 3}
-  endDia: 0
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  animator: {fileID: 0}
-  buttonAmount: 0
-  playerAudio: {fileID: 0}
-  paperBoy:
-  - {fileID: 8300000, guid: 2ad2d2931b1a0c1408a1a207f7038eea, type: 3}
-  - {fileID: 8300000, guid: 4ba0e21811f944b498e7b2646eb088b6, type: 3}
-  - {fileID: 8300000, guid: e3a42bad18f470747bf36790826bc551, type: 3}
-  - {fileID: 8300000, guid: 0eeb3cce58a20ee4f83189c4dbbfbe03, type: 3}
-  - {fileID: 8300000, guid: 50731e0ec387f70448cb056cf5360b22, type: 3}
-  femmeFatale:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  policeMan:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  businessMan:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  mobster:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!65 &891728152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1361,57 +1310,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1590948221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668157995123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96769461d35428a4287aff8a6c109881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonOption: {fileID: 0}
-  canvasPrefab: {fileID: 8546253281799615425, guid: e65b281b034e0384fa37c680b1cf26ce,
-    type: 3}
-  endDia: 0
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  animator: {fileID: 0}
-  buttonAmount: 0
-  playerAudio: {fileID: 0}
-  paperBoy:
-  - {fileID: 8300000, guid: 2ad2d2931b1a0c1408a1a207f7038eea, type: 3}
-  - {fileID: 8300000, guid: 4ba0e21811f944b498e7b2646eb088b6, type: 3}
-  - {fileID: 8300000, guid: e3a42bad18f470747bf36790826bc551, type: 3}
-  - {fileID: 8300000, guid: 0eeb3cce58a20ee4f83189c4dbbfbe03, type: 3}
-  - {fileID: 8300000, guid: 50731e0ec387f70448cb056cf5360b22, type: 3}
-  femmeFatale:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  policeMan:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  businessMan:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  mobster:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!65 &1590948222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1860,14 +1758,13 @@ GameObject:
   - component: {fileID: 5006512736378182240}
   - component: {fileID: 3166231814995900186}
   - component: {fileID: 1590948222}
-  - component: {fileID: 1590948221}
   m_Layer: 0
   m_Name: Practice "FF" (1)
   m_TagString: Objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8296172668867700765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,11 +1776,10 @@ GameObject:
   - component: {fileID: 5006512735664413198}
   - component: {fileID: 3166231813541312372}
   - component: {fileID: 891728152}
-  - component: {fileID: 891728151}
   m_Layer: 0
   m_Name: Practice "Mobster"
   m_TagString: Objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1

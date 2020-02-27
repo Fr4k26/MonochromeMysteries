@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 
     public Text body, paperboy, reciept, pinkslip, knife, gun, blood;
     public AudioSource shutter;
+    public AudioClip photo;
 
     public GameObject canvas;
     public GameObject journalUI;
@@ -33,6 +34,8 @@ public class CameraController : MonoBehaviour
     private bool gunBool = false;
     private bool bloodBool = false;
     private bool uiEnable = false;
+
+    private bool pictureTaken = false;
 
     public Camera camera;
     
@@ -111,12 +114,14 @@ public class CameraController : MonoBehaviour
 	{
         int oldMask = camera.cullingMask;
 		RaycastHit hit;
-		if (Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetKeyDown(KeyCode.LeftShift) && pictureTaken == false)
 		{
-			//test comment
+            //test comment
+            pictureTaken = true;
 			shutter = GetComponent<AudioSource>();
-			shutter.Play(0);
-			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, captureDistance))
+			shutter.PlayOneShot(photo);
+            StartCoroutine(nextPicture());
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, captureDistance))
 			{
                 print(hit.collider.gameObject.name);
                 GameObject [] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
@@ -144,7 +149,7 @@ public class CameraController : MonoBehaviour
                             StartCoroutine(WaitRoutine());
 
                         }
-                        else if (name.Equals("Practice Paperboy"))
+                        else if (name.Equals("Paperboy"))
                         {
                             if (paperShotTexture != null)
                             { paperShotTexture = null; }
@@ -271,5 +276,11 @@ public class CameraController : MonoBehaviour
 		rain.SetActive(false);
 
 	}
+
+    IEnumerator nextPicture()
+    {
+        yield return new WaitForSeconds(0.706f);
+        pictureTaken = false;
+    }
 
 }
