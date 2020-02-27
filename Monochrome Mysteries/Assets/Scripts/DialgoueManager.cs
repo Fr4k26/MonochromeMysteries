@@ -57,11 +57,12 @@ public class DialgoueManager : MonoBehaviour
 
         DisplayNextSentence();
 
-
     }
 
     public void DisplayNextSentence()
     {
+        stillTalking = true;
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -71,7 +72,6 @@ public class DialgoueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        //stillTalking = false;
     }
 
     public void DisplayOptions()
@@ -80,22 +80,31 @@ public class DialgoueManager : MonoBehaviour
     }
 
 
-
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
-        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.7F);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
 
         if(stillTalking == true)
         {
-            print("sound");
-            //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.7F);
+            StartCoroutine(nextSound());
         }
 
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
+            stillTalking = false;
+        }
+    }
+
+    IEnumerator nextSound()
+    {
+        yield return new WaitForSeconds(0.706f);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
+        if (stillTalking == true)
+        {
+            StartCoroutine(nextSound());
         }
     }
 

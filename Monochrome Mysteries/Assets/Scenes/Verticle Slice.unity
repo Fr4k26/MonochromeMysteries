@@ -659,7 +659,8 @@ AudioSource:
   m_GameObject: {fileID: 267683593}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2514256048629180025, guid: b0c6114e9d5b9024e80f15266415d8c5,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4d92a58ba8f03ca42831a90c81c4718a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.16
@@ -4288,6 +4289,12 @@ PrefabInstance:
       propertyPath: MaxDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2606200036393070165, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4035087093411249709, guid: b0c6114e9d5b9024e80f15266415d8c5,
+        type: 2}
     - target: {fileID: 2606200036393070166, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: bodyImage
@@ -4358,6 +4365,12 @@ PrefabInstance:
       propertyPath: MaxDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7348326385484228936, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 238658720582347424, guid: b0c6114e9d5b9024e80f15266415d8c5,
+        type: 2}
     - target: {fileID: 7348326386291044781, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: m_Enabled
