@@ -21,6 +21,8 @@ public class DialgoueManager : MonoBehaviour
 
     public int buttonAmount;
 
+    private bool stillTalking = false;
+
 
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
     public AudioSource playerAudio;
@@ -60,6 +62,7 @@ public class DialgoueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        stillTalking = true;
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -81,12 +84,18 @@ public class DialgoueManager : MonoBehaviour
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
-        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.7F);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
+
+        if (stillTalking == true)
+        {
+            StartCoroutine(nextSound());
+        }
 
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return null;
+            stillTalking = false;
         }
     }
 
@@ -99,5 +108,15 @@ public class DialgoueManager : MonoBehaviour
             DisplayOptions();
         }
         endDia = false;
+    }
+
+    IEnumerator nextSound()
+    {
+        yield return new WaitForSeconds(0.706f);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
+        if (stillTalking == true)
+        {
+            StartCoroutine(nextSound());
+        }
     }
 }
