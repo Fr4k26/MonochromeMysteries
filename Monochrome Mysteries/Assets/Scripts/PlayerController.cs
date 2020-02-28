@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 	PlayerController playerController;
     Rigidbody playerRB;
     GameObject camera;
+   
 
     public float walkSpeed;
 	public float sprintSpeed;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
 	public float jumpSpeed;
     float lastYPos;
     public bool canmove = true;
+    
 
     // Min and max values for player position -- use for boundaries regarding where you want the player to go.
     public float xMin, xMax, zMin, zMax;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     // Assign private variable
     private void Start()
 	{
+       
 		moveSpeed = walkSpeed;
         //stateSwap = FindObjectOfType<StateSwap>();
         playerRB = GetComponent<Rigidbody>();
@@ -52,6 +55,9 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = walkSpeed;
         }
+
+        
+       
 
         //Vertical limits
         if (isGrounded())

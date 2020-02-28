@@ -9,7 +9,7 @@ public class SolveMystery : MonoBehaviour
     public Dropdown secondDrop;
     public Dropdown thirdDrop;
 
-    Text winText;
+    public Text winText;
 
     public int firstValue;
     public int secondValue;
@@ -23,6 +23,7 @@ public class SolveMystery : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
@@ -43,6 +44,7 @@ public class SolveMystery : MonoBehaviour
         if (secondDrop.value == secondValue)
         {
             secondCorrect = true;
+            Debug.Log("Correct");
         }
         else
         {
@@ -52,6 +54,7 @@ public class SolveMystery : MonoBehaviour
         if (thirdDrop.value == thirdValue)
         {
             thirdCorrect = true;
+            Debug.Log(thirdCorrect);
         }
         else
         {
@@ -59,11 +62,13 @@ public class SolveMystery : MonoBehaviour
         }
     }
 
-    void SolveM()
+    public void SolveM()
     {
         if(firstCorrect && secondCorrect && thirdCorrect == true)
         {
             Debug.Log("Solved the Mystery!");
+            winText.text = "You have solved the Mystery!";
+            winText.gameObject.SetActive(true);
         }
     }
 }

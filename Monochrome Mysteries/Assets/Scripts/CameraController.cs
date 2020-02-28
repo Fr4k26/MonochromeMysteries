@@ -97,11 +97,15 @@ public class CameraController : MonoBehaviour
                 {
                     journalUI.SetActive(true);
                     uiEnable = true;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
                 else if (uiEnable == true)
                 {
                     journalUI.SetActive(false);
                     uiEnable = false;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
             }
         }
