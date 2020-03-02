@@ -40,7 +40,8 @@ public class LadderBehaviour : MonoBehaviour
             player.GetComponent<PlayerController>().canClimb = true;
             player.GetComponent<PlayerController>().canmove = false;
             player.GetComponent<Rigidbody>().useGravity = false;
-            
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
     }
     private void OnTriggerExit(Collider other)
