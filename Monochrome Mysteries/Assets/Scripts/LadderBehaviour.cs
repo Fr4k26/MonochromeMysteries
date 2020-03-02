@@ -6,7 +6,6 @@ public class LadderBehaviour : MonoBehaviour
 {
 
     public GameObject player;
-    private bool canClimb = false;
     public float climbSpeed = 1;
     private Vector3 up = new Vector3(0, 1, 0);
     private Vector3 down = new Vector3(0, -1, 0);
@@ -20,7 +19,7 @@ public class LadderBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canClimb)
+        if (player.GetComponent<PlayerController>().canClimb)
         {
             
             if (Input.GetKey(KeyCode.W))
@@ -29,9 +28,7 @@ public class LadderBehaviour : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
-                canClimb = false;
-                player.GetComponent<PlayerController>().canmove = true;
-                player.GetComponent<Rigidbody>().useGravity = true;
+                player.transform.Translate(down * Time.deltaTime * climbSpeed);
             }
         }
     }
@@ -40,7 +37,7 @@ public class LadderBehaviour : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            canClimb = true;
+            player.GetComponent<PlayerController>().canClimb = true;
             player.GetComponent<PlayerController>().canmove = false;
             player.GetComponent<Rigidbody>().useGravity = false;
         }
@@ -49,7 +46,7 @@ public class LadderBehaviour : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            canClimb = false;
+            player.GetComponent<PlayerController>().canClimb = false;
             player.GetComponent<PlayerController>().canmove = true;
             player.GetComponent<Rigidbody>().useGravity = true;
         }
