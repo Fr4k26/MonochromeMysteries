@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialgoueManager : MonoBehaviour
 {
-    
+    GameController gc;
     public List<GameObject> buttonList;
     public GameObject buttonOption;
     public GameObject canvasPrefab;
@@ -23,6 +23,8 @@ public class DialgoueManager : MonoBehaviour
 
     private bool stillTalking = false;
 
+    public bool opensDoor; //Determines whether or not this dialogue opens a door
+    public int doorTarget; //Determines which door will open
 
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
     public AudioSource playerAudio;
@@ -34,6 +36,7 @@ public class DialgoueManager : MonoBehaviour
 
     void Start()
     {
+        gc = FindObjectOfType<GameController>();
         buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
@@ -47,6 +50,10 @@ public class DialgoueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
+        if(opensDoor)
+        {
+            gc.doors[doorTarget].SetActive(false);
+        }
 
         sentences.Clear();
 
