@@ -693,7 +693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16698
+  m_Name: pb_Mesh37556
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4766,10 +4766,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1543298122, guid: 01f2857e67b687e4e95e5d4e17cce949, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582774337, guid: 01f2857e67b687e4e95e5d4e17cce949, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1396146662941145888, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1396146662941145888, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -5066,6 +5074,26 @@ PrefabInstance:
         type: 3}
       propertyPath: verticalClamp
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208023127770259875, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208023127964069430, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208023128319621501, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947320224776165, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7348326385085989057, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -15921,7 +15949,7 @@ RectTransform:
   m_Children:
   - {fileID: 610211449}
   m_Father: {fileID: 743517321}
-  m_RootOrder: 10
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

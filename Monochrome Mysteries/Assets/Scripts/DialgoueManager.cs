@@ -84,6 +84,7 @@ public class DialgoueManager : MonoBehaviour
     public void DisplayOptions()
     {
         buttonOption.SetActive(true);
+        stillTalking = false;
     }
 
 
@@ -115,6 +116,7 @@ public class DialgoueManager : MonoBehaviour
             DisplayOptions();
         }
         endDia = false;
+        stillTalking = false;
     }
 
     IEnumerator nextSound()
