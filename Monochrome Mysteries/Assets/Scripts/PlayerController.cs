@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 	PlayerController playerController;
     Rigidbody playerRB;
     GameObject camera;
-   
 
+    public bool canClimb = false;
     public float walkSpeed;
 	public float sprintSpeed;
 	private float moveSpeed;
@@ -116,6 +116,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Spike")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (collision.gameObject.tag == "Ground")
+        {
+            canClimb = false;
+            canmove = true;
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
