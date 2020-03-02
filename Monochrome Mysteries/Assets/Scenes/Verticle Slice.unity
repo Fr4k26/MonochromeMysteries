@@ -5002,6 +5002,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2825408828701857487, guid: 5cb386359af923e45b7cb875228c2ca0,
         type: 2}
+    - target: {fileID: 2606200036393070165, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e66e5254798d4214ca52f8afbf5f88af, type: 3}
     - target: {fileID: 2606200036393070166, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: bodyImage
@@ -5056,7 +5061,7 @@ PrefabInstance:
         type: 3}
       propertyPath: photo
       value: 
-      objectReference: {fileID: 8300000, guid: 46fbdcd8d885ffd4281bcb40c9c98a5c, type: 3}
+      objectReference: {fileID: 8300000, guid: e66e5254798d4214ca52f8afbf5f88af, type: 3}
     - target: {fileID: 2606200036393070167, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: verticalClamp
