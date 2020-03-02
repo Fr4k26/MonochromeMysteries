@@ -693,7 +693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15040
+  m_Name: pb_Mesh16698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4965,6 +4965,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606200034826879399, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 2606200034826879421, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -11756,7 +11761,7 @@ GameObject:
   - component: {fileID: 1001141664}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
