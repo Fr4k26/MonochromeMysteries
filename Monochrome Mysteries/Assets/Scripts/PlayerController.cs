@@ -93,14 +93,11 @@ public class PlayerController : MonoBehaviour
                 float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
                                                                  // Move player using transform
                                                                  //transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
-                Vector3 nextMove = (playerRB.position + Vector3.ClampMagnitude(camera.transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical), newMoveSpeed));
-                playerRB.MovePosition(nextMove);
+                //Vector3 nextMove = (playerRB.position + Vector3.ClampMagnitude(camera.transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical), newMoveSpeed));
+                //playerRB.MovePosition(nextMove);
 
-                // Clamp the player's position so they can't go out of bounds.
-                /* clampedPosition = transform.position;
-                clampedPosition.x = Mathf.Clamp(clampedPosition.x, xMin, xMax);
-                clampedPosition.z = Mathf.Clamp(clampedPosition.z, zMin, zMax);
-                transform.position = clampedPosition;*/
+                transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
+                playerRB.MovePosition(transform.position);
             }
             else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W))
             {
