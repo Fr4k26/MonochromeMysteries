@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Assign private variable
     private void Start()
 	{
-       
+        canClimb = false;
 		moveSpeed = walkSpeed;
         //stateSwap = FindObjectOfType<StateSwap>();
         playerRB = GetComponent<Rigidbody>();
