@@ -885,6 +885,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &271188013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3208023127770259874, guid: 01f2857e67b687e4e95e5d4e17cce949,
@@ -991,6 +992,8 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 85.912, y: -90.00001, z: -90.00001}
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
@@ -8420,6 +8423,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> parent of a8408d7... Solve Mystery Basic
+=======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1001 &719190849
 PrefabInstance:
@@ -8567,7 +8573,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6f4adea930d4c654ca88ff0b6662f650, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
@@ -10363,6 +10372,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &870680403
 GameObject:
@@ -10460,6 +10470,8 @@ Transform:
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!114 &887223325 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3208023127862228636, guid: 6f4adea930d4c654ca88ff0b6662f650,
@@ -10474,7 +10486,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
@@ -13388,6 +13403,7 @@ Mesh:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &1224005327 stripped
 GameObject:
@@ -13478,6 +13494,8 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
@@ -13628,7 +13646,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6f4adea930d4c654ca88ff0b6662f650, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
