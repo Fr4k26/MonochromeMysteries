@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
     public AudioSource shutter;
     public AudioClip photo;
 
+    public bool cameraFlash = false;
+    public Light cameraLight;
+
     public GameObject canvas;
     public GameObject journalUI;
 
@@ -125,6 +128,11 @@ public class CameraController : MonoBehaviour
             shutter.PlayOneShot(photo);
             pictureTaken = true;
             StartCoroutine(nextPicture());
+
+            if (cameraFlash == false)
+            {
+                cameraLight.intensity = 100;
+            }
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, captureDistance))
 			{
