@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 		playerController = GetComponent<PlayerController>();
         lastYPos = GetComponent<Rigidbody>().transform.position.y;
-        //camera = gameObject.transform.GetChild(0).gameObject;
         camera = FindObjectOfType<CameraCollision>().gameObject;
     }
 
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour
             moveSpeed = walkSpeed;
         }
 
-        
        
 
         //Vertical limits
@@ -74,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
     }
-	bool isGrounded()
+    bool isGrounded()
 	{
 		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
 	}
@@ -99,36 +97,17 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
                 playerRB.MovePosition(transform.position);
             }
-            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(0 * 0, 0f, 0 * 0);
-            }
         }
 	}
 
-    // Handle player's ability to flip
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Spike")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
         if (collision.gameObject.tag == "Ground")
         {
             canClimb = false;
             canmove = true;
-            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 
     public float linearDrag;
-    private void OnTriggerEnter(Collider other)
-    {
-        // Handle gravity with Quicksand when player enters it
-        if(other.gameObject.tag == "Spike")
-        {
-            playerRB.drag = linearDrag;
-        }
-    }
 }
