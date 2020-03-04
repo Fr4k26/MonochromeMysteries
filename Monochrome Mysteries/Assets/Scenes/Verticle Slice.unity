@@ -884,6 +884,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 52a9608b123e23447b5efdadb0b0c1c4, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &271188013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3208023127770259874, guid: 01f2857e67b687e4e95e5d4e17cce949,
@@ -990,6 +991,8 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 85.912, y: -90.00001, z: -90.00001}
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1001 &349576360
@@ -8400,11 +8403,23 @@ Transform:
   m_LocalRotation: {x: 0.70665693, y: -0.02521993, z: -0.02521993, w: 0.70665693}
   m_LocalPosition: {x: 0.5141182, y: 0.7258668, z: 1.3857574}
   m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD
   m_Children: []
   m_Father: {fileID: 791780725}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 85.912, y: -90.00001, z: -90.00001}
 =======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
+=======
+  m_Children:
+  - {fileID: 378354814}
+  - {fileID: 2022006599}
+  - {fileID: 1462865432}
+  - {fileID: 748784373}
+  - {fileID: 448808144}
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1001 &719190849
 PrefabInstance:
@@ -8551,7 +8566,10 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4adea930d4c654ca88ff0b6662f650, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!43 &722212381
@@ -10344,6 +10362,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: fab11424c2050234abb05d7a1cbe097c, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &870680403
 GameObject:
@@ -10439,6 +10458,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 129.091, y: -0.000015258789, z: -0.000015258789}
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!114 &887223325 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3208023127862228636, guid: 6f4adea930d4c654ca88ff0b6662f650,
@@ -10452,7 +10473,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1 &907961276
@@ -13363,6 +13387,7 @@ Mesh:
     path: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &1224005327 stripped
 GameObject:
@@ -13453,6 +13478,8 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1001 &1234985887
@@ -13600,7 +13627,10 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4adea930d4c654ca88ff0b6662f650, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 54c07f842935ddce9d7e8130f6acc726c2308c30
+=======
+>>>>>>> parent of a8408d7... Solve Mystery Basic
 =======
 >>>>>>> parent of a8408d7... Solve Mystery Basic
 --- !u!1 &1250701408
