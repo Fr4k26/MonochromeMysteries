@@ -20,12 +20,21 @@ public class SolveMystery : MonoBehaviour
     bool thirdCorrect;
 
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        
+    }
+
+
+
     public void CheckOptions()
     {
         if(firstDrop.value == firstValue)
         {
             firstCorrect = true;
-            Debug.Log("Correct 1");
+            Debug.Log("Correct!");
         }
         else
         {
@@ -35,7 +44,7 @@ public class SolveMystery : MonoBehaviour
         if (secondDrop.value == secondValue)
         {
             secondCorrect = true;
-            Debug.Log("Correct 2");
+            Debug.Log("Correct");
         }
         else
         {
@@ -45,7 +54,7 @@ public class SolveMystery : MonoBehaviour
         if (thirdDrop.value == thirdValue)
         {
             thirdCorrect = true;
-            Debug.Log("Correct 3");
+            Debug.Log(thirdCorrect);
         }
         else
         {
