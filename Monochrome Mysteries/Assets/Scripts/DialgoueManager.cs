@@ -10,6 +10,9 @@ public class DialgoueManager : MonoBehaviour
     public GameObject buttonOption;
     public GameObject canvasPrefab;
 
+    public GameObject playerObject;
+    public PlayerController playerController;
+
     public bool endDia;
 
     public Text nameText;
@@ -28,7 +31,7 @@ public class DialgoueManager : MonoBehaviour
 
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
     public AudioSource playerAudio;
-    public AudioClip [] paperBoy;
+    public AudioClip[] paperBoy;
     public AudioClip[] femmeFatale;
     public AudioClip[] policeMan;
     public AudioClip[] businessMan;
@@ -40,6 +43,7 @@ public class DialgoueManager : MonoBehaviour
         buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
+        playerController = playerObject.GetComponent<PlayerController>();
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
         playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
@@ -48,6 +52,7 @@ public class DialgoueManager : MonoBehaviour
     public void StartDialogue (Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
+        playerController.canmove = false;
 
         nameText.text = dialogue.name;
         if(opensDoor)
@@ -117,6 +122,7 @@ public class DialgoueManager : MonoBehaviour
         }
         endDia = false;
         stillTalking = false;
+        playerController.canmove = true;
     }
 
     IEnumerator nextSound()

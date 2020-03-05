@@ -42,15 +42,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && canmove)
         {
             playerRB.velocity = new Vector3(0f, jumpSpeed, 0f);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canmove)
         {
             moveSpeed = sprintSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) && canmove)
         {
             moveSpeed = walkSpeed;
         }
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             float moveVertical = Input.GetAxis("Vertical");
 
 
-            if (moveVertical > 0f || moveVertical < 0f || moveHorizontal > 0f || moveHorizontal < 0f)
+            if ((moveVertical > 0f || moveVertical < 0f || moveHorizontal > 0f || moveHorizontal < 0f) && canmove)
             {
                 float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
                                                                  // Move player using transform

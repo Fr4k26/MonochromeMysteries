@@ -38,12 +38,16 @@ public class CameraController : MonoBehaviour
     private bool pictureTaken = false;
 
     public Camera camera;
-    
+
+    public GameObject playerObject;
+    public PlayerController playerController;
 
     public GameObject winText;
 
     void Start()
     {
+        playerController = playerObject.GetComponent<PlayerController>();
+
         if (cameraUI != null)
         {
             cameraUI.SetActive(false);
@@ -56,7 +60,6 @@ public class CameraController : MonoBehaviour
         uiEnable = false;
         journalUI.SetActive(false);
 
-        
 	}
 
 	void Update()
@@ -98,6 +101,7 @@ public class CameraController : MonoBehaviour
             {
                 if (uiEnable == false)
                 {
+                    playerController.canmove = false;
                     journalUI.SetActive(true);
                     uiEnable = true;
                     Cursor.visible = true;
@@ -105,6 +109,7 @@ public class CameraController : MonoBehaviour
                 }
                 else if (uiEnable == true)
                 {
+                    playerController.canmove = true;
                     journalUI.SetActive(false);
                     uiEnable = false;
                     Cursor.visible = false;
@@ -261,11 +266,7 @@ public class CameraController : MonoBehaviour
     IEnumerator WaitRoutine()
     {
 
-
-
-
         yield return new WaitForSeconds(0.1f);
-
 
         canvas.SetActive(true);
         cameraUI.SetActive(true);
