@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib Ground_Tile.mtl
+g default
+v 0.000000 31.000002 8.200653
+v 0.000000 31.000002 0.000000
+v -8.390630 31.000002 0.000000
+v -8.390630 31.000002 8.200653
+vt 0.001947 0.001992
+vt 0.975412 0.001992
+vt 0.975412 0.998008
+vt 0.001947 0.998008
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+s off
+g Ground_Tile
+usemtl Rooftop_Plane:initialShadingGroup
+f 1/1/1 2/2/2 3/3/3 4/4/4
