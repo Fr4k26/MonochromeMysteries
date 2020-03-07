@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4726
+  m_Name: pb_Mesh-4760
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -478,7 +478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2676
+  m_Name: pb_Mesh-2704
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -740,7 +740,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15996
+  m_Name: pb_Mesh15124
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1399,7 +1399,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4534
+  m_Name: pb_Mesh-4568
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1970,6 +1970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949801178400380018, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: m_Text
+      value: '"Did you hear anything? Gunshots, screams?"'
+      objectReference: {fileID: 0}
     - target: {fileID: 2621399493976222187, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1988,17 +1993,70 @@ PrefabInstance:
     - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.name
-      value: gwrgr
+      value: Woman in Red
       objectReference: {fileID: 0}
     - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: gwegwre
+      value: '"Local tycoon. My boss until this morning, in fact." She is curt, effective,
+        though her accent is inconsistent.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "[\"What's his name? And formal occupation?\"]\r\r\n\"Matthew Herentz.
+        Had a hand in... most things. War, politics, the papers, manufacturing--
+        in short: He was an American businessman. I was his regional manager.\"\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "[\"And now that he's dead?\"]\r\r\nA flare in her eyes, she didn't
+        expect that so soon, \"Well now... I suppose I am an American businessman.\"
+        She laughs silently at this premise.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: '["Did you want the job?"]
+
+        "Hardly. But someone must handle
+        his affairs, no? And Herentz often made... subpar decisions. I am now in
+        a position to heal the monstrosity he left behind."
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: '["What sort of decisions?"]
+
+
+        She sits there for a moment,
+        before sharply glancing over, "That old kid there: Herentz'' doing. By all
+        accounts the young man brings in more sales than any other paper boy. Herentz
+        refused him a raise and a promotion."
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: "[\"Why?\"]\r\n\"Maybe he wanted to make it clear how exclusive a pay
+        raise would be. Though...\" she slows and her jaw sets, \"I think I should
+        leave conjecture to your kind.\"\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656220421466424500, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: "She seems to have locked down, you should try another angle.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 3261470481231917346, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
@@ -2038,7 +2096,7 @@ PrefabInstance:
     - target: {fileID: 3261470481231917346, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3261470481231917346, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
@@ -2130,6 +2188,11 @@ PrefabInstance:
       propertyPath: dialogue.sentences.Array.data[0]
       value: wefwegrws
       objectReference: {fileID: 0}
+    - target: {fileID: 6582388421524557787, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: m_Text
+      value: '"Who''s the dead man?"'
+      objectReference: {fileID: 0}
     - target: {fileID: 6864992245002943448, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2148,17 +2211,65 @@ PrefabInstance:
     - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.name
-      value: gwrgwr
+      value: Woman in Red
       objectReference: {fileID: 0}
     - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: fewfgttwe
+      value: '"No, inspector." '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "[\"Do you live nearby?\"]\r\n\r\n\"Just visiting, actually.\"\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "[\"And why are you here, now?\"]\r\n\r\n\"He was my boss, I'm here
+        to assist in the investigation.\"\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "[...]\r\n\r\nShe nods, as if agreeing with someone, \"Anything else
+        you need me for?\" You flip through your journal for another question to
+        prolong this. \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "She regards you calmly. It seems that she knows more than she's letting
+        on, but isn't going to cooperate on this matter much further. It might be
+        best to cut your losses here.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: "[That's all. Thank you, Miss...?]\r\r\nYou didn't ask for her name.
+        She smirks, as if watching the journalist dance.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: "After a moment with your hand outstretched for a closing handshake,
+        she mercifully speaks.\r\n\"Gina Afluette. Charmed.\" The immediate tension
+        has passed, but you can feel your error as she gingerly shakes your hand.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796415146091115946, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[7]
+      value: "[\u201CThanks for your time.\u201D]\r\n\u201COf course.\u201D\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811226641118597074, guid: 4a9db54e8854819468d19c04ea9c7175,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7852099720606720151, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
@@ -3523,7 +3634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3592
+  m_Name: pb_Mesh-3626
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4268,6 +4379,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paper Boy Dialogue UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1396146664132040576, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -260
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396146664132040576, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2606200034826879392, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: sprintSpeed
@@ -4326,7 +4447,7 @@ PrefabInstance:
     - target: {fileID: 2606200034826879393, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2606200034826879393, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -5506,7 +5627,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15906
+  m_Name: pb_Mesh15022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5912,60 +6033,63 @@ PrefabInstance:
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: "\"EXTRA FROM THE HERALD. EXTRA. READ ALL ABOUT IT. EXCLUSIVE ON THE
-        LATEST SCANDAL...\" \nThe teen surveys the policemen down the street, tending
-        to a far more interesting piece of news than he can muster today. "
+      value: "A middle-aged woman in a red dress sits outside a cafe, calmly surveying
+        her surroundings. Every now and then she turns back to look over the body,
+        perhaps to confirm it hasn\u2019t walked away."
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: '[You approach]
+      value: '[Approach.]
 
-        "Ah, good day sir. Extra special from the Herald
-        today, glad to see people still keep up with politics."'
+        She takes her time to look you up and down as
+        you approach. You don''t get the sense that you''re allowed to ask any questions
+        until she''s done.
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: "As soon as you approach his voice drops several decibels and takes
-        on a certain confidence: He thinks that he's secured the sale at this point.
-        \n"
+      value: "\"Tell me then. Journalist or another P.I.?\" there is a discernible
+        French accent, but what strikes you is the question's utter disinterest in
+        your answer. She is either masking her intent or simply dismissing the situation
+        before it begins.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: He's maybe 16 years old, but his clothes are that of someone half his
-        age-- they're ragged from overuse but clean, well maintained. He's obviously
-        been at the gig for a while.
+      value: "[\"Journalist, ma'am.\"]\r\r\nShe nods sagely, as if she's known what
+        your answer was going to be for the last decade.\r\n\"Making a little story
+        out of this, then?\"\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: '["You''ve been working this box for a while?"]
-
-        "Yeah... They
-        were promisin'' a promotion all throughout the war. I was peddling the big
-        headlines-- ''Greatest Military Operation in History Begin in France,'' ''Japan
-        Surrenders, End of War!'' he rattles off several more effortlessly...'
+      value: "[\"I wouldn't be much of a journalist if I didn't.\"]\r\r\nShe shakes
+        in mock laughter, before slipping in a question,\r\n\"Not all stories need
+        to be retold, no?\" Despite its casual delivery, her laughter has dropped
+        off and her posture is again tightly controlled.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: '"And then it all wraps up, and some war hero stumbles back, buys up
-        the printing company, and here I am still." he gestures at his general existence.'
+      value: "[\"I think the truth comes first.\"]\r\r\n\"Ah, one of those.\" She
+        says without intonation.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[6]
-      value: '["What do you know about the deceased?"]
-
-        His smile grows taut,
-        as he eyes you over with newfound interest, "Ah so you''re a cop, eh?"'
+      value: "\"Now then inspector, ask your questions. I will do my best to answer.\"
+        She says it like she's giving you permission. You suspect she has a plan
+        now-- or maybe already made one ten-odd years ago and just had to perform
+        a few edits.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
@@ -6023,7 +6147,7 @@ PrefabInstance:
     - target: {fileID: 8546253280166288988, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: dialogue.name
-      value: Femme Fatale
+      value: Woman in Red
       objectReference: {fileID: 0}
     - target: {fileID: 8546253280166288990, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
@@ -6081,6 +6205,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253281424306940, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546253281424306940, guid: e65b281b034e0384fa37c680b1cf26ce,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -260
       objectReference: {fileID: 0}
     - target: {fileID: 8546253281799615425, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
@@ -8723,7 +8857,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16012
+  m_Name: pb_Mesh15140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8925,7 +9059,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4238
+  m_Name: pb_Mesh-4272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10102,7 +10236,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 51c38fb279345924b8c5cbf0476269da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51c38fb279345924b8c5cbf0476269da,
         type: 3}
@@ -11160,7 +11294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15886
+  m_Name: pb_Mesh15000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
