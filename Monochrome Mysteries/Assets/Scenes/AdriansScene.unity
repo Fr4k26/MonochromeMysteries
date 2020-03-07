@@ -2264,11 +2264,17 @@ MonoBehaviour:
   buttonOption: {fileID: 1828660638}
   canvasPrefab: {fileID: 8546253281799615425, guid: e65b281b034e0384fa37c680b1cf26ce,
     type: 3}
+  choiceMenu: {fileID: 0}
+  playerObject: {fileID: 0}
+  playerController: {fileID: 0}
   endDia: 0
   nameText: {fileID: 2140533580}
   dialogueText: {fileID: 134303449}
   animator: {fileID: 177860177}
   buttonAmount: 0
+  showChoices: 0
+  opensDoor: 0
+  doorTarget: 0
   playerAudio: {fileID: 0}
   paperBoy: []
   femmeFatale: []
@@ -2531,7 +2537,7 @@ PrefabInstance:
     - target: {fileID: 8546253281799615425, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546253281799615485, guid: e65b281b034e0384fa37c680b1cf26ce,
         type: 3}
@@ -3184,7 +3190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2089736520
 MonoBehaviour:
   m_ObjectHideFlags: 0

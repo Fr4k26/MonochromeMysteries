@@ -9,6 +9,8 @@ public class DialgoueManager : MonoBehaviour
     public List<GameObject> buttonList;
     public GameObject buttonOption;
     public GameObject canvasPrefab;
+    public Canvas choiceMenu;
+    
 
     public GameObject playerObject;
     public PlayerController playerController;
@@ -20,11 +22,12 @@ public class DialgoueManager : MonoBehaviour
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     public int buttonAmount;
 
     private bool stillTalking = false;
+    public bool showChoices;
 
     public bool opensDoor; //Determines whether or not this dialogue opens a door
     public int doorTarget; //Determines which door will open
@@ -44,6 +47,7 @@ public class DialgoueManager : MonoBehaviour
         endDia = true;
         sentences = new Queue<string>();
         playerController = playerObject.GetComponent<PlayerController>();
+        
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
         playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
@@ -52,8 +56,8 @@ public class DialgoueManager : MonoBehaviour
     public void StartDialogue (Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-        playerController.canmove = false;
-
+        //playerController.canmove = false;
+        showChoices = false;
         nameText.text = dialogue.name;
         if(opensDoor)
         {
@@ -66,9 +70,8 @@ public class DialgoueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
-
+        DisplayOptions();
 
     }
 
@@ -88,8 +91,18 @@ public class DialgoueManager : MonoBehaviour
 
     public void DisplayOptions()
     {
-        buttonOption.SetActive(true);
-        stillTalking = false;
+       if(showChoices == true)
+       {
+            choiceMenu.gameObject.SetActive(true);
+            
+       }
+        
+       if(showChoices == false)
+       {
+            choiceMenu.gameObject.SetActive(false);
+       }
+        
+        
     }
 
 
@@ -98,7 +111,6 @@ public class DialgoueManager : MonoBehaviour
     {
         dialogueText.text = "";
         playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
-
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
@@ -115,14 +127,15 @@ public class DialgoueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("isOpen", false);
-        
-        if(endDia == true)
-        {
-            DisplayOptions();
-        }
-        endDia = false;
+
+        showChoices = true;
+        DisplayOptions();
+            
+      
+        endDia = true;
         stillTalking = false;
-        playerController.canmove = true;
+       
+        //playerController.canmove = true;
     }
 
     IEnumerator nextSound()
