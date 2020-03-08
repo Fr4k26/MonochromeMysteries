@@ -67,8 +67,18 @@ public class DialgoueManager : MonoBehaviour
     {
         paperAnimator.SetBool("isOpen", true);
         femAnimator.SetBool("isOpen", true);
-        femTalking.SetBool("isTalking", true);
-        paperTalking.SetBool("isTalking", true);
+
+        if(paperBoyTrigger.boyTrigger == true)
+        {
+            paperTalking.SetBool("isTalking", true);
+        }
+
+        if(femmeFataleTrigger.femmeTrigger == true)
+        {
+            femTalking.SetBool("isTalking", true);
+        }
+        
+       
         playerController.canmove = false;
         showChoices = false;
         nameText.text = dialogue.name;
@@ -158,8 +168,17 @@ public class DialgoueManager : MonoBehaviour
     {
         paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
-        femTalking.SetBool("isTalking", false);
-        femTalking.SetBool("isTalking", false);
+        if(paperBoyTrigger.boyTrigger == false)
+        {
+            paperTalking.SetBool("isTalking", false);
+        }
+
+        if(femmeFataleTrigger.femmeTrigger == true)
+        {
+            femTalking.SetBool("isTalking", false);
+        }
+        
+        
 
         showChoices = true;
       
