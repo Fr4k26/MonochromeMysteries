@@ -27,8 +27,10 @@ public class DialgoueManager : MonoBehaviour
     public Text femNameText;
     public Text femDialogueText;
 
-    public Animator animator;
+    public Animator paperAnimator;
     public Animator femAnimator;
+    public Animator paperTalking;
+    public Animator femTalking;
 
     public Queue<string> sentences;
 
@@ -63,8 +65,10 @@ public class DialgoueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true);
+        paperAnimator.SetBool("isOpen", true);
         femAnimator.SetBool("isOpen", true);
+        femTalking.SetBool("isTalking", true);
+        paperTalking.SetBool("isTalking", true);
         playerController.canmove = false;
         showChoices = false;
         nameText.text = dialogue.name;
@@ -152,8 +156,11 @@ public class DialgoueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        animator.SetBool("isOpen", false);
+        paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
+        femTalking.SetBool("isTalking", false);
+        femTalking.SetBool("isTalking", false);
+
         showChoices = true;
       
         if(paperBoyTrigger.boyTrigger == true)
