@@ -3,27 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-class Trigger : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
-    public Canvas diaCanvas;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Canvas boyCanvas;
+    public bool boyTrigger;
+    public Canvas femmeCanvas;
+    public bool femmeTrigger;
+    public GameObject triggerObj;
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider collider)
+    public void OnTriggerEnter(Collider collider)
     {
-        diaCanvas.gameObject.SetActive(true);
+        if(triggerObj.CompareTag("Paper Boy"))
+        {
+            boyCanvas.gameObject.SetActive(true);
+            boyTrigger = true;
+        }
+        if (triggerObj.CompareTag("Femme Fatale"))
+        {
+            femmeCanvas.gameObject.SetActive(true);
+            femmeTrigger = true;
+        }
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
-        diaCanvas.gameObject.SetActive(false);
+        boyCanvas.gameObject.SetActive(false);
+        boyTrigger = false;
+        femmeCanvas.gameObject.SetActive(false);
+        femmeTrigger = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

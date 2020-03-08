@@ -8,7 +8,14 @@ public class DialgoueManager : MonoBehaviour
     GameController gc;
     public List<GameObject> buttonList;
     public GameObject buttonOption;
-    public GameObject canvasPrefab;
+    public GameObject PaperBoyCanvas;
+    public GameObject FemmeFataleCanvas;
+    public Canvas choicePaperBoyMenu;
+    public Canvas choiceFemmeFataleMenu;
+    public Trigger paperBoyTrigger;
+    public Trigger femmeFataleTrigger;
+    
+    
 
     public GameObject playerObject;
     public PlayerController playerController;
@@ -17,14 +24,20 @@ public class DialgoueManager : MonoBehaviour
 
     public Text nameText;
     public Text dialogueText;
+    public Text femNameText;
+    public Text femDialogueText;
 
-    public Animator animator;
+    public Animator paperAnimator;
+    public Animator femAnimator;
+    public Animator paperTalking;
+    public Animator femTalking;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     public int buttonAmount;
 
     private bool stillTalking = false;
+    public bool showChoices;
 
     public bool opensDoor; //Determines whether or not this dialogue opens a door
     public int doorTarget; //Determines which door will open
@@ -44,6 +57,7 @@ public class DialgoueManager : MonoBehaviour
         endDia = true;
         sentences = new Queue<string>();
         playerController = playerObject.GetComponent<PlayerController>();
+        
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
         playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
@@ -51,10 +65,24 @@ public class DialgoueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-        animator.SetBool("isOpen", true);
-        playerController.canmove = false;
+        paperAnimator.SetBool("isOpen", true);
+        femAnimator.SetBool("isOpen", true);
 
+        if(paperBoyTrigger.boyTrigger == true)
+        {
+            paperTalking.SetBool("isTalking", true);
+        }
+
+        if(femmeFataleTrigger.femmeTrigger == true)
+        {
+            femTalking.SetBool("isTalking", true);
+        }
+        
+       
+        playerController.canmove = false;
+        showChoices = false;
         nameText.text = dialogue.name;
+        femNameText.text = dialogue.name;
         if(opensDoor)
         {
             gc.doors[doorTarget].SetActive(false);
@@ -66,9 +94,9 @@ public class DialgoueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
-
+        DisplayOptionsPaperBoy();
+        DisplayOptionsFemmeFatale();
 
     }
 
@@ -78,6 +106,7 @@ public class DialgoueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            
             return;
         }
 
@@ -86,19 +115,41 @@ public class DialgoueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    public void DisplayOptions()
+    public void DisplayOptionsPaperBoy()
     {
-        buttonOption.SetActive(true);
-        stillTalking = false;
+       if(showChoices == true)
+       {
+            choicePaperBoyMenu.gameObject.SetActive(true);
+       }
+        
+       if(showChoices == false)
+       {
+            choicePaperBoyMenu.gameObject.SetActive(false);
+       }
+
     }
+
+    public void DisplayOptionsFemmeFatale()
+    {
+        if (showChoices == true)
+        {
+            choiceFemmeFataleMenu.gameObject.SetActive(true);
+        }
+
+        if (showChoices == false)
+        {
+            choiceFemmeFataleMenu.gameObject.SetActive(false);
+        }
+    }
+    
 
 
 
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
-        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
-
+        femDialogueText.text = "";
+        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
@@ -107,6 +158,7 @@ public class DialgoueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
+            femDialogueText.text += letter;
             yield return null;
             stillTalking = false;
         }
@@ -114,21 +166,42 @@ public class DialgoueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        animator.SetBool("isOpen", false);
-        
-        if(endDia == true)
+        paperAnimator.SetBool("isOpen", false);
+        femAnimator.SetBool("isOpen", false);
+        if(paperBoyTrigger.boyTrigger == false)
         {
-            DisplayOptions();
+            paperTalking.SetBool("isTalking", false);
         }
-        endDia = false;
+
+        if(femmeFataleTrigger.femmeTrigger == true)
+        {
+            femTalking.SetBool("isTalking", false);
+        }
+        
+        
+
+        showChoices = true;
+      
+        if(paperBoyTrigger.boyTrigger == true)
+        {
+            DisplayOptionsPaperBoy();
+        }
+
+        if (femmeFataleTrigger.femmeTrigger == true)
+        {
+            DisplayOptionsFemmeFatale();
+        }
+
+        endDia = true;
         stillTalking = false;
+       
         playerController.canmove = true;
     }
 
     IEnumerator nextSound()
     {
         yield return new WaitForSeconds(0.706f);
-        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
+        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
