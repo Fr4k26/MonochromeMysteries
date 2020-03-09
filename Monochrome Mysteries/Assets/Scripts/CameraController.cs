@@ -147,6 +147,23 @@ public class CameraController : MonoBehaviour
                 print(hit.collider.gameObject.name);
                 GameObject [] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
 
+                if (hit.collider.gameObject.tag == "Paper Boy" && hit.collider.gameObject.name == "PP Trigger Holder")
+                {
+                    if (paperShotTexture != null)
+                    { paperShotTexture = null; }
+
+                    canvas.SetActive(false);
+                    cameraUI.SetActive(false);
+                    WaitBeforeScreenshotRoutine();
+                    paperboy.GetComponent<Text>().color = Color.green;
+                    paperboyBool = true;
+                    paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+                    Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
+                    Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
+                    paperboyImage.GetComponent<Image>().sprite = papershot;
+                    StartCoroutine(WaitRoutine());
+                }
+
                 foreach (GameObject obj in objectiveArray)
                 {
                     if (hit.collider.gameObject == obj)
