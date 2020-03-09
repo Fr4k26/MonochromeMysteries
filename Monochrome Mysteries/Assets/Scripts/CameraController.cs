@@ -8,11 +8,15 @@ public class CameraController : MonoBehaviour
 	public float captureDistance = 500;
 	public GameObject cameraUI, textUI, rain;
 
-    public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage;
+    public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage;
 
     public Text body, paperboy, reciept, pinkslip, knife, gun, blood;
     public AudioSource shutter;
     public AudioClip photo;
+
+    public Dropdown Killerdropdown;
+    public Dropdown Weapondropdown;
+    public Dropdown Motivedropdown;
 
     public GameObject canvas;
     public GameObject journalUI;
@@ -25,17 +29,18 @@ public class CameraController : MonoBehaviour
     private Texture2D knifeShotTexture;
     private Texture2D gunShotTexture;
     private Texture2D bloodShotTexture;
+    private Texture2D femmeShotTexture;
 
     private bool bodyBool = false;
-    private bool paperboyBool = false;
     private bool recieptBool = false;
     private bool pinkslipBool = false;
-    private bool knifeBool = false;
-    private bool gunBool = false;
     private bool bloodBool = false;
     private bool uiEnable = false;
 
     private bool pictureTaken = false;
+
+    public List<string> killerOptions;
+    public List<string> weaponOptions;
 
     public Camera camera;
 
@@ -47,6 +52,8 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         playerController = playerObject.GetComponent<PlayerController>();
+        killerOptions = new List<string>();
+        weaponOptions = new List<string>();
 
         if (cameraUI != null)
         {
@@ -62,9 +69,35 @@ public class CameraController : MonoBehaviour
 
 	}
 
-	void Update()
+    void AddKiller(string item)
     {
-		if(Input.GetMouseButton(1))
+        if(!killerOptions.Contains(item))
+        {
+            killerOptions.Add(item);
+            Killerdropdown.ClearOptions();
+            Killerdropdown.AddOptions(killerOptions);
+        }
+        
+
+    }
+
+    void AddWeapon(string item)
+    {
+        if (!weaponOptions.Contains(item))
+        {
+            weaponOptions.Add(item);
+            Weapondropdown.ClearOptions();
+            Weapondropdown.AddOptions(weaponOptions);
+        }
+
+
+    }
+
+    void Update()
+    {
+
+
+        if (Input.GetMouseButton(1))
 		{
 			Zoom();			
 		}
@@ -97,14 +130,15 @@ public class CameraController : MonoBehaviour
         //All Objectives True
         if (Input.GetKeyDown(KeyCode.F12))
         {
+            AddKiller("Paperboy");
+            AddKiller("Femme Fatale");
             bodyBool = true;
-            paperboyBool = true;
             recieptBool = true;
             pinkslipBool = true;
-            knifeBool = true;
-            gunBool = true;
+            AddWeapon("Gun");
+            AddWeapon("Box Cutter");
             bloodBool = true;
-}
+        }
             ;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -156,7 +190,7 @@ public class CameraController : MonoBehaviour
                     cameraUI.SetActive(false);
                     WaitBeforeScreenshotRoutine();
                     paperboy.GetComponent<Text>().color = Color.green;
-                    paperboyBool = true;
+                    AddKiller("Paperboy");
                     paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                     Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                     Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
@@ -196,7 +230,7 @@ public class CameraController : MonoBehaviour
                             cameraUI.SetActive(false);
                             WaitBeforeScreenshotRoutine();
                             paperboy.GetComponent<Text>().color = Color.green;
-                            paperboyBool = true;
+                            AddKiller("Paperboy");
                             paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                             Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
@@ -244,7 +278,7 @@ public class CameraController : MonoBehaviour
                             cameraUI.SetActive(false);
                             WaitBeforeScreenshotRoutine();
                             knife.GetComponent<Text>().color = Color.green;
-                            knifeBool = true;
+                            AddWeapon("Box Cutter");
                             knifeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, knifeShotTexture.width, knifeShotTexture.height);
                             Sprite knifeshot = Sprite.Create(knifeShotTexture, rec, new Vector2(0.5f, 0.5f));
@@ -260,7 +294,7 @@ public class CameraController : MonoBehaviour
                             cameraUI.SetActive(false);
                             WaitBeforeScreenshotRoutine();
                             gun.GetComponent<Text>().color = Color.green;
-                            gunBool = true;
+                            AddWeapon("Gun");
                             gunShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, gunShotTexture.width, gunShotTexture.height);
                             Sprite gunshot = Sprite.Create(gunShotTexture, rec, new Vector2(0.5f, 0.5f));
@@ -281,6 +315,21 @@ public class CameraController : MonoBehaviour
                             Rect rec = new Rect(0, 0, bloodShotTexture.width, bloodShotTexture.height);
                             Sprite bloodshot = Sprite.Create(bloodShotTexture, rec, new Vector2(0.5f, 0.5f));
                             bloodImage.GetComponent<Image>().sprite = bloodshot;
+                            StartCoroutine(WaitRoutine());
+                        }
+                        else if (name.Equals("Femme Fatale Character"))
+                        {
+                            if (femmeShotTexture != null)
+                            { femmeShotTexture = null; }
+
+                            canvas.SetActive(false);
+                            cameraUI.SetActive(false);
+                            WaitBeforeScreenshotRoutine();
+                            AddKiller("Femme Fatale");
+                            femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+                            Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
+                            Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
+                            femmeImage.GetComponent<Image>().sprite = femmeshot;
                             StartCoroutine(WaitRoutine());
                         }
                     }
