@@ -66,6 +66,10 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.velocity = new Vector3(playerRB.velocity.x, playerRB.velocity.y / 1.75f, playerRB.velocity.z);
         }
+        
+        //Restart Scene
+        if (Input.GetKeyDown(KeyCode.F11))
+            SceneManager.LoadScene("Verticle Slice");
     }
 
     void FixedUpdate()

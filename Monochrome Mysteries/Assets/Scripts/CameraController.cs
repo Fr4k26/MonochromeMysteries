@@ -94,7 +94,18 @@ public class CameraController : MonoBehaviour
                 textUI.SetActive(true);
             }
         }
-
+        //All Objectives True
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            bodyBool = true;
+            paperboyBool = true;
+            recieptBool = true;
+            pinkslipBool = true;
+            knifeBool = true;
+            gunBool = true;
+            bloodBool = true;
+}
+            ;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (journalUI != null)
