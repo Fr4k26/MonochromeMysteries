@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
     private Texture2D bloodShotTexture;
     private Texture2D femmeShotTexture;
 
-    private bool bodyBool = false;
+
     private bool recieptBool = false;
     private bool pinkslipBool = false;
     private bool bloodBool = false;
@@ -132,7 +132,7 @@ public class CameraController : MonoBehaviour
         {
             AddKiller("Paperboy");
             AddKiller("Femme Fatale");
-            bodyBool = true;
+            AddKiller("Corpse");
             recieptBool = true;
             pinkslipBool = true;
             AddWeapon("Gun");
@@ -213,7 +213,7 @@ public class CameraController : MonoBehaviour
                             cameraUI.SetActive(false);
                             WaitBeforeScreenshotRoutine();
                             body.GetComponent<Text>().color = Color.green;
-                            bodyBool = true;
+                            AddKiller("Corpse");
                             bodyShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                             Rect rec = new Rect(0, 0, bodyShotTexture.width, bodyShotTexture.height);
                             Sprite bodyshot = Sprite.Create(bodyShotTexture, rec, new Vector2(0.5f, 0.5f));
