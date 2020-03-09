@@ -14,6 +14,7 @@ public class AddingOptions : MonoBehaviour
         manager = FindObjectOfType<DialgoueManager>();
     }
 
+    //Adds options to the dialogue!
     public void AddOption()
     {
         if (manager.sentences.Count == 0)
