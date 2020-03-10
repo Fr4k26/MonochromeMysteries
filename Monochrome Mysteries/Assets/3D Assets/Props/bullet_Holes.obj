@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib bullet_Holes.mtl
+g default
+v -0.227266 0.000000 0.227266
+v 0.227266 0.000000 0.227266
+v -0.227266 0.000000 -0.227266
+v 0.227266 0.000000 -0.227266
+vt 0.001992 0.001992
+vt 0.998008 0.001992
+vt 0.998008 0.998008
+vt 0.001992 0.998008
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+s off
+g Bullet_Holes
+usemtl initialShadingGroup
+f 1/1/1 2/2/2 4/3/3 3/4/4
