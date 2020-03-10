@@ -149,7 +149,7 @@ public class DialgoueManager : MonoBehaviour
     {
         dialogueText.text = "";
         femDialogueText.text = "";
-        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
@@ -201,7 +201,7 @@ public class DialgoueManager : MonoBehaviour
     IEnumerator nextSound()
     {
         yield return new WaitForSeconds(0.706f);
-        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
+        playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
