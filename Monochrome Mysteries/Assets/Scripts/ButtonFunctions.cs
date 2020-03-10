@@ -55,7 +55,7 @@ public class ButtonFunctions : MonoBehaviour
         yield return new WaitForSeconds(0.800f);
         if (menuChoice == 1)
         {
-            SceneManager.LoadScene("Old_Vert_Slice");
+            SceneManager.LoadScene("Verticle Slice");
         }
         if (menuChoice == 2)
         {
