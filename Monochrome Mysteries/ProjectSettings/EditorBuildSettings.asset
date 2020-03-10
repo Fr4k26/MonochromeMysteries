@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Old_Vert_Slice.unity
     guid: 95432bbca5d51854ea27b57a56baf3ed
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: e32505854c27b1145beadc5b8efd41f9
   m_configObjects: {}

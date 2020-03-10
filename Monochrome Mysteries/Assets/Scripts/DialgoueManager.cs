@@ -121,31 +121,32 @@ public class DialgoueManager : MonoBehaviour
         if (showChoices == true)
        {
             choicePaperBoyMenu.gameObject.SetActive(true);
-       }
+            playerController.canmove = false;
+        }
         
        if(showChoices == false)
        {
             choicePaperBoyMenu.gameObject.SetActive(false);
        }
-
     }
 
     public void DisplayOptionsFemmeFatale()
     {
         playerController.canmove = false;
+
         if (showChoices == true)
         {
             choiceFemmeFataleMenu.gameObject.SetActive(true);
+            playerController.canmove = false;
         }
 
         if (showChoices == false)
         {
             choiceFemmeFataleMenu.gameObject.SetActive(false);
+
         }
+
     }
-    
-
-
 
     IEnumerator TypeSentence (string sentence)
     {
@@ -185,34 +186,40 @@ public class DialgoueManager : MonoBehaviour
         if(paperBoyTrigger.boyTrigger == false)
         {
             paperTalking.SetBool("isTalking", false);
+            stillTalking = false;
         }
 
         if(femmeFataleTrigger.femmeTrigger == true)
         {
             femTalking.SetBool("isTalking", false);
+            stillTalking = false;
         }
-        
-        
 
-        showChoices = true;
-      
-        if(paperBoyTrigger.boyTrigger == true)
+
+        if (paperBoyTrigger.boyTrigger == true)
         {
+            showChoices = true;
             DisplayOptionsPaperBoy();
             playerController.canmove = false;
         }
 
+
         if (femmeFataleTrigger.femmeTrigger == true)
         {
+            showChoices = true;
             DisplayOptionsFemmeFatale();
             playerController.canmove = false;
         }
+        
 
         endDia = true;
+
         stillTalking = false;
+
         playerController.canmove = true;
     }
 
+    //Calls for a new dialogue sound of the character in question is still talking based on the stillTalking boolean
     IEnumerator nextSound()
     {
         yield return new WaitForSeconds(0.706f);

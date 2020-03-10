@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         
         //Restart Scene
         if (Input.GetKeyDown(KeyCode.F11))
-            SceneManager.LoadScene("Old_Vert_Slice");
+            SceneManager.LoadScene("Verticle Slice");
     }
 
     void FixedUpdate()

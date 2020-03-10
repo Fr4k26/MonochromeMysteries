@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SolveMystery : MonoBehaviour
 {
@@ -60,6 +61,13 @@ public class SolveMystery : MonoBehaviour
             Debug.Log("Solved the Mystery!");
             winText.text = "You have solved the Mystery!";
             winText.gameObject.SetActive(true);
+            StartCoroutine(winChange());
         }
+    }
+
+    IEnumerator winChange()
+    {
+        yield return new WaitForSeconds(0.805f);
+        SceneManager.LoadScene("Victory");
     }
 }
