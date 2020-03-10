@@ -5,29 +5,73 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public AudioSource buttonSound;
+    public AudioClip[] menuFeedback;
+    private int menuChoice;
+
+    void start()
+    {
+        menuChoice = 0;
+    }
+
     public void openGameScreen()
     {
-        SceneManager.LoadScene("Verticle Slice");
+        buttonSound.PlayOneShot(menuFeedback[0]);
+        menuChoice = 1;
+        StartCoroutine(soundWait());
     }
 
     public void openMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        buttonSound.PlayOneShot(menuFeedback[1]);
+        menuChoice = 2;
+        StartCoroutine(soundWait());
     }
 
     public void openHowToPlay()
     {
-        SceneManager.LoadScene("How to Play Scene");
+        buttonSound.PlayOneShot(menuFeedback[0]);
+        menuChoice = 3;
+        StartCoroutine(soundWait());
     }
 
     public void openCredits()
     {
-        SceneManager.LoadScene("Credits Scene");
+        buttonSound.PlayOneShot(menuFeedback[0]);
+        menuChoice = 4;
+        StartCoroutine(soundWait());
     }
 
     public void endGame()
     {
-        Application.Quit();
+        buttonSound.PlayOneShot(menuFeedback[1]);
+        menuChoice = 5;
+        StartCoroutine(soundWait());
+    }
+
+    IEnumerator soundWait()
+    {
+        yield return new WaitForSeconds(1.000f);
+        if (menuChoice == 1)
+        {
+            SceneManager.LoadScene("Old_Vert_Slice");
+        }
+        if (menuChoice == 2)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        if (menuChoice == 3)
+        {
+            SceneManager.LoadScene("How to Play Scene");
+        }
+        if (menuChoice == 4)
+        {
+            SceneManager.LoadScene("Credits Scene");
+        }
+        if (menuChoice == 5)
+        {
+            Application.Quit();
+        }
     }
 }
