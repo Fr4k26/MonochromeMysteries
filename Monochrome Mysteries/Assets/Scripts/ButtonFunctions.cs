@@ -52,7 +52,7 @@ public class ButtonFunctions : MonoBehaviour
 
     IEnumerator soundWait()
     {
-        yield return new WaitForSeconds(1.000f);
+        yield return new WaitForSeconds(0.800f);
         if (menuChoice == 1)
         {
             SceneManager.LoadScene("Old_Vert_Slice");

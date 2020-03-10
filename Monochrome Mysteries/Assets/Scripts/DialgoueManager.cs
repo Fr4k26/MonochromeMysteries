@@ -43,7 +43,7 @@ public class DialgoueManager : MonoBehaviour
     public int doorTarget; //Determines which door will open
 
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
-    public AudioSource playerAudio;
+    private AudioSource playerAudio;
     public AudioClip[] paperBoy;
     public AudioClip[] femmeFatale;
     public AudioClip[] policeMan;
@@ -117,7 +117,8 @@ public class DialgoueManager : MonoBehaviour
 
     public void DisplayOptionsPaperBoy()
     {
-       if(showChoices == true)
+        playerController.canmove = false;
+        if (showChoices == true)
        {
             choicePaperBoyMenu.gameObject.SetActive(true);
        }
@@ -131,6 +132,7 @@ public class DialgoueManager : MonoBehaviour
 
     public void DisplayOptionsFemmeFatale()
     {
+        playerController.canmove = false;
         if (showChoices == true)
         {
             choiceFemmeFataleMenu.gameObject.SetActive(true);
@@ -149,7 +151,17 @@ public class DialgoueManager : MonoBehaviour
     {
         dialogueText.text = "";
         femDialogueText.text = "";
-        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length-1)], 0.9F);
+
+        if (femmeFataleTrigger.femmeTrigger == true)
+        {
+            playerAudio.PlayOneShot(femmeFatale[Random.Range(0, femmeFatale.Length)], 0.9F);
+        }
+
+        if (paperBoyTrigger.boyTrigger == true)
+        {
+            playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length)], 0.9F);
+        }
+        
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
@@ -166,6 +178,8 @@ public class DialgoueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        playerController.canmove = true;
+
         paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
         if(paperBoyTrigger.boyTrigger == false)
@@ -185,23 +199,34 @@ public class DialgoueManager : MonoBehaviour
         if(paperBoyTrigger.boyTrigger == true)
         {
             DisplayOptionsPaperBoy();
+            playerController.canmove = false;
         }
 
         if (femmeFataleTrigger.femmeTrigger == true)
         {
             DisplayOptionsFemmeFatale();
+            playerController.canmove = false;
         }
 
         endDia = true;
         stillTalking = false;
-       
         playerController.canmove = true;
     }
 
     IEnumerator nextSound()
     {
         yield return new WaitForSeconds(0.706f);
-        //playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length - 1)], 0.8F);
+
+        if (femmeFataleTrigger.femmeTrigger == true)
+        {
+            playerAudio.PlayOneShot(femmeFatale[Random.Range(0, femmeFatale.Length)], 0.8F);
+        }
+
+        if (paperBoyTrigger.boyTrigger == true)
+        {
+            playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length)], 0.8F);
+        }
+
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
