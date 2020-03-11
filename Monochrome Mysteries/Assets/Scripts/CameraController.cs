@@ -198,6 +198,22 @@ public class CameraController : MonoBehaviour
                     StartCoroutine(WaitRoutine());
                 }
 
+                if (hit.collider.gameObject.tag == "Femme Fatale" && hit.collider.gameObject.name == "FF Trigger Holder")
+                {
+                    if (femmeShotTexture != null)
+                    { femmeShotTexture = null; }
+
+                    canvas.SetActive(false);
+                    cameraUI.SetActive(false);
+                    WaitBeforeScreenshotRoutine();
+                    AddKiller("Femme Fatale");
+                    femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+                    Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
+                    Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
+                    femmeImage.GetComponent<Image>().sprite = femmeshot;
+                    StartCoroutine(WaitRoutine());
+                }
+
                 foreach (GameObject obj in objectiveArray)
                 {
                     if (hit.collider.gameObject == obj)
