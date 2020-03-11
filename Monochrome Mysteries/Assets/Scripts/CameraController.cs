@@ -135,8 +135,8 @@ public class CameraController : MonoBehaviour
             AddKiller("Corpse");
             recieptBool = true;
             pinkslipBool = true;
-            AddWeapon("Box Cutter");
             AddWeapon("Gun");
+            AddWeapon("Box Cutter");
             bloodBool = true;
         }
             ;
