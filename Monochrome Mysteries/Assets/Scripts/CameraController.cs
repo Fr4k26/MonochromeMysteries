@@ -168,7 +168,7 @@ public class CameraController : MonoBehaviour
 	{
         int oldMask = camera.cullingMask;
 		RaycastHit hit;
-		if (Input.GetKeyDown(KeyCode.LeftShift) && pictureTaken == false)
+		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse0) && pictureTaken == false)
 		{
 			//test comment
 			shutter = GetComponent<AudioSource>();
@@ -195,6 +195,22 @@ public class CameraController : MonoBehaviour
                     Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                     Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
                     paperboyImage.GetComponent<Image>().sprite = papershot;
+                    StartCoroutine(WaitRoutine());
+                }
+
+                if (hit.collider.gameObject.tag == "Femme Fatale" && hit.collider.gameObject.name == "FF Trigger Holder")
+                {
+                    if (femmeShotTexture != null)
+                    { femmeShotTexture = null; }
+
+                    canvas.SetActive(false);
+                    cameraUI.SetActive(false);
+                    WaitBeforeScreenshotRoutine();
+                    AddKiller("Femme Fatale");
+                    femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+                    Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
+                    Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
+                    femmeImage.GetComponent<Image>().sprite = femmeshot;
                     StartCoroutine(WaitRoutine());
                 }
 
