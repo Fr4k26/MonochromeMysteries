@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Verticle Slice.unity
     guid: 0ae031dba152acf459b92a50ff5ac8ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old_Vert_Slice.unity
     guid: 95432bbca5d51854ea27b57a56baf3ed
   - enabled: 1
