@@ -13027,10 +13027,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7720857643445411738, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_Text
+      value: -Right click to aim.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720857643445411738, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7720857644091891196, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: m_Text
-      value: "Press Left Shift while aiming to \ntake picture"
+      value: "-Press Left Click while \n aiming to take a picture."
       objectReference: {fileID: 0}
     - target: {fileID: 7720857644091891196, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}

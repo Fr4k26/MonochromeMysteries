@@ -168,7 +168,7 @@ public class CameraController : MonoBehaviour
 	{
         int oldMask = camera.cullingMask;
 		RaycastHit hit;
-		if (Input.GetKeyDown(KeyCode.LeftShift) && pictureTaken == false)
+		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse0) && pictureTaken == false)
 		{
 			//test comment
 			shutter = GetComponent<AudioSource>();
