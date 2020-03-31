@@ -479,5 +479,89 @@ PrefabInstance:
       propertyPath: m_Name
       value: Journal UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6521167436287342264, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167436287342264, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '6
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437184322041, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437184322041, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '4
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437570947424, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '1
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437570947424, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437651943277, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437651943277, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '7
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437712421427, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437712421427, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '3
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437850844897, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: ' 2
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167437850844897, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167438140778946, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521167438140778946, guid: 62834517d437dbd4797fb346244fb833,
+        type: 3}
+      propertyPath: m_Text
+      value: '5
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62834517d437dbd4797fb346244fb833, type: 3}
