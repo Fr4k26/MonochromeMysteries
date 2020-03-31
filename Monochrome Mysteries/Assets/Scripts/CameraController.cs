@@ -128,7 +128,7 @@ public class CameraController : MonoBehaviour
             }
         }
         //All Objectives True
-        if (Input.GetKeyDown(KeyCode.F12))
+        /*if (Input.GetKeyDown(KeyCode.F12))
         {
             AddKiller("Paperboy");
             AddKiller("Femme Fatale");
@@ -138,7 +138,7 @@ public class CameraController : MonoBehaviour
             AddWeapon("Box Cutter");
             AddWeapon("Gun");
             bloodBool = true;
-        }
+        }*/
             ;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
