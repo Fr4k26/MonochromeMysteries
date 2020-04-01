@@ -12,8 +12,8 @@ public class MusicFader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            characterMusic.volume = characterMusic.volume + 0.2f;
-            sceneMusic.volume = sceneMusic.volume - 0.4f;
+            characterMusic.volume = characterMusic.volume + 0.25f;
+            sceneMusic.volume = sceneMusic.volume - 0.45f;
         }
     }
 
@@ -21,8 +21,8 @@ public class MusicFader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            characterMusic.volume = characterMusic.volume - 0.2f;
-            sceneMusic.volume = sceneMusic.volume + 0.4f;
+            characterMusic.volume = characterMusic.volume - 0.25f;
+            sceneMusic.volume = sceneMusic.volume + 0.45f;
         }
     }
 }
