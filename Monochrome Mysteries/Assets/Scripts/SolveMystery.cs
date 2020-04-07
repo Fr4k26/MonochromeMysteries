@@ -12,9 +12,9 @@ public class SolveMystery : MonoBehaviour
 
     public Text winText;
 
-    public int firstValue;
-    public int secondValue;
-    public int thirdValue;
+    public string firstValue;
+    public string secondValue;
+    public string thirdValue;
 
     bool firstCorrect;
     bool secondCorrect;
@@ -23,7 +23,8 @@ public class SolveMystery : MonoBehaviour
 
     public void CheckOptions()
     {
-        if(firstDrop.value == firstValue)
+        print("First: " + firstDrop.captionText.text);
+        if (firstDrop.captionText.text == firstValue)
         {
             firstCorrect = true;
             Debug.Log("Correct 1");
@@ -33,7 +34,8 @@ public class SolveMystery : MonoBehaviour
             firstCorrect = false;
         }
 
-        if (secondDrop.value == secondValue)
+        print("Second: " + secondDrop.captionText.text);
+        if (secondDrop.captionText.text == secondValue)
         {
             secondCorrect = true;
             Debug.Log("Correct 2");
@@ -43,7 +45,8 @@ public class SolveMystery : MonoBehaviour
             secondCorrect = false;
         }
 
-        if (thirdDrop.value == thirdValue)
+        print("Third: " + thirdDrop.captionText.text);
+        if (thirdDrop.captionText.text == thirdValue)
         {
             thirdCorrect = true;
             Debug.Log("Correct 3");
