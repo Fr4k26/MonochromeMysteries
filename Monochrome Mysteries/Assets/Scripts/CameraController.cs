@@ -102,14 +102,14 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))//If you're pressing down the mouse
         {
-            Zoom();
+            Zoom();//Go into camera mode
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))//If you *just* pressed down the mouse
         {
             rain.SetActive(true);
-            if (cameraUI != null)
+            if (cameraUI != null)//Turn on the camera UI
             {
                 cameraUI.SetActive(true);
                 cameraLens = true;
@@ -119,10 +119,10 @@ public class CameraController : MonoBehaviour
                 textUI.SetActive(false);
             }
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1))//If you let go of the mouse
         {
             rain.SetActive(false);
-            if (cameraUI != null)
+            if (cameraUI != null)//Reset everything
             {
                 cameraUI.SetActive(false);
                 cameraLens = false;
@@ -133,7 +133,7 @@ public class CameraController : MonoBehaviour
                 textUI.SetActive(true);
             }
         }
-        if (Input.GetMouseButtonDown(2) && cameraLens) //if
+        if (Input.GetMouseButtonDown(2) && cameraLens) //If you scroll while you're in camera mode change the field of view
         {
             camera.fieldOfView -= 25;
 
@@ -156,7 +156,7 @@ public class CameraController : MonoBehaviour
             bloodBool = true;
         }*/
             ;
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))//If you hit tab, open the journal
         {
             if (journalUI != null)
             {
@@ -191,7 +191,7 @@ public class CameraController : MonoBehaviour
             shutter = GetComponent<AudioSource>();
             shutter.PlayOneShot(photo);
             pictureTaken = true;
-            StartCoroutine(nextPicture());
+            StartCoroutine(nextPicture());//Allow another photo in 1 second
 
             //If you get a hit
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, captureDistance))
@@ -206,7 +206,7 @@ public class CameraController : MonoBehaviour
 
                 GameObject[] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
 
-                foreach (GameObject obj in objectiveArray)
+                foreach (GameObject obj in objectiveArray)//Check to see which Objective the hit is, before running FoundEvidence
                 {
                     if (hit.collider.gameObject == obj)
                     {
@@ -258,7 +258,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, and what displays on the screen after you photograph it 
+    //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, what text displays on the screen after you photograph it, and the appropriate boolean
     void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText, bool alreadyFound)
     {
         StartCoroutine(TakeScreenshot(evidenceTexture, evidenceImage));
@@ -301,17 +301,18 @@ public class CameraController : MonoBehaviour
         canvas.SetActive(false);
         cameraUI.SetActive(false);
 
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();//Needs to be at the end of the frame or it doesn't remove the camera UI
 
         evidenceTexture = ScreenCapture.CaptureScreenshotAsTexture(); //Capture the screen as the evidenceTexture
         Rect rec = new Rect(0, 0, evidenceTexture.width, evidenceTexture.height);
         Sprite newShot = Sprite.Create(evidenceTexture, rec, new Vector2(0.5f, 0.5f));
         evidenceImage.GetComponent<Image>().sprite = newShot;
 
-        canvas.SetActive(true);
+        canvas.SetActive(true);//Reset everything
         cameraUI.SetActive(true);
     }
 
+    //If the title has been on the screen for 2 seconds, turn it off
     IEnumerator EvidenceTextReset(string evidenceTitle)
     {
         yield return new WaitForSeconds(2f);
