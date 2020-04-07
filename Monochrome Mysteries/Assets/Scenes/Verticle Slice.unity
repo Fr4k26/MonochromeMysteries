@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4660946, g: 0.4657923, b: 0.46188927, a: 1}
+  m_IndirectSpecularColor: {r: 0.466138, g: 0.46583652, b: 0.46193022, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -945,7 +945,7 @@ Transform:
   - {fileID: 801522171}
   - {fileID: 2137793965}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &167820015 stripped
 MonoBehaviour:
@@ -2118,7 +2118,7 @@ PrefabInstance:
     - target: {fileID: 3261470481231917346, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261470481231917346, guid: 4a9db54e8854819468d19c04ea9c7175,
         type: 3}
@@ -12467,7 +12467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711596497
 GameObject:
@@ -12480,7 +12480,7 @@ GameObject:
   - component: {fileID: 711596498}
   - component: {fileID: 711596500}
   - component: {fileID: 711596499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PP Trigger Holder
   m_TagString: Paper Boy
   m_Icon: {fileID: 0}
@@ -15414,7 +15414,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 479bcad813b3eb1418aa1a76f549d18e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 479bcad813b3eb1418aa1a76f549d18e,
         type: 3}
@@ -17101,7 +17101,7 @@ Transform:
   - {fileID: 2112490340}
   - {fileID: 50102388}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1232053594
 Mesh:
@@ -17406,7 +17406,7 @@ Transform:
   - {fileID: 1406004830}
   - {fileID: 6970796757987117717}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1252271331
 PrefabInstance:
@@ -18357,7 +18357,7 @@ Transform:
   - {fileID: 1789446900}
   - {fileID: 628186975}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323749432 stripped
 GameObject:
@@ -26589,7 +26589,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 51c38fb279345924b8c5cbf0476269da,
         type: 3}
       propertyPath: m_TagString
-      value: Paper Boy
+      value: Objective
       objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 51c38fb279345924b8c5cbf0476269da,
         type: 3}
@@ -28977,7 +28977,7 @@ GameObject:
   - component: {fileID: 1927989405}
   - component: {fileID: 1927989407}
   - component: {fileID: 1927989406}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FF Trigger Holder
   m_TagString: Femme Fatale
   m_Icon: {fileID: 0}

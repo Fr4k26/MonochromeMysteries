@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-	public float captureDistance = 500;
-	public GameObject cameraUI, textUI, rain;
+    public float captureDistance = 500;
+    public GameObject cameraUI, textUI, rain;
 
     public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage;
 
@@ -41,6 +41,7 @@ public class CameraController : MonoBehaviour
 
     public List<string> killerOptions;
     public List<string> weaponOptions;
+    public List<string> motiveOptions;
 
     public Camera camera;
 
@@ -63,22 +64,20 @@ public class CameraController : MonoBehaviour
         {
             winText.SetActive(false);
         }
-        Invoke("Rain",.1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
+        Invoke("Rain", .1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
         uiEnable = false;
         journalUI.SetActive(false);
 
-	}
+    }
 
     void AddKiller(string item)
     {
-        if(!killerOptions.Contains(item))
+        if (!killerOptions.Contains(item))
         {
             killerOptions.Add(item);
             Killerdropdown.ClearOptions();
             Killerdropdown.AddOptions(killerOptions);
         }
-        
-
     }
 
     void AddWeapon(string item)
@@ -89,21 +88,27 @@ public class CameraController : MonoBehaviour
             Weapondropdown.ClearOptions();
             Weapondropdown.AddOptions(weaponOptions);
         }
+    }
 
-
+    void AddMotive(string item)
+    {
+        if (!motiveOptions.Contains(item))
+        {
+            motiveOptions.Add(item);
+            Motivedropdown.ClearOptions();
+            Motivedropdown.AddOptions(weaponOptions);
+        }
     }
 
     void Update()
     {
-
-
         if (Input.GetMouseButton(1))
-		{
-			Zoom();			
-		}
-		if (Input.GetMouseButtonDown(1))
         {
-			rain.SetActive(true);
+            Zoom();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            rain.SetActive(true);
             if (cameraUI != null)
             {
                 cameraUI.SetActive(true);
@@ -112,12 +117,10 @@ public class CameraController : MonoBehaviour
             {
                 textUI.SetActive(false);
             }
-		}
-		if (Input.GetMouseButtonUp(1))
+        }
+        if (Input.GetMouseButtonUp(1))
         {
-
-
-			rain.SetActive(false);
+            rain.SetActive(false);
             if (cameraUI != null)
             {
                 cameraUI.SetActive(false);
@@ -164,33 +167,32 @@ public class CameraController : MonoBehaviour
         }
     }
 
-	private void Zoom()
-	{
+    private void Zoom()
+    {
         int oldMask = camera.cullingMask;
-		RaycastHit hit;
-		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse0) && pictureTaken == false)
-		{
-			//test comment
-			shutter = GetComponent<AudioSource>();
+        RaycastHit hit;
+        //If you try to take a picture
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Mouse0) && pictureTaken == false)
+        {
+            //Shutter and Audio
+            shutter = GetComponent<AudioSource>();
             shutter.PlayOneShot(photo);
             pictureTaken = true;
             StartCoroutine(nextPicture());
 
+            //If you get a hit
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, captureDistance))
-			{
+            {
+                //Check all objectives
                 print(hit.collider.gameObject.name);
-                GameObject [] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
+                GameObject[] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
 
-                if (hit.collider.gameObject.tag == "Paper Boy" && hit.collider.gameObject.name == "PP Trigger Holder")
+                /*if (hit.collider.gameObject.tag == "Paper Boy" && hit.collider.gameObject.name == "PP Trigger Holder")
                 {
                     if (paperShotTexture != null)
                     { paperShotTexture = null; }
 
-                    canvas.SetActive(false);
-                    cameraUI.SetActive(false);
-                    WaitBeforeScreenshotRoutine();
-                    paperboy.GetComponent<Text>().color = Color.green;
-                    AddKiller("Paperboy");
+                    FoundEvidence("Paperboy", "Killer");
                     paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                     Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
                     Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
@@ -203,16 +205,13 @@ public class CameraController : MonoBehaviour
                     if (femmeShotTexture != null)
                     { femmeShotTexture = null; }
 
-                    canvas.SetActive(false);
-                    cameraUI.SetActive(false);
-                    WaitBeforeScreenshotRoutine();
-                    AddKiller("Femme Fatale");
+                    FoundEvidence("Femme Fatale", "Killer");
                     femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
                     Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
                     Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
                     femmeImage.GetComponent<Image>().sprite = femmeshot;
                     StartCoroutine(WaitRoutine());
-                }
+                }*/
 
                 foreach (GameObject obj in objectiveArray)
                 {
@@ -222,145 +221,73 @@ public class CameraController : MonoBehaviour
                         print("Object with tag: " + name + " has been captured");
                         if (name.Equals("Practice Body"))
                         {
-                            if (bodyShotTexture != null)
-                            { bodyShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            body.GetComponent<Text>().color = Color.green;
-                            AddKiller("Corpse");
-                            bodyShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, bodyShotTexture.width, bodyShotTexture.height);
-                            Sprite bodyshot = Sprite.Create(bodyShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            bodyImage.GetComponent<Image>().sprite = bodyshot;
-                            StartCoroutine(WaitRoutine());
-
+                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage);
                         }
                         else if (name.Equals("Paperboy"))
                         {
-                            if (paperShotTexture != null)
-                            { paperShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            paperboy.GetComponent<Text>().color = Color.green;
-                            AddKiller("Paperboy");
-                            paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
-                            Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            paperboyImage.GetComponent<Image>().sprite = papershot;
-                            StartCoroutine(WaitRoutine());
+                            FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage);
                         }
                         else if (name.Equals("Practice Reciept"))
                         {
-                            if (recieptShotTexture != null)
-                            { bodyShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            reciept.GetComponent<Text>().color = Color.green;
-                            recieptBool = true;
-                            recieptShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, recieptShotTexture.width, recieptShotTexture.height);
-                            Sprite recieptshot = Sprite.Create(recieptShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            recieptImage.GetComponent<Image>().sprite = recieptshot;
-                            StartCoroutine(WaitRoutine());
+                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage);
                         }
                         else if (name.Equals("Practice Pinkslip"))
                         {
-                            if (pinkShotTexture != null)
-                            { pinkShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            pinkslip.GetComponent<Text>().color = Color.green;
-                            pinkslipBool = true;
-                            pinkShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, pinkShotTexture.width, pinkShotTexture.height);
-                            Sprite pinkshot = Sprite.Create(pinkShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            pinkImage.GetComponent<Image>().sprite = pinkshot;
-                            StartCoroutine(WaitRoutine());
+                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage);
                         }
                         else if (name.Equals("Practice Knife"))
                         {
-                            if (knifeShotTexture != null)
-                            { knifeShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            knife.GetComponent<Text>().color = Color.green;
-                            AddWeapon("Box Cutter");
-                            knifeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, knifeShotTexture.width, knifeShotTexture.height);
-                            Sprite knifeshot = Sprite.Create(knifeShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            knifeImage.GetComponent<Image>().sprite = knifeshot;
-                            StartCoroutine(WaitRoutine());
+                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage);
                         }
                         else if (name.Equals("Practice Gun"))
                         {
-                            if (gunShotTexture != null)
-                            { gunShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            gun.GetComponent<Text>().color = Color.green;
-                            AddWeapon("Gun");
-                            gunShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, gunShotTexture.width, gunShotTexture.height);
-                            Sprite gunshot = Sprite.Create(gunShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            gunImage.GetComponent<Image>().sprite = gunshot;
-                            StartCoroutine(WaitRoutine());
+                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage);
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
-                            if (bloodShotTexture != null)
-                            { bloodShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            blood.GetComponent<Text>().color = Color.green;
+                            FoundEvidence(bloodShotTexture, "Blood","Motive", bloodImage);
                             bloodBool = true;
-                            bloodShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, bloodShotTexture.width, bloodShotTexture.height);
-                            Sprite bloodshot = Sprite.Create(bloodShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            bloodImage.GetComponent<Image>().sprite = bloodshot;
-                            StartCoroutine(WaitRoutine());
                         }
                         else if (name.Equals("Femme Fatale Character"))
-                        {
-                            if (femmeShotTexture != null)
-                            { femmeShotTexture = null; }
-
-                            canvas.SetActive(false);
-                            cameraUI.SetActive(false);
-                            WaitBeforeScreenshotRoutine();
-                            AddKiller("Femme Fatale");
-                            femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                            Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
-                            Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
-                            femmeImage.GetComponent<Image>().sprite = femmeshot;
-                            StartCoroutine(WaitRoutine());
+                        { 
+                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage);
                         }
                     }
                 }
-			}
-		}
-		
+            }
+        }
+    }
 
-	}
+    void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage)
+    {
+        if(evidenceTexture != null)
+        { evidenceTexture = null; }
+
+        canvas.SetActive(false);
+        cameraUI.SetActive(false);
+        WaitBeforeScreenshotRoutine();
+        if(evidenceType == "Weapon")
+        {
+            AddWeapon(evidence);
+        }
+        else if(evidenceType == "Killer")
+        {
+            AddKiller(evidence);
+        }
+        else if(evidenceType == "Motive")
+        {
+            AddMotive(evidence);
+        }
+        evidenceTexture = ScreenCapture.CaptureScreenshotAsTexture();
+        Rect rec = new Rect(0, 0, evidenceTexture.width, evidenceTexture.height);
+        Sprite newShot = Sprite.Create(evidenceTexture, rec, new Vector2(0.5f, 0.5f));
+        evidenceImage.GetComponent<Image>().sprite = newShot;
+        StartCoroutine(WaitRoutine());
+    }
 
     IEnumerator WaitRoutine()
     {
-
         yield return new WaitForSeconds(0.1f);
-
         canvas.SetActive(true);
         cameraUI.SetActive(true);
     }
@@ -378,9 +305,8 @@ public class CameraController : MonoBehaviour
     }
 
     void Rain()
-	{
-		rain.SetActive(false);
-
-	}
+    {
+        rain.SetActive(false);
+    }
 
 }
