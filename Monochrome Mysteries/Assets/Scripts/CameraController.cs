@@ -316,7 +316,7 @@ public class CameraController : MonoBehaviour
     IEnumerator EvidenceTextReset(string evidenceTitle)
     {
         yield return new WaitForSeconds(2f);
-        if ("Found: " + evidenceTitle == evidenceFoundText.text)
+        if ("Found: " + evidenceTitle == evidenceFoundText.text || "Already Found: " + evidenceTitle == evidenceFoundText.text)
         {
             evidenceFoundText.text = "";
         }
