@@ -23,7 +23,6 @@ public class SolveMystery : MonoBehaviour
 
     public void CheckOptions()
     {
-        print("First: " + firstDrop.captionText.text);
         if (firstDrop.captionText.text == firstValue)
         {
             firstCorrect = true;
@@ -34,7 +33,6 @@ public class SolveMystery : MonoBehaviour
             firstCorrect = false;
         }
 
-        print("Second: " + secondDrop.captionText.text);
         if (secondDrop.captionText.text == secondValue)
         {
             secondCorrect = true;
@@ -45,7 +43,6 @@ public class SolveMystery : MonoBehaviour
             secondCorrect = false;
         }
 
-        print("Third: " + thirdDrop.captionText.text);
         if (thirdDrop.captionText.text == thirdValue)
         {
             thirdCorrect = true;

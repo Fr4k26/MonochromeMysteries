@@ -186,33 +186,13 @@ public class CameraController : MonoBehaviour
             {
                 //Check all objectives
                 print(hit.collider.gameObject.name);
-                GameObject[] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
 
-                /*if (hit.collider.gameObject.tag == "Paper Boy" && hit.collider.gameObject.name == "PP Trigger Holder")
+                if(hit.collider.gameObject.GetComponent<AddingOptions>() != null)
                 {
-                    if (paperShotTexture != null)
-                    { paperShotTexture = null; }
-
-                    FoundEvidence("Paperboy", "Killer");
-                    paperShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                    Rect rec = new Rect(0, 0, paperShotTexture.width, paperShotTexture.height);
-                    Sprite papershot = Sprite.Create(paperShotTexture, rec, new Vector2(0.5f, 0.5f));
-                    paperboyImage.GetComponent<Image>().sprite = papershot;
-                    StartCoroutine(WaitRoutine());
+                    hit.collider.gameObject.GetComponent<AddingOptions>().AddOptionCam();
                 }
 
-                if (hit.collider.gameObject.tag == "Femme Fatale" && hit.collider.gameObject.name == "FF Trigger Holder")
-                {
-                    if (femmeShotTexture != null)
-                    { femmeShotTexture = null; }
-
-                    FoundEvidence("Femme Fatale", "Killer");
-                    femmeShotTexture = ScreenCapture.CaptureScreenshotAsTexture();
-                    Rect rec = new Rect(0, 0, femmeShotTexture.width, femmeShotTexture.height);
-                    Sprite femmeshot = Sprite.Create(femmeShotTexture, rec, new Vector2(0.5f, 0.5f));
-                    femmeImage.GetComponent<Image>().sprite = femmeshot;
-                    StartCoroutine(WaitRoutine());
-                }*/
+                GameObject[] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");
 
                 foreach (GameObject obj in objectiveArray)
                 {
@@ -246,11 +226,11 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
-                            FoundEvidence(bloodShotTexture, "Blood","N/A", bloodImage, "Victim's Blood", blood);
+                            FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood);
                             bloodBool = true;
                         }
                         else if (name.Equals("Femme Fatale Character"))
-                        { 
+                        {
                             FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme);
                         }
                     }
@@ -262,21 +242,21 @@ public class CameraController : MonoBehaviour
     //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, and what displays on the screen after you photograph it 
     void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText)
     {
-        if(evidenceTexture != null)//If the evidence piece already has a texture, get rid of it
+        if (evidenceTexture != null)//If the evidence piece already has a texture, get rid of it
         { evidenceTexture = null; }
 
         canvas.SetActive(false);
         cameraUI.SetActive(false);
         WaitBeforeScreenshotRoutine();
-        if(evidenceType == "Weapon")//Add the evidence piece to the appropriate dropdown
+        if (evidenceType == "Weapon")//Add the evidence piece to the appropriate dropdown
         {
             AddWeapon(evidence);
         }
-        else if(evidenceType == "Killer")
+        else if (evidenceType == "Killer")
         {
             AddKiller(evidence);
         }
-        else if(evidenceType == "Motive")
+        else if (evidenceType == "Motive")
         {
             AddMotive(evidence);
         }
@@ -297,7 +277,7 @@ public class CameraController : MonoBehaviour
     IEnumerator EvidenceTextReset(string evidenceTitle)
     {
         yield return new WaitForSeconds(2f);
-        if("Found: " + evidenceTitle == evidenceFoundText.text)
+        if ("Found: " + evidenceTitle == evidenceFoundText.text)
         {
             evidenceFoundText.text = "";
         }
