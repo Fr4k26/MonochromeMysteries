@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage;
 
     public Text body, paperboy, reciept, pinkslip, knife, gun, blood, femme;
+    private bool bodyFound, paperboyFound, recieptFound, pinkslipFound, knifeFound, gunFound, bloodFound, femmeFound = false;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -31,9 +32,6 @@ public class CameraController : MonoBehaviour
     private Texture2D bloodShotTexture;
     private Texture2D femmeShotTexture;
 
-    private bool recieptBool = false;
-    private bool pinkslipBool = false;
-    private bool bloodBool = false;
     private bool uiEnable = false;
     public bool cameraLens = false;
 
@@ -216,36 +214,43 @@ public class CameraController : MonoBehaviour
                         print("Object with tag: " + name + " has been captured");
                         if (name.Equals("Practice Body"))
                         {
-                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim", body);
+                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim", body, bodyFound);
+                            bodyFound = true;
                         }
                         else if (name.Equals("Paperboy"))
                         {
-                            FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy);
+                            FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy, paperboyFound);
+                            paperboyFound = true;
                         }
                         else if (name.Equals("Practice Reciept"))
                         {
-                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage, "Gun Purchase Reciept for Reggie", reciept);
+                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage, "Gun Purchase Reciept for Reggie", reciept, recieptFound);
+                            recieptFound = true;
                         }
                         else if (name.Equals("Practice Pinkslip"))
                         {
-                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage, "Pinkslip Firing Reggie", pinkslip);
+                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage, "Pinkslip Firing Reggie", pinkslip, pinkslipFound);
+                            pinkslipFound = true;
                         }
                         else if (name.Equals("Practice Knife"))
                         {
-                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage, "Box Cutter", knife);
+                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage, "Box Cutter", knife, knifeFound);
+                            knifeFound = true;
                         }
                         else if (name.Equals("Practice Gun"))
                         {
-                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage, "Period Appropriate Firearm", gun);
+                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage, "Period Appropriate Firearm", gun, gunFound);
+                            gunFound = true;
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
-                            FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood);
-                            bloodBool = true;
+                            FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
+                            bloodFound = true;
                         }
                         else if (name.Equals("Femme Fatale Character"))
                         {
-                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme);
+                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme, femmeFound);
+                            femmeFound = true;
                         }
                     }
                 }
@@ -254,30 +259,38 @@ public class CameraController : MonoBehaviour
     }
 
     //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, and what displays on the screen after you photograph it 
-    void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText)
+    void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText, bool alreadyFound)
     {
         StartCoroutine(TakeScreenshot(evidenceTexture, evidenceImage));
-        if (evidenceType == "Weapon")//Add the evidence piece to the appropriate dropdown
+
+        if(alreadyFound == true)//If you already found it
         {
-            AddWeapon(evidence);
+            evidenceFoundText.text = "Already Found: " + evidenceTitle;//Tell the player it's already found
+            StartCoroutine(EvidenceTextReset(evidenceTitle));
         }
-        else if (evidenceType == "Killer")
+        else//If they haven't found it before
         {
-            AddKiller(evidence);
+            if (evidenceType == "Weapon")//Add the evidence piece to the appropriate dropdown
+            {
+                AddWeapon(evidence);
+            }
+            else if (evidenceType == "Killer")
+            {
+                AddKiller(evidence);
+            }
+            else if (evidenceType == "Motive")
+            {
+                AddMotive(evidence);
+            }
+            else
+            {
+                //Evidence fits into no dropdown
+            }
+
+            evidenceFoundText.text = "Found: " + evidenceTitle;//Say that it's been found
+            StartCoroutine(EvidenceTextReset(evidenceTitle));
+            journalEvidenceText.text = evidenceTitle;
         }
-        else if (evidenceType == "Motive")
-        {
-            AddMotive(evidence);
-        }
-        else
-        {
-            //Evidence fits into no dropdown
-        }
-        
-        evidenceFoundText.text = "Found: " + evidenceTitle;
-        StartCoroutine(EvidenceTextReset(evidenceTitle));
-        journalEvidenceText.text = evidenceTitle;
-        StartCoroutine(WaitRoutine());
     }
 
     //Save the picture
@@ -294,6 +307,9 @@ public class CameraController : MonoBehaviour
         Rect rec = new Rect(0, 0, evidenceTexture.width, evidenceTexture.height);
         Sprite newShot = Sprite.Create(evidenceTexture, rec, new Vector2(0.5f, 0.5f));
         evidenceImage.GetComponent<Image>().sprite = newShot;
+
+        canvas.SetActive(true);
+        cameraUI.SetActive(true);
     }
 
     IEnumerator EvidenceTextReset(string evidenceTitle)
@@ -304,14 +320,6 @@ public class CameraController : MonoBehaviour
             evidenceFoundText.text = "";
         }
     }
-
-    IEnumerator WaitRoutine()
-    {
-        yield return new WaitForSeconds(0.1f);
-        canvas.SetActive(true);
-        cameraUI.SetActive(true);
-    }
-
 
     IEnumerator nextPicture()
     {
