@@ -258,15 +258,16 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    //If you have found a valid evidence piece
     void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage)
     {
-        if(evidenceTexture != null)
+        if(evidenceTexture != null)//If the evidence piece already has a texture, get rid of it
         { evidenceTexture = null; }
 
         canvas.SetActive(false);
         cameraUI.SetActive(false);
         WaitBeforeScreenshotRoutine();
-        if(evidenceType == "Weapon")
+        if(evidenceType == "Weapon")//Add the evidence piece to the appropriate dropdown
         {
             AddWeapon(evidence);
         }
@@ -278,7 +279,11 @@ public class CameraController : MonoBehaviour
         {
             AddMotive(evidence);
         }
-        evidenceTexture = ScreenCapture.CaptureScreenshotAsTexture();
+        else
+        {
+            //Evidence fits into no dropdown
+        }
+        evidenceTexture = ScreenCapture.CaptureScreenshotAsTexture(); //Capture the screen as the evidenceTexture
         Rect rec = new Rect(0, 0, evidenceTexture.width, evidenceTexture.height);
         Sprite newShot = Sprite.Create(evidenceTexture, rec, new Vector2(0.5f, 0.5f));
         evidenceImage.GetComponent<Image>().sprite = newShot;
