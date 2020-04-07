@@ -10,12 +10,15 @@ public class DialgoueManager : MonoBehaviour
     public GameObject buttonOption;
     public GameObject PaperBoyCanvas;
     public GameObject FemmeFataleCanvas;
+    public GameObject MobBossCanvas;
     public Canvas choicePaperBoyMenu;
     public Canvas choiceFemmeFataleMenu;
+    public Canvas choiceMobBossMenu;
     public Trigger paperBoyTrigger;
     public Trigger femmeFataleTrigger;
-    
-    
+    public Trigger mobBossTrigger;
+
+
 
     public GameObject playerObject;
     public PlayerController playerController;
@@ -26,11 +29,16 @@ public class DialgoueManager : MonoBehaviour
     public Text dialogueText;
     public Text femNameText;
     public Text femDialogueText;
+    public Text mobNameText;
+    public Text mobDialogueText;
+
 
     public Animator paperAnimator;
     public Animator femAnimator;
+    public Animator mobAnimator;
     public Animator paperTalking;
     public Animator femTalking;
+    public Animator mobTalking;
 
     public Queue<string> sentences;
 
@@ -46,7 +54,7 @@ public class DialgoueManager : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip[] paperBoy;
     public AudioClip[] femmeFatale;
-    public AudioClip[] policeMan;
+    //public AudioClip[] policeMan;
     public AudioClip[] businessMan;
     public AudioClip[] mobster;
 
@@ -67,8 +75,9 @@ public class DialgoueManager : MonoBehaviour
     {
         paperAnimator.SetBool("isOpen", true);
         femAnimator.SetBool("isOpen", true);
+        mobAnimator.SetBool("isOpen", true);
 
-        if(paperBoyTrigger.boyTrigger == true)
+        if (paperBoyTrigger.boyTrigger == true)
         {
             paperTalking.SetBool("isTalking", true);
         }
@@ -77,12 +86,18 @@ public class DialgoueManager : MonoBehaviour
         {
             femTalking.SetBool("isTalking", true);
         }
-        
-       
+
+        if (mobBossTrigger.mobTrigger == true)
+        {
+            mobTalking.SetBool("isTalking", true);
+        }
+
+
         playerController.canmove = false;
         showChoices = false;
         nameText.text = dialogue.name;
         femNameText.text = dialogue.name;
+        mobNameText.text = dialogue.name;
         if(opensDoor)
         {
             gc.doors[doorTarget].SetActive(false);
@@ -97,6 +112,7 @@ public class DialgoueManager : MonoBehaviour
         DisplayNextSentence();
         DisplayOptionsPaperBoy();
         DisplayOptionsFemmeFatale();
+        DisplayOptionsMobBoss();
 
     }
 
@@ -148,10 +164,29 @@ public class DialgoueManager : MonoBehaviour
 
     }
 
+    public void DisplayOptionsMobBoss()
+    {
+        playerController.canmove = false;
+
+        if (showChoices == true)
+        {
+            choiceMobBossMenu.gameObject.SetActive(true);
+            playerController.canmove = false;
+        }
+
+        if (showChoices == false)
+        {
+            choiceMobBossMenu.gameObject.SetActive(false);
+
+        }
+
+    }
+
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
         femDialogueText.text = "";
+        mobDialogueText.text = "";
 
         if (femmeFataleTrigger.femmeTrigger == true)
         {
@@ -162,7 +197,12 @@ public class DialgoueManager : MonoBehaviour
         {
             playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length)], 0.9F);
         }
-        
+
+        if (mobBossTrigger.mobTrigger == true)
+        {
+            //playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.9F);
+        }
+
         if (stillTalking == true)
         {
             StartCoroutine(nextSound());
@@ -172,6 +212,7 @@ public class DialgoueManager : MonoBehaviour
         {
             dialogueText.text += letter;
             femDialogueText.text += letter;
+            mobDialogueText.text += letter;
             yield return null;
             stillTalking = false;
         }
@@ -183,15 +224,22 @@ public class DialgoueManager : MonoBehaviour
 
         paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
+        mobAnimator.SetBool("isOpen", false);
         if(paperBoyTrigger.boyTrigger == false)
         {
             paperTalking.SetBool("isTalking", false);
             stillTalking = false;
         }
 
-        if(femmeFataleTrigger.femmeTrigger == true)
+        if(femmeFataleTrigger.femmeTrigger == false)
         {
             femTalking.SetBool("isTalking", false);
+            stillTalking = false;
+        }
+
+        if (mobBossTrigger.mobTrigger == false)
+        {
+            mobTalking.SetBool("isTalking", false);
             stillTalking = false;
         }
 
@@ -203,14 +251,20 @@ public class DialgoueManager : MonoBehaviour
             playerController.canmove = false;
         }
 
-
         if (femmeFataleTrigger.femmeTrigger == true)
         {
             showChoices = true;
             DisplayOptionsFemmeFatale();
             playerController.canmove = false;
         }
-        
+
+        if (mobBossTrigger.mobTrigger == true)
+        {
+            showChoices = true;
+            DisplayOptionsMobBoss();
+            playerController.canmove = false;
+        }
+
 
         endDia = true;
 
@@ -232,6 +286,11 @@ public class DialgoueManager : MonoBehaviour
         if (paperBoyTrigger.boyTrigger == true)
         {
             playerAudio.PlayOneShot(paperBoy[Random.Range(0, paperBoy.Length)], 0.8F);
+        }
+
+        if (mobBossTrigger.mobTrigger == true)
+        {
+            //playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.8F);
         }
 
         if (stillTalking == true)

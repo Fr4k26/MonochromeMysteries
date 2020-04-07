@@ -11,6 +11,7 @@ public class DoorControl : MonoBehaviour
     public AudioClip open;
     public AudioClip close;
     public AudioClip locked;
+    public GameObject doorLocked;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class DoorControl : MonoBehaviour
         else if (other.tag == "Player" && !doorOpen)
         {
             doorNoise.PlayOneShot(locked);
+            doorLocked.SetActive(true);
         }
     }
 
@@ -37,6 +39,12 @@ public class DoorControl : MonoBehaviour
         {
             doorNoise.PlayOneShot(close);
             theDoor.SetActive(true);
+            doorLocked.SetActive(false);
         }
+    }
+
+    public void OpenDoor()
+    {
+        doorOpen = true;
     }
 }
