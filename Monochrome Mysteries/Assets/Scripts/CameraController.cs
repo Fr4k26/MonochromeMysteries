@@ -8,10 +8,10 @@ public class CameraController : MonoBehaviour
     public float captureDistance = 500;
     public GameObject cameraUI, textUI, rain;
 
-    public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage;
+    public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage, mobImage;
 
-    public Text body, paperboy, reciept, pinkslip, knife, gun, blood, femme;
-    private bool bodyFound, paperboyFound, recieptFound, pinkslipFound, knifeFound, gunFound, bloodFound, femmeFound = false;
+    public Text body, paperboy, reciept, pinkslip, knife, gun, blood, femme, mob;
+    private bool bodyFound, paperboyFound, recieptFound, pinkslipFound, knifeFound, gunFound, bloodFound, femmeFound, mobFound = false;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -31,6 +31,7 @@ public class CameraController : MonoBehaviour
     private Texture2D gunShotTexture;
     private Texture2D bloodShotTexture;
     private Texture2D femmeShotTexture;
+    private Texture2D mobShotTexture;
 
     private bool uiEnable = false;
     public bool cameraLens = false;
@@ -251,6 +252,11 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme, femmeFound);
                             femmeFound = true;
+                        }
+                        else if (name.Equals("MobBoss"))
+                        {
+                            FoundEvidence(mobShotTexture, "Mobster", "Killer", mobImage, "Suspicious Woman", mob, mobFound);
+                            mobFound = true;
                         }
                     }
                 }
