@@ -35,6 +35,7 @@ public class CameraController : MonoBehaviour
     private bool pinkslipBool = false;
     private bool bloodBool = false;
     private bool uiEnable = false;
+    public bool cameraLens = false;
 
     private bool pictureTaken = false;
 
@@ -113,6 +114,7 @@ public class CameraController : MonoBehaviour
             if (cameraUI != null)
             {
                 cameraUI.SetActive(true);
+                cameraLens = true;
             }
             if (textUI != null)
             {
@@ -125,10 +127,22 @@ public class CameraController : MonoBehaviour
             if (cameraUI != null)
             {
                 cameraUI.SetActive(false);
+                cameraLens = false;
+                camera.fieldOfView = 60;
             }
             if (cameraUI != null)
             {
                 textUI.SetActive(true);
+            }
+        }
+        if (Input.GetMouseButtonDown(2) && cameraLens) //if
+        {
+            camera.fieldOfView -= 25;
+
+            if (camera.fieldOfView < 10)
+            {
+                camera.fieldOfView = 60;
+
             }
         }
         //All Objectives True
