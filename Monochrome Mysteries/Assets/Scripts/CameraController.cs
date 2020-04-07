@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage;
 
-    public Text body, paperboy, reciept, pinkslip, knife, gun, blood;
+    public Text body, paperboy, reciept, pinkslip, knife, gun, blood, femme;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -222,36 +222,36 @@ public class CameraController : MonoBehaviour
                         print("Object with tag: " + name + " has been captured");
                         if (name.Equals("Practice Body"))
                         {
-                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim");
+                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim", body);
                         }
                         else if (name.Equals("Paperboy"))
                         {
-                            FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy");
+                            FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy);
                         }
                         else if (name.Equals("Practice Reciept"))
                         {
-                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage, "Gun Purchase Reciept for Reggie");
+                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage, "Gun Purchase Reciept for Reggie", reciept);
                         }
                         else if (name.Equals("Practice Pinkslip"))
                         {
-                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage, "Pinkslip Firing Reggie");
+                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage, "Pinkslip Firing Reggie", pinkslip);
                         }
                         else if (name.Equals("Practice Knife"))
                         {
-                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage, "Box Cutter");
+                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage, "Box Cutter", knife);
                         }
                         else if (name.Equals("Practice Gun"))
                         {
-                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage, "Period Appropriate Firearm");
+                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage, "Period Appropriate Firearm", gun);
                         }
                         else if (name.Equals("Practice Bulletholes/Blood"))
                         {
-                            FoundEvidence(bloodShotTexture, "Blood","N/A", bloodImage, "Victim's Blood");
+                            FoundEvidence(bloodShotTexture, "Blood","N/A", bloodImage, "Victim's Blood", blood);
                             bloodBool = true;
                         }
                         else if (name.Equals("Femme Fatale Character"))
                         { 
-                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red");
+                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme);
                         }
                     }
                 }
@@ -260,7 +260,7 @@ public class CameraController : MonoBehaviour
     }
 
     //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, and what displays on the screen after you photograph it 
-    void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle)
+    void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText)
     {
         if(evidenceTexture != null)//If the evidence piece already has a texture, get rid of it
         { evidenceTexture = null; }
@@ -290,6 +290,7 @@ public class CameraController : MonoBehaviour
         evidenceImage.GetComponent<Image>().sprite = newShot;
         evidenceFoundText.text = "Found: " + evidenceTitle;
         StartCoroutine(EvidenceTextReset(evidenceTitle));
+        journalEvidenceText.text = evidenceTitle;
         StartCoroutine(WaitRoutine());
     }
 
