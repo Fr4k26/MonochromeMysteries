@@ -12,6 +12,7 @@ public class Trigger : MonoBehaviour
     public Canvas mobCanvas;
     public bool mobTrigger;
     public GameObject triggerObj;
+    public GameObject cameraUser;
 
     // Update is called once per frame
     public void OnTriggerEnter(Collider collider)
@@ -34,6 +35,7 @@ public class Trigger : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        cameraUser.GetComponent<CameraLook>().enabled = false;
     }
 
     public void OnTriggerExit(Collider other)
@@ -46,5 +48,6 @@ public class Trigger : MonoBehaviour
         mobTrigger = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        cameraUser.GetComponent<CameraLook>().enabled = true;
     }
 }
