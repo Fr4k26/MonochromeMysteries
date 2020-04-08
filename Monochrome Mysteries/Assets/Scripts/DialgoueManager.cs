@@ -22,6 +22,8 @@ public class DialgoueManager : MonoBehaviour
 
     public GameObject playerObject;
     public PlayerController playerController;
+    private Transform paperBoyFace, femmeFataleFace, mobBossFace, playerFace; //Used to force the player to look at each character during dialouge
+
 
     public bool endDia;
 
@@ -65,7 +67,11 @@ public class DialgoueManager : MonoBehaviour
         endDia = true;
         sentences = new Queue<string>();
         playerController = playerObject.GetComponent<PlayerController>();
-        
+        playerFace = GameObject.Find("Player").transform;
+        paperBoyFace = GameObject.Find("Paperboy Face").transform;
+        femmeFataleFace = GameObject.Find("Femme Fatale Face").transform;
+        mobBossFace = GameObject.Find("Mob Boss Face").transform;
+
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
         playerAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
@@ -80,16 +86,19 @@ public class DialgoueManager : MonoBehaviour
         if (paperBoyTrigger.boyTrigger == true)
         {
             paperTalking.SetBool("isTalking", true);
+            playerFace.LookAt(paperBoyFace);
         }
 
         if(femmeFataleTrigger.femmeTrigger == true)
         {
             femTalking.SetBool("isTalking", true);
+            playerFace.LookAt(femmeFataleFace);
         }
 
         if (mobBossTrigger.mobTrigger == true)
         {
             mobTalking.SetBool("isTalking", true);
+            playerFace.LookAt(mobBossFace);
         }
 
 
