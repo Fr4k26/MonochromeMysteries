@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 	public float sprintSpeed;
 	private float moveSpeed;
 	float distToGround = 2f;
-	public float jumpSpeed;
     float lastYPos;
     public bool canmove = true;
     
@@ -41,11 +40,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && canmove)
-        {
-            playerRB.velocity = new Vector3(0f, jumpSpeed, 0f);
-        }
         if (Input.GetKeyDown(KeyCode.LeftShift) && canmove)
         {
             moveSpeed = sprintSpeed;
@@ -68,8 +62,8 @@ public class PlayerController : MonoBehaviour
         }
         
         //Restart Scene
-        //if (Input.GetKeyDown(KeyCode.F11))
-        //    SceneManager.LoadScene("Verticle Slice");
+        if (Input.GetKeyDown(KeyCode.F11))
+            SceneManager.LoadScene("Verticle Slice");
     }
 
     void FixedUpdate()
