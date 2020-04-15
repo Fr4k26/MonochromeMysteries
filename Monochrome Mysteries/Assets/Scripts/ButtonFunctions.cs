@@ -50,6 +50,13 @@ public class ButtonFunctions : MonoBehaviour
         StartCoroutine(soundWait());
     }
 
+    public void openBonusScreen()
+    {
+        buttonSound.PlayOneShot(menuFeedback[0]);
+        menuChoice = 6;
+        StartCoroutine(soundWait());
+    }
+
     IEnumerator soundWait()
     {
         yield return new WaitForSeconds(0.800f);
@@ -72,6 +79,10 @@ public class ButtonFunctions : MonoBehaviour
         if (menuChoice == 5)
         {
             Application.Quit();
+        }
+        if (menuChoice == 6)
+        {
+            SceneManager.LoadScene("Alpha Level");
         }
     }
 }
