@@ -11,12 +11,15 @@ public class DialgoueManager : MonoBehaviour
     public GameObject PaperBoyCanvas;
     public GameObject FemmeFataleCanvas;
     public GameObject MobBossCanvas;
+    //public GameObject BusinessManCanvas;
     public Canvas choicePaperBoyMenu;
     public Canvas choiceFemmeFataleMenu;
     public Canvas choiceMobBossMenu;
+    //public Canvas BusinessManMenu;
     public Trigger paperBoyTrigger;
     public Trigger femmeFataleTrigger;
     public Trigger mobBossTrigger;
+    //public Trigger BusinessManTrigger;
 
 
 
@@ -33,14 +36,18 @@ public class DialgoueManager : MonoBehaviour
     public Text femDialogueText;
     public Text mobNameText;
     public Text mobDialogueText;
+    //public Text manNameText;
+    //public Text manDialougeText;
 
 
     public Animator paperAnimator;
     public Animator femAnimator;
     public Animator mobAnimator;
+    //public Animator manAnimator;
     public Animator paperTalking;
     public Animator femTalking;
     public Animator mobTalking;
+    //public Animator manTalking;
 
     public Queue<string> sentences;
 
@@ -58,7 +65,7 @@ public class DialgoueManager : MonoBehaviour
     public AudioClip[] femmeFatale;
     //public AudioClip[] policeMan;
     public AudioClip[] businessMan;
-    public AudioClip[] mobster;
+    public AudioClip[] mobBoss;
 
     void Start()
     {
@@ -209,7 +216,7 @@ public class DialgoueManager : MonoBehaviour
 
         if (mobBossTrigger.mobTrigger == true)
         {
-            //playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.9F);
+            playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.9F);
         }
 
         if (stillTalking == true)
@@ -299,7 +306,7 @@ public class DialgoueManager : MonoBehaviour
 
         if (mobBossTrigger.mobTrigger == true)
         {
-            //playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.8F);
+            playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.8F);
         }
 
         if (stillTalking == true)

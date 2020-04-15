@@ -11,6 +11,8 @@ public class Trigger : MonoBehaviour
     public bool femmeTrigger;
     public Canvas mobCanvas;
     public bool mobTrigger;
+    //public Canvas manCanvas;
+    //public bool manTrigger;
     public GameObject triggerObj;
     public GameObject cameraUser;
 
