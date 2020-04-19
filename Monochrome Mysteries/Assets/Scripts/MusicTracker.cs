@@ -1,4 +1,5 @@
-﻿/************************************************************************************************
+﻿
+/************************************************************************************************
 // File Name:   MusicTracker.cs
 // Author:      Jake Hyland
 // Description: Contains a function for establishing the background music track being played in any given scene
@@ -21,9 +22,9 @@ public class MusicTracker : MonoBehaviour
 
         if (objs.Length > 1)
         {
-            Destroy(objs[0]);
+            Destroy(objs[1]);
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(objs[0]);
     }
 }
