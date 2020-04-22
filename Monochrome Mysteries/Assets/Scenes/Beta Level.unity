@@ -154,7 +154,7 @@ RectTransform:
   m_Children:
   - {fileID: 2117647939}
   m_Father: {fileID: 171055060}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31284,6 +31284,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7348326385085989085, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7348326385484228936, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: MaxDistance
@@ -54694,7 +54699,7 @@ RectTransform:
   - {fileID: 2141236342}
   - {fileID: 1076134531}
   m_Father: {fileID: 171055060}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -76995,7 +77000,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 47.5
+      scalar: 56.01
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -77427,7 +77432,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 11100
+    maxNumParticles: 18866
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -77573,7 +77578,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 21.5
+      value: 170.6
       mode: 0
       spread: 0
       speed:
@@ -77692,7 +77697,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 250
+      scalar: 836.7
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -81525,7 +81530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978631510}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 12.374565, y: 33.692898, z: -11.88736}
+  m_LocalPosition: {x: 12.374565, y: 33.692898, z: -65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308372545}
@@ -89479,7 +89484,7 @@ RectTransform:
   - {fileID: 1786282177605350753}
   - {fileID: 6569604131901399114}
   m_Father: {fileID: 171055060}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -90413,7 +90418,7 @@ RectTransform:
   m_Children:
   - {fileID: 5477363397922451375}
   m_Father: {fileID: 171055060}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
