@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
 
     public GameObject canvas;
     public GameObject journalUI;
+    public GameObject optionsUI;
 
     private Flash flash;
     private Texture2D bodyShotTexture;
@@ -34,6 +35,7 @@ public class CameraController : MonoBehaviour
     private Texture2D mobShotTexture;
 
     private bool uiEnable = false;
+    private bool optionsEnable = false;
     public bool cameraLens = false;
 
     private bool pictureTaken = false;
@@ -68,6 +70,7 @@ public class CameraController : MonoBehaviour
         Invoke("Rain", .1f); // rain method allows rain object to start as raining and going rather than a static image when started without the invoke
         uiEnable = false;
         journalUI.SetActive(false);
+        optionsUI.SetActive(false);
 
     }
 
@@ -161,6 +164,14 @@ public class CameraController : MonoBehaviour
         {
             if (journalUI != null)
             {
+                //if(optionsEnable)
+                //{
+                //    playerController.canmove = true;
+                //    optionsUI.SetActive(false);
+                //    optionsEnable = false;
+                //    Cursor.visible = false;
+                //    Cursor.lockState = CursorLockMode.Locked;
+                //}
                 if (uiEnable == false)
                 {
                     playerController.canmove = false;
@@ -174,6 +185,37 @@ public class CameraController : MonoBehaviour
                     playerController.canmove = true;
                     journalUI.SetActive(false);
                     uiEnable = false;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            if (optionsUI != null)
+            {
+                //if (uiEnable)
+                //{
+                //    playerController.canmove = true;
+                //    journalUI.SetActive(false);
+                //    uiEnable = false;
+                //    Cursor.visible = false;
+                //    Cursor.lockState = CursorLockMode.Locked;
+                //}
+                if (optionsEnable == false)
+                {
+                    playerController.canmove = false;
+                    optionsUI.SetActive(true);
+                    optionsEnable = true;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                if (optionsEnable == true)
+                {
+                    playerController.canmove = true;
+                    optionsUI.SetActive(false);
+                    optionsEnable = false;
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
