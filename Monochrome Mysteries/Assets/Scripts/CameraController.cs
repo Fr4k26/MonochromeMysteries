@@ -8,10 +8,10 @@ public class CameraController : MonoBehaviour
     public float captureDistance = 500;
     public GameObject cameraUI, textUI, rain;
 
-    public Image bodyImage, paperboyImage, recieptImage, pinkImage, knifeImage, gunImage, bloodImage, femmeImage, mobImage;
+    public Image bodyImage, paperboyImage, blackmailImage, cardImage, briefcaseImage, tommygunImage, gunImage, bloodImage, femmeImage, mobImage, businessImage;
 
-    public Text body, paperboy, reciept, pinkslip, knife, gun, blood, femme, mob;
-    private bool bodyFound, paperboyFound, recieptFound, pinkslipFound, knifeFound, gunFound, bloodFound, femmeFound, mobFound = false;
+    public Text body, paperboy, blackmail, card, briefcase, tommygun, gun, blood, femme, mob, business;
+    private bool bodyFound, paperboyFound, blackmailFound, cardFound, briefcaseFound, tommygunFound, gunFound, bloodFound, femmeFound, mobFound, businessFound = false;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -25,13 +25,15 @@ public class CameraController : MonoBehaviour
     private Flash flash;
     private Texture2D bodyShotTexture;
     private Texture2D paperShotTexture;
-    private Texture2D recieptShotTexture;
-    private Texture2D pinkShotTexture;
-    private Texture2D knifeShotTexture;
+    private Texture2D blackmailShotTexture;
+    private Texture2D cardShotTexture;
+    private Texture2D briefcaseShotTexture;
+    private Texture2D tommyShotTexture;
     private Texture2D gunShotTexture;
     private Texture2D bloodShotTexture;
     private Texture2D femmeShotTexture;
     private Texture2D mobShotTexture;
+    private Texture2D businessShotTexture;
 
     private bool uiEnable = false;
     public bool cameraLens = false;
@@ -213,7 +215,7 @@ public class CameraController : MonoBehaviour
                     {
                         name = obj.gameObject.name;
                         print("Object with tag: " + name + " has been captured");
-                        if (name.Equals("Practice Body"))
+                        if (name.Equals("Chalkstains"))
                         {
                             FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim", body, bodyFound);
                             bodyFound = true;
@@ -223,34 +225,39 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy, paperboyFound);
                             paperboyFound = true;
                         }
-                        else if (name.Equals("Practice Reciept"))
+                        else if (name.Equals("Blackmail Note"))
                         {
-                            FoundEvidence(recieptShotTexture, "Reciept", "Motive", recieptImage, "Gun Purchase Reciept for Reggie", reciept, recieptFound);
-                            recieptFound = true;
+                            FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Blackmail Note Addressed to Fio", blackmail, blackmailFound);
+                            blackmailFound = true;
                         }
-                        else if (name.Equals("Practice Pinkslip"))
+                        else if (name.Equals("ID Card"))
                         {
-                            FoundEvidence(pinkShotTexture, "Pinkslip", "Motive", pinkImage, "Pinkslip Firing Reggie", pinkslip, pinkslipFound);
-                            pinkslipFound = true;
+                            FoundEvidence(cardShotTexture, "Communist ID Card", "Motive", cardImage, "Communist Party ID Card, George Valerio", card, cardFound);
+                            cardFound = true;
                         }
-                        else if (name.Equals("Practice Knife"))
+                        else if (name.Equals("Briefcase"))
                         {
-                            FoundEvidence(knifeShotTexture, "Box Cutter", "Weapon", knifeImage, "Box Cutter", knife, knifeFound);
-                            knifeFound = true;
+                            FoundEvidence(briefcaseShotTexture, "Briefcase", "Motive", briefcaseImage, "Large Briefcase", briefcase, briefcaseFound);
+                            briefcaseFound = true;
                         }
-                        else if (name.Equals("Practice Gun"))
+                        else if (name.Equals("Tommygun"))
                         {
-                            FoundEvidence(gunShotTexture, "Gun", "Weapon", gunImage, "Period Appropriate Firearm", gun, gunFound);
+                            FoundEvidence(tommyShotTexture, "Tommygun", "Weapon", tommygunImage, "Freshly Fired Tommygun", tommygun, tommygunFound);
+                            tommygunFound = true;
+                        }
+                        else if (name.Equals("Revolver"))
+                        {
+                            FoundEvidence(gunShotTexture, "Revolver", "Weapon", gunImage, "Discarded Revolver", gun, gunFound);
                             gunFound = true;
                         }
-                        else if (name.Equals("Practice Bulletholes/Blood"))
+                        else if (name.Equals("Bloodspatter"))
                         {
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
                             bloodFound = true;
                         }
                         else if (name.Equals("Femme Fatale Character"))
                         {
-                            FoundEvidence(femmeShotTexture, "Femme Fatale", "Character", femmeImage, "Woman in Red", femme, femmeFound);
+                            FoundEvidence(femmeShotTexture, "Woman in Red", "Character", femmeImage, "Woman in Red", femme, femmeFound);
                             femmeFound = true;
                         }
                         else if (name.Equals("MobBoss"))
@@ -258,13 +265,18 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(mobShotTexture, "Mobster", "Killer", mobImage, "Suspicious Woman", mob, mobFound);
                             mobFound = true;
                         }
+                        else if (name.Equals("BusinessMan"))
+                        {
+                            FoundEvidence(businessShotTexture, "Businessman", "Killer", businessImage, "Local Businessman", business, businessFound);
+                            businessFound = true;
+                        }
                     }
                 }
             }
         }
     }
 
-    //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, what text displays on the screen after you photograph it, and the appropriate boolean
+    //If you have found a valid evidence piece, input the appropriate Texture, Name of the evidence, Type, Image, what text displays on the screen after you photograph it, text, and the appropriate boolean
     void FoundEvidence(Texture2D evidenceTexture, string evidence, string evidenceType, Image evidenceImage, string evidenceTitle, Text journalEvidenceText, bool alreadyFound)
     {
         StartCoroutine(TakeScreenshot(evidenceTexture, evidenceImage));

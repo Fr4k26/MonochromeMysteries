@@ -11,8 +11,9 @@ public class Trigger : MonoBehaviour
     public bool femmeTrigger;
     public Canvas mobCanvas;
     public bool mobTrigger;
-    //public Canvas manCanvas;
-    //public bool manTrigger;
+    public Canvas manCanvas;
+    public bool manTrigger;
+
     public GameObject triggerObj;
     public GameObject cameraUser;
 
@@ -34,6 +35,11 @@ public class Trigger : MonoBehaviour
             mobCanvas.gameObject.SetActive(true);
             mobTrigger = true;
         }
+        if (triggerObj.CompareTag("Businessman"))
+        {
+            manCanvas.gameObject.SetActive(true);
+            manTrigger = true;
+        }
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -48,6 +54,8 @@ public class Trigger : MonoBehaviour
         femmeTrigger = false;
         mobCanvas.gameObject.SetActive(false);
         mobTrigger = false;
+        manCanvas.gameObject.SetActive(false);
+        manTrigger = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         cameraUser.GetComponent<CameraLook>().enabled = true;
