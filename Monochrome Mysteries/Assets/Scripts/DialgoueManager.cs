@@ -11,21 +11,21 @@ public class DialgoueManager : MonoBehaviour
     public GameObject PaperBoyCanvas;
     public GameObject FemmeFataleCanvas;
     public GameObject MobBossCanvas;
-    //public GameObject BusinessManCanvas;
+    public GameObject BusinessManCanvas;
     public Canvas choicePaperBoyMenu;
     public Canvas choiceFemmeFataleMenu;
     public Canvas choiceMobBossMenu;
-    //public Canvas BusinessManMenu;
+    public Canvas choiceBusinessManMenu;
     public Trigger paperBoyTrigger;
     public Trigger femmeFataleTrigger;
     public Trigger mobBossTrigger;
-    //public Trigger BusinessManTrigger;
+    public Trigger BusinessManTrigger;
 
 
 
     public GameObject playerObject;
     public PlayerController playerController;
-    private Transform paperBoyFace, femmeFataleFace, mobBossFace, playerFace; //Used to force the player to look at each character during dialouge
+    private Transform paperBoyFace, femmeFataleFace, mobBossFace, businessmanFace, playerFace; //Used to force the player to look at each character during dialouge
 
 
     public bool endDia;
@@ -36,18 +36,18 @@ public class DialgoueManager : MonoBehaviour
     public Text femDialogueText;
     public Text mobNameText;
     public Text mobDialogueText;
-    //public Text manNameText;
-    //public Text manDialougeText;
+    public Text manNameText;
+    public Text manDialougeText;
 
 
     public Animator paperAnimator;
     public Animator femAnimator;
     public Animator mobAnimator;
-    //public Animator manAnimator;
+    public Animator manAnimator;
     public Animator paperTalking;
     public Animator femTalking;
     public Animator mobTalking;
-    //public Animator manTalking;
+    public Animator manTalking;
 
     public Queue<string> sentences;
 
@@ -78,6 +78,7 @@ public class DialgoueManager : MonoBehaviour
         paperBoyFace = GameObject.Find("Paperboy Face").transform;
         femmeFataleFace = GameObject.Find("Femme Fatale Face").transform;
         mobBossFace = GameObject.Find("Mob Boss Face").transform;
+        businessmanFace = GameObject.Find("Businessman Face").transform;
 
 
         //Establish Connection to Audio Source Attached to Camera to play Sound Effects
@@ -89,6 +90,7 @@ public class DialgoueManager : MonoBehaviour
         paperAnimator.SetBool("isOpen", true);
         femAnimator.SetBool("isOpen", true);
         mobAnimator.SetBool("isOpen", true);
+        manAnimator.SetBool("isOpen", true);
 
         if (paperBoyTrigger.boyTrigger == true)
         {
@@ -108,12 +110,20 @@ public class DialgoueManager : MonoBehaviour
             playerFace.LookAt(mobBossFace);
         }
 
+        if(BusinessManTrigger.manTrigger == true)
+        {
+            manTalking.SetBool("isTalking", true);
+            playerFace.LookAt(businessmanFace);
+        }
+
 
         playerController.canmove = false;
         showChoices = false;
         nameText.text = dialogue.name;
         femNameText.text = dialogue.name;
         mobNameText.text = dialogue.name;
+        manNameText.text = dialogue.name;
+
         if(opensDoor)
         {
             gc.doors[doorTarget].SetActive(false);
@@ -129,7 +139,7 @@ public class DialgoueManager : MonoBehaviour
         DisplayOptionsPaperBoy();
         DisplayOptionsFemmeFatale();
         DisplayOptionsMobBoss();
-
+        DisplayOptionsBusinessman();
     }
 
     public void DisplayNextSentence()
@@ -195,6 +205,22 @@ public class DialgoueManager : MonoBehaviour
             choiceMobBossMenu.gameObject.SetActive(false);
 
         }
+    }
+
+    public void DisplayOptionsBusinessman()
+    {
+        playerController.canmove = false;
+
+        if (showChoices == true)
+        {
+            choiceBusinessManMenu.gameObject.SetActive(true);
+            playerController.canmove = false;
+        }
+
+        if (showChoices == false)
+        {
+            choiceBusinessManMenu.gameObject.SetActive(false);
+        }
 
     }
 
@@ -203,6 +229,7 @@ public class DialgoueManager : MonoBehaviour
         dialogueText.text = "";
         femDialogueText.text = "";
         mobDialogueText.text = "";
+        manDialougeText.text = "";
 
         if (femmeFataleTrigger.femmeTrigger == true)
         {
@@ -218,6 +245,11 @@ public class DialgoueManager : MonoBehaviour
         {
             playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.9F);
         }
+        if(BusinessManTrigger.manTrigger == true)
+        {
+            playerAudio.PlayOneShot(businessMan[Random.Range(0, mobBoss.Length)], 0.9F);
+
+        }
 
         if (stillTalking == true)
         {
@@ -229,6 +261,7 @@ public class DialgoueManager : MonoBehaviour
             dialogueText.text += letter;
             femDialogueText.text += letter;
             mobDialogueText.text += letter;
+            manDialougeText.text += letter;
             yield return null;
             stillTalking = false;
         }
@@ -241,6 +274,7 @@ public class DialgoueManager : MonoBehaviour
         paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
         mobAnimator.SetBool("isOpen", false);
+        manAnimator.SetBool("isOpen", false);
         if(paperBoyTrigger.boyTrigger == false)
         {
             paperTalking.SetBool("isTalking", false);
@@ -256,6 +290,11 @@ public class DialgoueManager : MonoBehaviour
         if (mobBossTrigger.mobTrigger == false)
         {
             mobTalking.SetBool("isTalking", false);
+            stillTalking = false;
+        }
+        if(BusinessManTrigger.manTrigger == false)
+        {
+            manTalking.SetBool("isTalking", false);
             stillTalking = false;
         }
 
@@ -278,6 +317,12 @@ public class DialgoueManager : MonoBehaviour
         {
             showChoices = true;
             DisplayOptionsMobBoss();
+            playerController.canmove = false;
+        }
+        if (BusinessManTrigger.manTrigger == true)
+        {
+            showChoices = true;
+            DisplayOptionsBusinessman();
             playerController.canmove = false;
         }
 
@@ -307,6 +352,10 @@ public class DialgoueManager : MonoBehaviour
         if (mobBossTrigger.mobTrigger == true)
         {
             playerAudio.PlayOneShot(mobBoss[Random.Range(0, mobBoss.Length)], 0.8F);
+        }
+        if(BusinessManTrigger.manTrigger == true)
+        {
+            playerAudio.PlayOneShot(businessMan[Random.Range(0, businessMan.Length)], 0.8F);
         }
 
         if (stillTalking == true)
