@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour
     private GameObject cameraObject;
     public GameObject journalUI;
 
-    public PlayerController playerController;
+    private PlayerController playerController;
 
     void Start()
     {
