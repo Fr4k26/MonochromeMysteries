@@ -8,10 +8,10 @@ public class CameraController : MonoBehaviour
     public float captureDistance = 500;
     public GameObject cameraUI, textUI, rain;
 
-    public Image bodyImage, paperboyImage, blackmailImage, cardImage, briefcaseImage, tommygunImage, gunImage, bloodImage, femmeImage, mobImage, businessImage, tommygunHolesImage;
+    public Image bodyImage, paperboyImage, blackmailImage, cardImage, briefcaseImage, tommygunImage, gunImage, bloodImage, femmeImage, mobImage, businessImage, tommygunHolesImage, deadCameraImage;
 
-    public Text body, paperboy, blackmail, card, briefcase, tommygun, gun, blood, femme, mob, business, tommygunHoles;
-    private bool bodyFound, paperboyFound, blackmailFound, cardFound, briefcaseFound, tommygunFound, gunFound, bloodFound, femmeFound, mobFound, businessFound, tommygunHolesFound = false;
+    public Text body, paperboy, blackmail, card, briefcase, tommygun, gun, blood, femme, mob, business, tommygunHoles, deadCamera;
+    private bool bodyFound, paperboyFound, blackmailFound, cardFound, briefcaseFound, tommygunFound, gunFound, bloodFound, femmeFound, mobFound, businessFound, tommygunHolesFound, deadCameraFound = false;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -36,6 +36,7 @@ public class CameraController : MonoBehaviour
     private Texture2D mobShotTexture;
     private Texture2D businessShotTexture;
     private Texture2D tommyShotHolesTexture;
+    private Texture2D deadCameraTexture;
 
     private bool uiEnable = false;
     private bool optionsEnable = false;
@@ -302,6 +303,12 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
                             bloodFound = true;
+                        }
+                        else if (name.Equals("Dead Camera"))
+                        {
+                            FoundEvidence(deadCameraTexture, "PI's Camera", "N/A", deadCameraImage, "PI's Camera", femme, deadCameraFound);
+                            deadCameraFound = true;
+
                         }
                         else if (name.Equals("Femme Fatale Character"))
                         {
