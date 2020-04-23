@@ -261,7 +261,7 @@ public class CameraController : MonoBehaviour
                         print("Object with tag: " + name + " has been captured");
                         if (name.Equals("Chalkstains"))
                         {
-                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Chalk Outline of the Corpse", body, bodyFound);
+                            FoundEvidence(bodyShotTexture, "Victim", "Killer", bodyImage, "Outline of Victim", body, bodyFound);
                             bodyFound = true;
                         }
                         else if (name.Equals("Paperboy"))
@@ -271,7 +271,7 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("Blackmail Note"))
                         {
-                            FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Blackmail Note Addressed to Fio", blackmail, blackmailFound);
+                            FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Soaked Blackmail Note", blackmail, blackmailFound);
                             blackmailFound = true;
                         }
                         else if (name.Equals("Membership Card"))
@@ -306,7 +306,7 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("Dead Camera"))
                         {
-                            FoundEvidence(deadCameraTexture, "PI's Camera", "N/A", deadCameraImage, "PI's Camera", femme, deadCameraFound);
+                            FoundEvidence(deadCameraTexture, "Bloody Camera", "N/A", deadCameraImage, "Bloody Camera", femme, deadCameraFound);
                             deadCameraFound = true;
 
                         }
