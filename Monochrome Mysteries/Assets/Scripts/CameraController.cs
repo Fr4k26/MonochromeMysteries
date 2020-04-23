@@ -215,7 +215,7 @@ public class CameraController : MonoBehaviour
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
-                if (optionsEnable == true)
+                else
                 {
                     playerController.canmove = true;
                     optionsUI.SetActive(false);
