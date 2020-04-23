@@ -299,7 +299,7 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(gunShotTexture, "Revolver", "Weapon", gunImage, "Discarded Revolver", gun, gunFound);
                             gunFound = true;
                         }
-                        else if (name.Equals("Bloodspatter"))
+                        else if (name.Equals("Blood Spatter"))
                         {
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
                             bloodFound = true;
