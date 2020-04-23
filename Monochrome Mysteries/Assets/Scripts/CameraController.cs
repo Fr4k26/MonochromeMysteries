@@ -273,9 +273,9 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Blackmail Note Addressed to Fio", blackmail, blackmailFound);
                             blackmailFound = true;
                         }
-                        else if (name.Equals("ID Card"))
+                        else if (name.Equals("Membership Card"))
                         {
-                            FoundEvidence(cardShotTexture, "Communist ID Card", "Motive", cardImage, "Communist Party ID Card", card, cardFound);
+                            FoundEvidence(cardShotTexture, "Communist Membership Card", "Motive", cardImage, "Communist Party Membership Card", card, cardFound);
                             cardFound = true;
                         }
                         else if (name.Equals("Briefcase"))
