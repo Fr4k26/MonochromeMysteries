@@ -8,10 +8,10 @@ public class CameraController : MonoBehaviour
     public float captureDistance = 500;
     public GameObject cameraUI, textUI, rain;
 
-    public Image bodyImage, paperboyImage, blackmailImage, cardImage, briefcaseImage, tommygunImage, gunImage, bloodImage, femmeImage, mobImage, businessImage;
+    public Image bodyImage, paperboyImage, blackmailImage, cardImage, briefcaseImage, tommygunImage, gunImage, bloodImage, femmeImage, mobImage, businessImage, tommygunHolesImage;
 
-    public Text body, paperboy, blackmail, card, briefcase, tommygun, gun, blood, femme, mob, business;
-    private bool bodyFound, paperboyFound, blackmailFound, cardFound, briefcaseFound, tommygunFound, gunFound, bloodFound, femmeFound, mobFound, businessFound = false;
+    public Text body, paperboy, blackmail, card, briefcase, tommygun, gun, blood, femme, mob, business, tommygunHoles;
+    private bool bodyFound, paperboyFound, blackmailFound, cardFound, briefcaseFound, tommygunFound, gunFound, bloodFound, femmeFound, mobFound, businessFound, tommygunHolesFound = false;
     public AudioSource shutter;
     public AudioClip photo;
 
@@ -35,6 +35,7 @@ public class CameraController : MonoBehaviour
     private Texture2D femmeShotTexture;
     private Texture2D mobShotTexture;
     private Texture2D businessShotTexture;
+    private Texture2D tommyShotHolesTexture;
 
     private bool uiEnable = false;
     private bool optionsEnable = false;
@@ -259,7 +260,7 @@ public class CameraController : MonoBehaviour
                         print("Object with tag: " + name + " has been captured");
                         if (name.Equals("Chalkstains"))
                         {
-                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Corpse of Victim", body, bodyFound);
+                            FoundEvidence(bodyShotTexture, "Corpse", "Killer", bodyImage, "Chalk Outline of the Corpse", body, bodyFound);
                             bodyFound = true;
                         }
                         else if (name.Equals("Paperboy"))
@@ -274,7 +275,7 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("ID Card"))
                         {
-                            FoundEvidence(cardShotTexture, "Communist ID Card", "Motive", cardImage, "Communist Party ID Card, George Valerio", card, cardFound);
+                            FoundEvidence(cardShotTexture, "Communist ID Card", "Motive", cardImage, "Communist Party ID Card", card, cardFound);
                             cardFound = true;
                         }
                         else if (name.Equals("Briefcase"))
@@ -286,6 +287,11 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(tommyShotTexture, "Tommygun", "Weapon", tommygunImage, "Freshly Fired Tommygun", tommygun, tommygunFound);
                             tommygunFound = true;
+                        }
+                        else if (name.Equals("Tommygun Bulletholes"))
+                        {
+                            FoundEvidence(tommyShotHolesTexture, "Tommygun Bulletholes", "N/A", tommygunHolesImage, "Bloodless Bulletholes", tommygunHoles, tommygunHolesFound);
+                            tommygunHolesFound = true;
                         }
                         else if (name.Equals("Revolver"))
                         {
