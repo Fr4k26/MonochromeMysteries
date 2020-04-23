@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   Pause.cs
+// Author:      Jake Hyland
+// Description: Contains a the Pause and Continue functions necessary to bring up or hide the pause menu as well as disable
+                other player actions when said menu is displayed.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

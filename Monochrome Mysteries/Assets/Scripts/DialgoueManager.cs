@@ -74,7 +74,7 @@ public class DialgoueManager : MonoBehaviour
         endDia = true;
         sentences = new Queue<string>();
         playerController = playerObject.GetComponent<PlayerController>();
-        playerFace = GameObject.Find("Player").transform;
+        playerFace = GameObject.Find("Main Camera").transform;
         paperBoyFace = GameObject.Find("Paperboy Face").transform;
         femmeFataleFace = GameObject.Find("Femme Fatale Face").transform;
         mobBossFace = GameObject.Find("Mob Boss Face").transform;

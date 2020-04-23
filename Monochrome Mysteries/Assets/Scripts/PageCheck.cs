@@ -21,7 +21,7 @@ public class PageCheck : MonoBehaviour
 
         if (pageValue > 4)
         {
-            pageValue = 4;
+            pageValue = 1;
         }
 
         if (pageValue == displayValue)
@@ -40,7 +40,7 @@ public class PageCheck : MonoBehaviour
 
         if (pageValue < 1)
         {
-            pageValue = 1;
+            pageValue = 4;
         }
 
         if (pageValue == displayValue)
