@@ -310,7 +310,7 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("Bloody Camera"))
                         {
-                            FoundEvidence(deadCameraTexture, "Bloody Camera", "N/A", deadCameraImage, "Bloody Camera", femme, deadCameraFound);
+                            FoundEvidence(deadCameraTexture, "Bloody Camera", "N/A", deadCameraImage, "Bloody Camera", deadCamera, deadCameraFound);
                             deadCameraFound = true;
 
                         }
