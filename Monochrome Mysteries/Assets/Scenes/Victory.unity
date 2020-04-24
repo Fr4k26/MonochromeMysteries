@@ -150,7 +150,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2825408828701857487, guid: 5cb386359af923e45b7cb875228c2ca0,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 60f112ceca3b7aa43b57f253139fe988, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -294,16 +294,16 @@ RectTransform:
   m_GameObject: {fileID: 485678096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.1849, y: 4.1849, z: 4.1849}
   m_Children:
   - {fileID: 1884100138}
   m_Father: {fileID: 6521167437367206185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -187}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -4, y: -469}
+  m_SizeDelta: {x: -1760, y: -1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485678098
 MonoBehaviour:
@@ -554,7 +554,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1391576949}
   - component: {fileID: 1391576948}
-  - component: {fileID: 1391576947}
   m_Layer: 0
   m_Name: Music Source
   m_TagString: Music Source
@@ -562,18 +561,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1391576947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391576946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbab13c89c017de4fa45321d919a49a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1391576948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -584,9 +571,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ac26d7450008eb43b0e680a3045daa7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 064f2fffd95436f4fae72c3ca791980c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_Volume: 1
   m_Pitch: 0.95
   Loop: 1
   Mute: 0
@@ -764,17 +751,17 @@ PrefabInstance:
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 94
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 405.21
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 267.5
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
@@ -809,22 +796,31 @@ PrefabInstance:
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7873
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7873
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505390, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7873
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
       propertyPath: m_Text
-      value: You Have Solved the Mystery!
+      value: "The culprit, Gina Afluette, shot the victim, Harris Wilke, Private
+        Investigator, when he uncovered the secret life she led in corporate espionage.
+        Investigation into the business owner, Adam. C. Winston, is heavily recommended
+        by the investigative journalist, Quincy Redmond, who aided police in apprehending
+        \"The Woman in Red.\" Despite his fraternization with the mob, it is the
+        opinion of the District Attorney that Mr. Redmond was indispensable in solving
+        this case alongside the overburdened police department. More citizens of
+        such caliber could keep the streets free of crime that falls into such mired,
+        grey legalities.\r\n\r\nThis \u201CMonochrome Mystery\u201D is solved.\r\nThank
+        you for playing!\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
         type: 3}
@@ -842,6 +838,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 4070c60a54578e24b9b754201d9d1642,
         type: 3}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754947319664505391, guid: 52a9608b123e23447b5efdadb0b0c1c4,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0.99
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52a9608b123e23447b5efdadb0b0c1c4, type: 3}
 --- !u!224 &1655668729 stripped
@@ -1047,7 +1088,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6521167436450086339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: -8.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521167437367206185}
@@ -1071,7 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1145,7 +1186,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
