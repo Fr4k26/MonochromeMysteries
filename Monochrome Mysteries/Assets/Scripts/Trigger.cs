@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Trigger : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Trigger : MonoBehaviour
     public bool mobTrigger;
     public Canvas manCanvas;
     public bool manTrigger;
+    public UnityEvent makeItActive;
 
     public GameObject triggerObj;
     public GameObject cameraUser;
@@ -20,6 +22,7 @@ public class Trigger : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider collider)
     {
+        makeItActive.Invoke();
         if(triggerObj.CompareTag("Paper Boy"))
         {
             boyCanvas.gameObject.SetActive(true);

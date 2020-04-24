@@ -215,7 +215,7 @@ public class CameraController : MonoBehaviour
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
-                else
+                if (optionsEnable == true)
                 {
                     playerController.canmove = true;
                     optionsUI.SetActive(false);
@@ -246,9 +246,13 @@ public class CameraController : MonoBehaviour
                 //Check all objectives
                 print(hit.collider.gameObject.name);
 
-                if(hit.collider.gameObject.GetComponent<AddingOptions>() != null)
+                if(hit.collider.gameObject.GetComponents<AddingOptions>() != null)
                 {
-                    hit.collider.gameObject.GetComponent<AddingOptions>().AddOptionCam();
+                   var Options = hit.collider.gameObject.GetComponents<AddingOptions>();
+                    foreach(var op in Options)
+                    {
+                        op.AddOptionCam();
+                    }
                 }
 
                 GameObject[] objectiveArray = GameObject.FindGameObjectsWithTag("Objective");

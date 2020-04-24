@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialgoueManager : MonoBehaviour
 {
+    public UnityEvent restartButton;
     GameController gc;
     public List<GameObject> buttonList;
     public GameObject buttonOption;
@@ -20,7 +22,7 @@ public class DialgoueManager : MonoBehaviour
     public Trigger femmeFataleTrigger;
     public Trigger mobBossTrigger;
     public Trigger BusinessManTrigger;
-
+    
 
 
     public GameObject playerObject;
@@ -332,7 +334,14 @@ public class DialgoueManager : MonoBehaviour
         stillTalking = false;
 
         playerController.canmove = true;
+        if(currentTrigger != null)
+        {
+            currentTrigger.onConvoEnd.Invoke();
+            currentTrigger = null;
+        }
     }
+
+    public static DialogueTrigger currentTrigger;
 
     //Calls for a new dialogue sound of the character in question is still talking based on the stillTalking boolean
     IEnumerator nextSound()
