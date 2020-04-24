@@ -228,10 +228,11 @@ public class DialgoueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        dialogueText.text = "";
-        femDialogueText.text = "";
-        mobDialogueText.text = "";
-        manDialougeText.text = "";
+        dialogueText.text = sentence;
+        femDialogueText.text = sentence;
+        mobDialogueText.text = sentence;
+        manDialougeText.text = sentence;
+        
 
         if (femmeFataleTrigger.femmeTrigger == true)
         {
@@ -258,6 +259,9 @@ public class DialgoueManager : MonoBehaviour
             StartCoroutine(nextSound());
         }
 
+        stillTalking = false;
+        yield return null;
+        /*
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -266,7 +270,7 @@ public class DialgoueManager : MonoBehaviour
             manDialougeText.text += letter;
             yield return null;
             stillTalking = false;
-        }
+        }*/
     }
 
     void EndDialogue()

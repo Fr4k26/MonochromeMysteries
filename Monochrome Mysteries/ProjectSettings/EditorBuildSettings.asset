@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits Scene.unity
     guid: 9e495e13b2f88a24184098dd7cdbfd0c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Verticle Slice.unity
     guid: 0ae031dba152acf459b92a50ff5ac8ab
   - enabled: 0
@@ -26,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Level.unity
     guid: 9ba68b6665c1e9b4aa83bb09404701c1
-  - enabled: 1
-    path: Assets/Scenes/Beta Level.unity
-    guid: 322f311459bb4904d81987d0f515755f
   m_configObjects: {}
