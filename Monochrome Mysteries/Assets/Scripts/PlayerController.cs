@@ -63,7 +63,9 @@ public class PlayerController : MonoBehaviour
         
         //Restart Scene
         if (Input.GetKeyDown(KeyCode.F11))
-            SceneManager.LoadScene("Verticle Slice");
+        {
+            ReloadScene();
+        }
     }
 
     void FixedUpdate()
@@ -105,6 +107,16 @@ public class PlayerController : MonoBehaviour
             canClimb = false;
             canmove = true;
         }
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("Beta Level");
+    }
+
+    public void MainScene()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     public float linearDrag;

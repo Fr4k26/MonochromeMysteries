@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358886076}
   - component: {fileID: 358886075}
+  - component: {fileID: 358886077}
   m_Layer: 0
   m_Name: Music Source
   m_TagString: Music Source
@@ -368,6 +369,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358886077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358886074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765d77668ee72c74bae5ca0e0912703f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &413010462 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4741930474375872820, guid: 31fbcb509764b5948b11bd7369741d41,

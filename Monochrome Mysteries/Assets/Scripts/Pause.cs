@@ -16,6 +16,7 @@ public class Pause : MonoBehaviour
     private bool paused = false;
     private GameObject cameraObject;
     public GameObject journalUI;
+    public GameObject howUI;
 
     private PlayerController playerController;
 
@@ -42,20 +43,25 @@ public class Pause : MonoBehaviour
     }
     private void PauseGame()
     {
+        Cursor.visible = true;
         cameraObject.GetComponent<CameraController>().enabled = false;
         journalUI.SetActive(false);
         Time.timeScale = 0;
         pausePanel.SetActive(true);
         StartCoroutine("pauseWait");
+        Cursor.lockState = CursorLockMode.None;
         //Disable scripts that still work while timescale is set to 0
     }
-    private void ContinueGame()
+    public void ContinueGame()
     {
         playerController.canmove = true;
         cameraObject.GetComponent<CameraController>().enabled = true;
         Time.timeScale = 1;
         pausePanel.SetActive(false);
+        howUI.SetActive(false);
         StartCoroutine("pauseWait");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         //enable the scripts again and the ability to move
     }
      private IEnumerator pauseWait()

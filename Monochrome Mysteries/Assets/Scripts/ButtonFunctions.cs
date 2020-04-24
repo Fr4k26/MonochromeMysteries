@@ -82,7 +82,7 @@ public class ButtonFunctions : MonoBehaviour
         }
         if (menuChoice == 6)
         {
-            SceneManager.LoadScene("Alpha Level");
+            SceneManager.LoadScene("Beta Level");
         }
     }
 }
