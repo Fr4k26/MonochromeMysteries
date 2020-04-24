@@ -308,7 +308,7 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
                             bloodFound = true;
                         }
-                        else if (name.Equals("Dead Camera"))
+                        else if (name.Equals("Bloody Camera"))
                         {
                             FoundEvidence(deadCameraTexture, "Bloody Camera", "N/A", deadCameraImage, "Bloody Camera", femme, deadCameraFound);
                             deadCameraFound = true;
@@ -316,7 +316,7 @@ public class CameraController : MonoBehaviour
                         }
                         else if (name.Equals("Femme Fatale Character"))
                         {
-                            FoundEvidence(femmeShotTexture, "Woman in Red", "Character", femmeImage, "Woman in Red", femme, femmeFound);
+                            FoundEvidence(femmeShotTexture, "Woman in Red", "Killer", femmeImage, "Woman in Red", femme, femmeFound);
                             femmeFound = true;
                         }
                         else if (name.Equals("MobBoss"))
