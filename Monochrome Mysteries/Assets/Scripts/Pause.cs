@@ -12,7 +12,7 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
 
-    private GameObject pausePanel;
+    public GameObject pausePanel;
     private bool paused = false;
     private GameObject cameraObject;
     public GameObject journalUI;
@@ -31,7 +31,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!paused)
+            if (!paused && playerController.canmove == true)
             {
                 PauseGame();
             }
