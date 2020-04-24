@@ -59,8 +59,8 @@ public class SolveMystery : MonoBehaviour
         if(firstCorrect && secondCorrect && thirdCorrect == true)
         {
             Debug.Log("Solved the Mystery!");
-            winText.text = "You have solved the Mystery!";
-            winText.gameObject.SetActive(true);
+            //winText.text = "You have solved the Mystery!";
+            //winText.gameObject.SetActive(true);
             StartCoroutine(winChange());
         }
     }
