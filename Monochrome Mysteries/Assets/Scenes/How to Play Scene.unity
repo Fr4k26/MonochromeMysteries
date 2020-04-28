@@ -479,5 +479,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: HTP Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6340222738622494192, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222738622494192, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222738622494192, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222738808316929, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222738808316929, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222738808316929, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222739315584896, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222739315584896, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340222739315584896, guid: fc9456d3f12b5d34bbd6440a43a9a6ea,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.07450981
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9456d3f12b5d34bbd6440a43a9a6ea, type: 3}
