@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3829174217389908621
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0.19
+  smoothness:
+    overrideState: 1
+    value: 0.58
+  roundness:
+    overrideState: 1
+    value: 0.82
+  rounded:
+    overrideState: 1
+    value: 1
+  mask:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 1
+    value: 1
 --- !u!114 &-1497558570137969818
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -18,16 +62,16 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 50, y: 95}
+    value: {x: 54.000008, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0.3
+    value: 0.5
   maxLuminance:
     overrideState: 1
     value: 9
   keyValue:
     overrideState: 1
-    value: 1
+    value: 0.88
   eyeAdaptation:
     overrideState: 1
     value: 0
@@ -58,13 +102,13 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.14
+    value: 0.13
   size:
     overrideState: 1
-    value: 0.66
+    value: 0.94
   lumContrib:
     overrideState: 1
-    value: 0.2
+    value: 0.21
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +126,55 @@ MonoBehaviour:
   - {fileID: -813459471633244731}
   - {fileID: 5730288934377689485}
   - {fileID: -1497558570137969818}
+  - {fileID: 185483695944292025}
+  - {fileID: -3829174217389908621}
+--- !u!114 &185483695944292025
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 6.3
+  threshold:
+    overrideState: 1
+    value: 0.79
+  softKnee:
+    overrideState: 1
+    value: 0.88
+  clamp:
+    overrideState: 1
+    value: 65472
+  diffusion:
+    overrideState: 1
+    value: 8.7
+  anamorphicRatio:
+    overrideState: 1
+    value: 1
+  color:
+    overrideState: 1
+    value: {r: 1, g: 1, b: 1, a: 1}
+  fastMode:
+    overrideState: 1
+    value: 0
+  dirtTexture:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 1
+    value: 0
 --- !u!114 &423911170455553086
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -107,7 +200,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 0
+    value: 1
   toneCurveToeStrength:
     overrideState: 1
     value: 0
@@ -141,25 +234,25 @@ MonoBehaviour:
     value: -26
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
   hueShift:
     overrideState: 1
     value: -1
   saturation:
     overrideState: 1
-    value: -77
+    value: -68
   brightness:
     overrideState: 1
     value: 0
   postExposure:
     overrideState: 1
-    value: 0
+    value: -0.18
   contrast:
     overrideState: 1
-    value: 12
+    value: 9
   mixerRedOutRedIn:
     overrideState: 1
-    value: 100
+    value: 53
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
@@ -171,10 +264,10 @@ MonoBehaviour:
     value: 0
   mixerGreenOutGreenIn:
     overrideState: 1
-    value: 100
+    value: 129
   mixerGreenOutBlueIn:
     overrideState: 1
-    value: 0
+    value: -6
   mixerBlueOutRedIn:
     overrideState: 1
     value: 0
@@ -183,7 +276,7 @@ MonoBehaviour:
     value: 0
   mixerBlueOutBlueIn:
     overrideState: 1
-    value: 100
+    value: 82
   lift:
     overrideState: 1
     value: {x: 1, y: 1, z: 1, w: 0}
@@ -1414,7 +1507,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.55
+    value: 2.9
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1438,7 +1531,7 @@ MonoBehaviour:
     value: 0
   radius:
     overrideState: 1
-    value: 0.4
+    value: 0.26
   quality:
     overrideState: 1
-    value: 3
+    value: 4
