@@ -41,6 +41,8 @@ public class DialgoueManager : MonoBehaviour
     public Text manNameText;
     public Text manDialougeText;
 
+    public float textSpeed = 0.016f;
+
 
     public Animator paperAnimator;
     public Animator femAnimator;
@@ -267,7 +269,7 @@ public class DialgoueManager : MonoBehaviour
             femDialogueText.text += letter;
             mobDialogueText.text += letter;
             manDialougeText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(textSpeed);
             stillTalking = false;
         }
     }
