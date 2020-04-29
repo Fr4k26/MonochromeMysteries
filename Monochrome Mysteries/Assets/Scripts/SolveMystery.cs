@@ -12,57 +12,63 @@ public class SolveMystery : MonoBehaviour
 
     public Text winText;
 
-    public string firstValue;
-    public string secondValue;
-    public string thirdValue;
-
-    bool firstCorrect;
-    bool secondCorrect;
-    bool thirdCorrect;
-
+    public string[] firstSolution = new string[3];
+    public string[] secondSolution = new string[3];
+    public string[] thirdSolution = new string[3];
+    public string[] fourthSolution = new string[3];
+    public string[] fifthSolution = new string[1];
 
     public void CheckOptions()
     {
-        if (firstDrop.captionText.text == firstValue)
+        if (firstDrop.captionText.text == firstSolution[0] && secondDrop.captionText.text == firstSolution[1] && thirdDrop.captionText.text == firstSolution[2])
         {
-            firstCorrect = true;
-            Debug.Log("Correct 1");
+            print("Femme Fatale True Ending");
+        }
+        else if (firstDrop.captionText.text == secondSolution[0] && secondDrop.captionText.text == secondSolution[1] && thirdDrop.captionText.text == secondSolution[2])
+        {
+            print("Businessman True Ending");
+        }
+        else if (firstDrop.captionText.text == thirdSolution[0] && secondDrop.captionText.text == thirdSolution[1] && thirdDrop.captionText.text == thirdSolution[2])
+        {
+            print("Mobster True Ending");
+        }
+        else if (firstDrop.captionText.text == fourthSolution[0] && thirdDrop.captionText.text == fourthSolution[2]) //Doesn't matter what gun the Paperboy used
+        {
+            print("Paperboy True Ending");
+        }
+        else if (firstDrop.captionText.text == firstSolution[0])
+        {
+            print("Femme Fatale Untrue Ending");
+        }
+        else if (firstDrop.captionText.text == secondSolution[0])
+        {
+            print("Businessman Untrue Ending");
+        }
+        else if (firstDrop.captionText.text == thirdSolution[0])
+        {
+            print("Mobster Untrue Ending");
+        }
+        else if (firstDrop.captionText.text == fourthSolution[0])
+        {
+            print("Paperboy Untrue Ending");
+        }
+        else if (firstDrop.captionText.text == fifthSolution[0])
+        {
+            print("Suicide Ending");
         }
         else
         {
-            firstCorrect = false;
+            print("Incomplete Mystery");
         }
 
-        if (secondDrop.captionText.text == secondValue)
-        {
-            secondCorrect = true;
-            Debug.Log("Correct 2");
-        }
-        else
-        {
-            secondCorrect = false;
-        }
-
-        if (thirdDrop.captionText.text == thirdValue)
-        {
-            thirdCorrect = true;
-            Debug.Log("Correct 3");
-        }
-        else
-        {
-            thirdCorrect = false;
-        }
     }
 
     public void SolveM()
     {
-        if(firstCorrect && secondCorrect && thirdCorrect == true)
-        {
             Debug.Log("Solved the Mystery!");
             //winText.text = "You have solved the Mystery!";
             //winText.gameObject.SetActive(true);
             StartCoroutine(winChange());
-        }
     }
 
     IEnumerator winChange()
