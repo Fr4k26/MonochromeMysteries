@@ -15,9 +15,15 @@ public class Trigger : MonoBehaviour
     public Canvas manCanvas;
     public bool manTrigger;
     public UnityEvent makeItActive;
+    private GameObject playerObject;
 
     public GameObject triggerObj;
     public GameObject cameraUser;
+
+    void Start()
+    {
+        playerObject = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
     public void OnTriggerEnter(Collider collider)
@@ -44,6 +50,7 @@ public class Trigger : MonoBehaviour
             manTrigger = true;
         }
 
+        playerObject.GetComponent<Pause>().enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         cameraUser.GetComponent<CameraLook>().enabled = false;
@@ -51,6 +58,7 @@ public class Trigger : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        playerObject.GetComponent<Pause>().enabled = true;
         boyCanvas.gameObject.SetActive(false);
         boyTrigger = false;
         femmeCanvas.gameObject.SetActive(false);

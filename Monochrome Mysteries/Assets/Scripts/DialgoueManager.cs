@@ -65,7 +65,6 @@ public class DialgoueManager : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip[] paperBoy;
     public AudioClip[] femmeFatale;
-    //public AudioClip[] policeMan;
     public AudioClip[] businessMan;
     public AudioClip[] mobBoss;
 
@@ -228,10 +227,10 @@ public class DialgoueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        dialogueText.text = sentence;
-        femDialogueText.text = sentence;
-        mobDialogueText.text = sentence;
-        manDialougeText.text = sentence;
+        dialogueText.text = "";
+        femDialogueText.text = "";
+        mobDialogueText.text = "";
+        manDialougeText.text = "";
         
 
         if (femmeFataleTrigger.femmeTrigger == true)
@@ -259,9 +258,9 @@ public class DialgoueManager : MonoBehaviour
             StartCoroutine(nextSound());
         }
 
-        stillTalking = false;
+        //stillTalking = false;
         yield return null;
-        /*
+        
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -270,7 +269,7 @@ public class DialgoueManager : MonoBehaviour
             manDialougeText.text += letter;
             yield return null;
             stillTalking = false;
-        }*/
+        }
     }
 
     void EndDialogue()

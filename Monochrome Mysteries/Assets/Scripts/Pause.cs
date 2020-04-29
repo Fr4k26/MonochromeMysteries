@@ -17,6 +17,7 @@ public class Pause : MonoBehaviour
     private GameObject cameraObject;
     public GameObject journalUI;
     public GameObject howUI;
+    public GameObject optionsUI;
 
     private PlayerController playerController;
 
@@ -58,6 +59,7 @@ public class Pause : MonoBehaviour
         cameraObject.GetComponent<CameraController>().enabled = true;
         Time.timeScale = 1;
         pausePanel.SetActive(false);
+        optionsUI.SetActive(false);
         howUI.SetActive(false);
         StartCoroutine("pauseWait");
         Cursor.lockState = CursorLockMode.Locked;
