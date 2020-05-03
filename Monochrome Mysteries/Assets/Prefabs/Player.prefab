@@ -1533,6 +1533,20 @@ MonoBehaviour:
   walkSpeed: 6
   sprintSpeed: 8
   canmove: 1
+  walkingSounds:
+  - {fileID: 8300000, guid: ea10dfd84ea7f964fbc0a9388095631d, type: 3}
+  - {fileID: 8300000, guid: 362f5277371b9d445b2e594feca807da, type: 3}
+  - {fileID: 8300000, guid: cc32832bce87b6149b28023526e5939f, type: 3}
+  - {fileID: 8300000, guid: 148e0682c7ab24b49a161e3d8b6e4c2e, type: 3}
+  - {fileID: 8300000, guid: 1759834ff76852a439e8dc948a2e575a, type: 3}
+  - {fileID: 8300000, guid: fdc562e129edeee4ab713f4618423b69, type: 3}
+  runningSounds:
+  - {fileID: 8300000, guid: 148e0682c7ab24b49a161e3d8b6e4c2e, type: 3}
+  - {fileID: 8300000, guid: 1759834ff76852a439e8dc948a2e575a, type: 3}
+  - {fileID: 8300000, guid: fdc562e129edeee4ab713f4618423b69, type: 3}
+  - {fileID: 8300000, guid: ee36887160c927e4c905d49ad28e1aa8, type: 3}
+  - {fileID: 8300000, guid: 48dcac28618e26f4ebb76587b4a08b66, type: 3}
+  - {fileID: 8300000, guid: 46617f593a88c72489906a1189a5cbb3, type: 3}
   xMin: -100
   xMax: 300
   zMin: -200
@@ -1582,6 +1596,7 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   journalUI: {fileID: 0}
   howUI: {fileID: 4699889396508284843}
+  optionsUI: {fileID: 0}
 --- !u!1 &2606200036393070124
 GameObject:
   m_ObjectHideFlags: 0
@@ -9049,9 +9064,24 @@ MonoBehaviour:
   secondDrop: {fileID: 3208023127964069431}
   thirdDrop: {fileID: 3208023128319621500}
   winText: {fileID: 6754947320224776164}
-  firstValue: 1
-  secondValue: 1
-  thirdValue: 2
+  firstSolution:
+  - 
+  - 
+  - 
+  secondSolution:
+  - 
+  - 
+  - 
+  thirdSolution:
+  - 
+  - 
+  - 
+  fourthSolution:
+  - 
+  - 
+  - 
+  fifthSolution:
+  - 
 --- !u!1 &8961977743921944471
 GameObject:
   m_ObjectHideFlags: 0
