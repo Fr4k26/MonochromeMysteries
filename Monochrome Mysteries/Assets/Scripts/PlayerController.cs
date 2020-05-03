@@ -109,14 +109,14 @@ public class PlayerController : MonoBehaviour
     {
         if (isSprinting && isMoving == true)
         {
-            stepSource.PlayOneShot(runningSounds[Random.Range(0, runningSounds.Length)], 0.5f);
+            stepSource.PlayOneShot(runningSounds[Random.Range(0, runningSounds.Length)], 0.25f);
             isMoving = false;
             yield return new WaitForSeconds(0.255f);
             isMoving = true;
         }
         if (isSprinting == false && isMoving == true)
         {
-            stepSource.PlayOneShot(walkingSounds[Random.Range(0, walkingSounds.Length)], 0.4f);
+            stepSource.PlayOneShot(walkingSounds[Random.Range(0, walkingSounds.Length)], 0.2f);
             isMoving = false;
             yield return new WaitForSeconds(0.425f);
             isMoving = true;

@@ -10,10 +10,15 @@ public class LadderBehaviour : MonoBehaviour
     private Vector3 up = new Vector3(0, 1, 0);
     private Vector3 down = new Vector3(0, -1, 0);
 
+    public AudioClip[] climbingSounds;
+    private AudioSource ladderSource;
+    private bool onLadder = false;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        ladderSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,10 +30,12 @@ public class LadderBehaviour : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 player.transform.Translate(up * Time.deltaTime * climbSpeed);
+                StartCoroutine(nextRung());
             }
             if (Input.GetKey(KeyCode.S))
             {
                 player.transform.Translate(down * Time.deltaTime * climbSpeed);
+                StartCoroutine(nextRung());
             }
         }
     }
@@ -37,6 +44,7 @@ public class LadderBehaviour : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            onLadder = true;
             player.GetComponent<PlayerController>().canClimb = true;
             player.GetComponent<PlayerController>().canmove = false;
             player.GetComponent<Rigidbody>().useGravity = false;
@@ -48,9 +56,21 @@ public class LadderBehaviour : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            onLadder = false;
             player.GetComponent<PlayerController>().canClimb = false;
             player.GetComponent<PlayerController>().canmove = true;
             player.GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
+
+    IEnumerator nextRung()
+    {
+        if (onLadder == true)
+        {
+            ladderSource.PlayOneShot(climbingSounds[Random.Range(0, climbingSounds.Length)], 0.55f);
+            onLadder = false;
+            yield return new WaitForSeconds(0.555f);
+            onLadder = true;
         }
     }
 }

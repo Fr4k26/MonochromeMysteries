@@ -154,6 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   climbSpeed: 1
+  climbingSounds:
+  - {fileID: 8300000, guid: 8b759f40b9a78fe49815d6950f25a8bb, type: 3}
+  - {fileID: 8300000, guid: 5691ce0711175064894f7acdf00decbe, type: 3}
+  - {fileID: 8300000, guid: c4bfd82ae94fa4845b20c2092e509095, type: 3}
+  - {fileID: 8300000, guid: 83ee957afe80a3e43bcddf50f85e0994, type: 3}
+  - {fileID: 8300000, guid: 7afe6d729735e114a8cb6432cce52060, type: 3}
+  - {fileID: 8300000, guid: 9fcade5b1fe9fa8459d4728bee849757, type: 3}
 --- !u!1 &8446009458542065776
 GameObject:
   m_ObjectHideFlags: 0
