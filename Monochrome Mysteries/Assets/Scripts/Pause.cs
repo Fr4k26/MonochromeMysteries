@@ -2,7 +2,7 @@
 // File Name:   Pause.cs
 // Author:      Jake Hyland
 // Description: Contains a the Pause and Continue functions necessary to bring up or hide the pause menu as well as disable
-                other player actions when said menu is displayed.
+                other player actions when said menu is displayed, such as the options panel and the mouse cursor.
 ************************************************************************************************/
 
 using System.Collections;
