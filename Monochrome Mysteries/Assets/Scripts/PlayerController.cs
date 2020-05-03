@@ -16,7 +16,13 @@ public class PlayerController : MonoBehaviour
 	float distToGround = 2f;
     float lastYPos;
     public bool canmove = true;
-    
+
+    public AudioClip[] walkingSounds;
+    public AudioClip[] runningSounds;
+    private AudioSource stepSource;
+    private bool isSprinting = false;
+    private bool isMoving = true;
+
 
     // Min and max values for player position -- use for boundaries regarding where you want the player to go.
     public float xMin, xMax, zMin, zMax;
@@ -33,6 +39,7 @@ public class PlayerController : MonoBehaviour
 		playerController = GetComponent<PlayerController>();
         lastYPos = GetComponent<Rigidbody>().transform.position.y;
         camera = FindObjectOfType<CameraCollision>().gameObject;
+        stepSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
     // Handle frame-based events
@@ -43,10 +50,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && canmove)
         {
             moveSpeed = sprintSpeed;
+            isSprinting = true;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) && canmove)
         {
             moveSpeed = walkSpeed;
+            isSprinting = false;
         }
 
        
@@ -86,16 +95,35 @@ public class PlayerController : MonoBehaviour
                 float newMoveSpeed = moveSpeed * Time.deltaTime; // Smooth player movement
                                                                  // Move player using transform
                                                                  //transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
-                //Vector3 nextMove = (playerRB.position + Vector3.ClampMagnitude(camera.transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical), newMoveSpeed));
-                //playerRB.MovePosition(nextMove);
+                                                                 //Vector3 nextMove = (playerRB.position + Vector3.ClampMagnitude(camera.transform.rotation * new Vector3(moveHorizontal, 0f, moveVertical), newMoveSpeed));
+                                                                 //playerRB.MovePosition(nextMove);
 
+                StartCoroutine(nextStep());
                 transform.Translate(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
                 playerRB.MovePosition(transform.position);
             }
         }
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator nextStep()
+    {
+        if (isSprinting && isMoving == true)
+        {
+            stepSource.PlayOneShot(runningSounds[Random.Range(0, runningSounds.Length)], 0.5f);
+            isMoving = false;
+            yield return new WaitForSeconds(0.255f);
+            isMoving = true;
+        }
+        if (isSprinting == false && isMoving == true)
+        {
+            stepSource.PlayOneShot(walkingSounds[Random.Range(0, walkingSounds.Length)], 0.4f);
+            isMoving = false;
+            yield return new WaitForSeconds(0.425f);
+            isMoving = true;
+        }
+    }
+
+        private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
