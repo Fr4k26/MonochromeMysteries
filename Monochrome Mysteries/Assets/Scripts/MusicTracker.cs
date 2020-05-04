@@ -13,8 +13,8 @@ using UnityEngine;
 public class MusicTracker : MonoBehaviour
 {
 
-    //Finds if the scene includes a Music playing object and destroys itself if there is new music
-    //If there isn't any new music, the object is not destroyed
+    //Finds if the scene includes a Music playing object and destroys that music to continue playing
+    //If there isn't any new music, nothing is destroyed
 
     void Awake()
     {

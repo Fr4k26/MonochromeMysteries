@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   MusicFader.cs
+// Author:      Jake Hyland
+// Description: Contains the trigger-based conditions for increasing and decreasing the volume
+//              of character music according to player proximity.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

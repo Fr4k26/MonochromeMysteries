@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   MusicTracker.cs
+// Authors:      Jamey Colleen (83%) & Jake Hyland (17%)
+// Description: Contains references to the Player in order to allow them to move up and down the
+//              ladders (Jamey), as well as play sounds when climbing is taking place (Jake).
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

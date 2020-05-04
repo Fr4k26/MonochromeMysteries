@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   PageCheck.cs
+// Author:      Jake Hyland
+// Description: Contains the two functions called by buttons on the How To Play Screen in
+//              order to properly display new pages, as well as loop back from the last page
+//              to the first one and vice versa.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

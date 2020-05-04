@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   GameplayMusic.cs
+// Author:      Jake Hyland
+// Description: Acts as a conditional to MusicTracker.cs that will remove the Main Menu Music
+//              from the gameplay scene.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
