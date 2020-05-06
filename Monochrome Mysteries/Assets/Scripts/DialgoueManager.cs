@@ -263,14 +263,25 @@ public class DialgoueManager : MonoBehaviour
         //stillTalking = false;
         yield return null;
         
-        foreach (char letter in sentence.ToCharArray())
+        if(PlayerPrefs.GetInt("displayAll", 0) == 1)
         {
-            dialogueText.text += letter;
-            femDialogueText.text += letter;
-            mobDialogueText.text += letter;
-            manDialougeText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            dialogueText.text = sentence;
+            femDialogueText.text = sentence;
+            mobDialogueText.text = sentence;
+            manDialougeText.text = sentence;
             stillTalking = false;
+        }
+        else
+        {
+            foreach (char letter in sentence.ToCharArray())
+            {
+                dialogueText.text += letter;
+                femDialogueText.text += letter;
+                mobDialogueText.text += letter;
+                manDialougeText.text += letter;
+                yield return new WaitForSeconds(textSpeed);
+                stillTalking = false;
+            }
         }
     }
 
