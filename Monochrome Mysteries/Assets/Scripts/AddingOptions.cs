@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   AddingOptions.cs
+// Author:      Adrian Frak
+// Description: This script is for managing new choices given to the player in dialogue with
+//              different characters, referencing the Dialogue Manager and the Player.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

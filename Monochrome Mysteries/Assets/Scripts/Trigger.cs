@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   Trigger.cs
+// Author:      Adrian Frak
+// Description: This script is for managing the canvas elements associated with each character
+//              when the player approaches them in order to start a conversation.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

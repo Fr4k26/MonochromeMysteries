@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   DialogueTrigger.cs
+// Author:      Adrian Frak
+// Description: This script is for activating dialogue between the player and the characters.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;

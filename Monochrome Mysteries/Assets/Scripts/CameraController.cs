@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   CameraController.cs
+// Authors:     Jamey Colleen (40%), David Suriano (50%), and Jake Hyland (10%)
+// Description: Contains a significant number of referenced images, audio, textures, and related
+//              variables necessary to allow the player to use the camera and all its features,
+//              as well as the journal. Written originally by Jamey, then refactored by David
+//              and updated considerably. Audio functionality added by Jake.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +34,6 @@ public class CameraController : MonoBehaviour
     public GameObject journalUI;
     public GameObject optionsUI;
 
-    private Flash flash;
     private Texture2D bodyShotTexture;
     private Texture2D paperShotTexture;
     private Texture2D blackmailShotTexture;

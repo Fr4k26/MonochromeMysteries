@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   ButtonFunctions.cs
+// Authors:     Grant Winter-Helms (16%) & Jake Hyland (84%)
+// Description: Contains references the Buttons present in the Main Menu Scene. Was originally
+//              created by Grant to load different scenes, and was expanded upon by Jake to
+//              incorporate audio, as well as load the main level using AsyncOperation.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

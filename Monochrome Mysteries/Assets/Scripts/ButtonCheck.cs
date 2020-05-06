@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   ButtonCheck.cs
+// Author:      Adrian Frak
+// Description: This script is for interfacing with the Dialogue Manger in order to properly
+//              end conversations between characters and the player.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

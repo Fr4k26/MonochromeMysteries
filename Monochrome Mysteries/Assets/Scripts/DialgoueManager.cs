@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   DialgoueManager.cs
+// Authors:     Adrian Frak (45%), David Suriano (20%), and Jake Hyland (35%)
+// Description: Contains a significant number of references to character-specific variables and
+//              objects, which are turned active/inactive, editing at runtime, and used to base
+//              other functions off of. Originally written by Adrian, tweaked and iterated upon
+//              by David, and adjusted for audio and the "look at" portions by Jake.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +16,6 @@ using UnityEngine.UI;
 public class DialgoueManager : MonoBehaviour
 {
     public UnityEvent restartButton;
-    GameController gc;
     public List<GameObject> buttonList;
     public GameObject buttonOption;
     public GameObject PaperBoyCanvas;
@@ -60,9 +68,6 @@ public class DialgoueManager : MonoBehaviour
     private bool stillTalking = false;
     public bool showChoices;
 
-    public bool opensDoor; //Determines whether or not this dialogue opens a door
-    public int doorTarget; //Determines which door will open
-
     //Audio Source Attached to Camera & Sound Effect Lists for Dialogue
     private AudioSource playerAudio;
     public AudioClip[] paperBoy;
@@ -72,7 +77,6 @@ public class DialgoueManager : MonoBehaviour
 
     void Start()
     {
-        gc = FindObjectOfType<GameController>();
         buttonList = new List<GameObject>();
         endDia = true;
         sentences = new Queue<string>();
@@ -126,11 +130,6 @@ public class DialgoueManager : MonoBehaviour
         femNameText.text = dialogue.name;
         mobNameText.text = dialogue.name;
         manNameText.text = dialogue.name;
-
-        if(opensDoor)
-        {
-            gc.doors[doorTarget].SetActive(false);
-        }
 
         sentences.Clear();
 

@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   ScrollToggle.cs
+// Author:      David Suriano
+// Description: This script is used to control the scrolling text during conversations with all
+//              the characters. Due to hardware issues, some computers display text at an
+//              annoyingly slow speed, so an optional toggle will allow them to avoid this on
+//              slower machines.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

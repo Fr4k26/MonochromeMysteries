@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   DoorControl.cs
+// Author:      Jake Hyland
+// Description: This script was meant for use with activating an originally locked gate that
+//              was cut from development.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

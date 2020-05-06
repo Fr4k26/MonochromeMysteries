@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   SolveMystery.cs
+// Author:      David Suriano
+// Description: This script is used to handle which ending to display based on the drop down
+//              entries in the Journal based on collected evidence, including the text written
+//              for each ending.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

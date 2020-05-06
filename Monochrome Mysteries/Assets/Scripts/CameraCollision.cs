@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   CameraCollision.cs
+// Author:      Jamey Colleen
+// Description: This script is made to smooth the Camera's movement and keep up with the player's transform.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
