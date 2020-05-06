@@ -1,6 +1,6 @@
 ﻿/************************************************************************************************
 // File Name:   SolveMystery.cs
-// Author:      David Suriano
+// Author:      Adrian Frak (20%), David Suriano (80%)
 // Description: This script is used to handle which ending to display based on the drop down
 //              entries in the Journal based on collected evidence, including the text written
 //              for each ending.
@@ -102,7 +102,7 @@ public class SolveMystery : MonoBehaviour
 
     IEnumerator winChange()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Victory");
     }
 }
