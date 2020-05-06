@@ -100,7 +100,8 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(nextStep());
                 Vector3 moveDir = new Vector3(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
-                if(!Physics.Raycast(transform.position, transform.TransformDirection(moveDir), .5f))//If you aren't going to run into something
+                Vector3 feet = transform.position + new Vector3(0, -.75f, 0);
+                if(!Physics.Raycast(feet, transform.TransformDirection(moveDir), .5f))//If you aren't going to run into something
                 {
                     //transform.Translate(moveDir);
                     //playerRB.MovePosition(transform.position);
