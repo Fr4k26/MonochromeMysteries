@@ -60,10 +60,12 @@ public class CameraController : MonoBehaviour
     public Material chalkNonEM, blackmailNonEM, cardNonEM, briefcaseNonEM, tommyNonEM, gunNonEM, bloodNonEM, holesNonEM, deadcamNonEM;//Non-emissive version of evidence materials
     public Material chalkEM, blackmailEM, cardEM, briefcaseEM, tommyEM, gunEM, bloodEM, holesEM, deadcamEM;//Emissive version of evidence materials
     public GameObject chalkObj, blackmailObj, cardObj, briefcaseObj, tommyObj, gunObj1, gunObj2, gunObj3, gunObj4, bloodObj, holesObj1, holesObj2, holesObj3, deadcamObj;//Objectives
+    public DialogueTrigger trigger;
 
     void Start()
     {
         playerController = playerObject.GetComponent<PlayerController>();
+        trigger = FindObjectOfType<DialogueTrigger>();
         killerOptions = new List<string>();
         weaponOptions = new List<string>();
         motiveOptions = new List<string>();
@@ -316,18 +318,25 @@ public class CameraController : MonoBehaviour
                         if (name.Equals("Chalkstains"))
                         {
                             FoundEvidence(bodyShotTexture, "Victim", "Killer", bodyImage, "Outline of Victim", body, bodyFound);
-                            bodyFound = true;
+                            
+                                bodyFound = true;
+ 
+                           
                             chalkObj.GetComponent<Renderer>().material = chalkNonEM;
                             chalkObj.GetComponent<AudioSource>().volume = 0f;
                         }
                         else if (name.Equals("Paperboy"))
                         {
                             FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy, paperboyFound);
-                            paperboyFound = true;
+                            
+                                paperboyFound = true;
+                            
+                            
                         }
                         else if (name.Equals("Blackmail Note"))
                         {
                             FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Soaked Blackmail Note", blackmail, blackmailFound);
+                            
                             blackmailFound = true;
                             blackmailObj.GetComponent<Renderer>().material = blackmailNonEM;
                             blackmailObj.GetComponent<AudioSource>().volume = 0f;
@@ -335,6 +344,7 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Membership Card"))
                         {
                             FoundEvidence(cardShotTexture, "Communist Membership Card", "Motive", cardImage, "Communist Party Membership Card", card, cardFound);
+                           
                             cardFound = true;
                             cardObj.GetComponent<Renderer>().material = cardNonEM;
                             cardObj.GetComponent<AudioSource>().volume = 0f;
@@ -342,6 +352,7 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Briefcase"))
                         {
                             FoundEvidence(briefcaseShotTexture, "Briefcase", "Motive", briefcaseImage, "Large Briefcase", briefcase, briefcaseFound);
+                           
                             briefcaseFound = true;
                             briefcaseObj.GetComponent<Renderer>().material = briefcaseNonEM;
                             briefcaseObj.GetComponent<AudioSource>().volume = 0f;
@@ -349,6 +360,7 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Tommygun"))
                         {
                             FoundEvidence(tommyShotTexture, "Tommygun", "Weapon", tommygunImage, "Freshly Fired Tommygun", tommygun, tommygunFound);
+                           
                             tommygunFound = true;
                             tommyObj.GetComponent<Renderer>().material = tommyNonEM;
                             tommyObj.GetComponent<AudioSource>().volume = 0f;
@@ -356,6 +368,7 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Tommygun Bulletholes"))
                         {
                             FoundEvidence(tommyShotHolesTexture, "Tommygun Bulletholes", "N/A", tommygunHolesImage, "Bloodless Bulletholes", tommygunHoles, tommygunHolesFound);
+                          
                             tommygunHolesFound = true;
                             holesObj1.GetComponent<AudioSource>().volume = 0f;
                             holesObj1.GetComponent<Renderer>().material = holesNonEM;
@@ -365,6 +378,7 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Revolver"))
                         {
                             FoundEvidence(gunShotTexture, "Revolver", "Weapon", gunImage, "Discarded Revolver", gun, gunFound);
+                           
                             gunFound = true;
                             gunObj1.GetComponent<AudioSource>().volume = 0f;
                             gunObj1.GetComponent<Renderer>().material = gunNonEM;
@@ -375,12 +389,14 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Blood Spatter"))
                         {
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
+                        
                             bloodFound = true;
                             bloodObj.GetComponent<Renderer>().material = bloodNonEM;
                         }
                         else if (name.Equals("Bloody Camera"))
                         {
                             FoundEvidence(deadCameraTexture, "Bloody Camera", "Motive", deadCameraImage, "Bloody Camera", deadCamera, deadCameraFound);
+                         
                             deadCameraFound = true;
                             deadcamObj.GetComponent<Renderer>().material = deadcamNonEM;
                             deadcamObj.GetComponent<AudioSource>().volume = 0f;
@@ -388,16 +404,19 @@ public class CameraController : MonoBehaviour
                         else if (name.Equals("Femme Fatale Character"))
                         {
                             FoundEvidence(femmeShotTexture, "Woman in Red", "Killer", femmeImage, "Woman in Red", femme, femmeFound);
+                         
                             femmeFound = true;
                         }
                         else if (name.Equals("MobBoss"))
                         {
                             FoundEvidence(mobShotTexture, "Mobster", "Killer", mobImage, "Suspicious Woman", mob, mobFound);
+                        
                             mobFound = true;
                         }
                         else if (name.Equals("BusinessMan"))
                         {
                             FoundEvidence(businessShotTexture, "Businessman", "Killer", businessImage, "Local Businessman", business, businessFound);
+                      
                             businessFound = true;
                         }
                     }

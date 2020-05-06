@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   Trigger.cs
+// Author:      (80%)Adrian Frak and (10%)Jake Hyland and (10%) David Suriano
+// Description: This script contains the entirety of how the dialogue system works in general. Everything
+                from how the dialogue begins, and how the dialogue ends included in this script, as well as 
+                certain sounds and animations playing when the dialogue starts.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
