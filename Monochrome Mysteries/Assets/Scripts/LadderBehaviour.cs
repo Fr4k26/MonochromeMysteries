@@ -24,6 +24,7 @@ public class LadderBehaviour : MonoBehaviour
 
     public AudioClip[] climbingSounds;
     private AudioSource ladderSource;
+    private bool ladderNoise = true;
 
     void Start()
     {
@@ -76,6 +77,7 @@ public class LadderBehaviour : MonoBehaviour
 
     public void StickToLadder()
     {
+        ladderNoise = true;
         onLadder = true;
         justOnLadder = false;
         player.GetComponent<PlayerController>().canClimb = true;
@@ -88,6 +90,7 @@ public class LadderBehaviour : MonoBehaviour
 
     public void KickOffLadder()
     {
+        ladderNoise = false;
         onLadder = false;
         justOnLadder = true;
         player.GetComponent<PlayerController>().canClimb = false;
@@ -99,10 +102,12 @@ public class LadderBehaviour : MonoBehaviour
 
     IEnumerator nextRung()
     {
-        if (onLadder == true)
+        if (onLadder && ladderNoise == true)
         {
-            ladderSource.PlayOneShot(climbingSounds[Random.Range(0, climbingSounds.Length)], 0.55f);
+            ladderNoise = false;
+            ladderSource.PlayOneShot(climbingSounds[Random.Range(0, climbingSounds.Length)], 0.45f);
             yield return new WaitForSeconds(.5f);
+            ladderNoise = true;
         }
     }
 }
