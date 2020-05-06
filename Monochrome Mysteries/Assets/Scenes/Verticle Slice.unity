@@ -641,6 +641,9 @@ MonoBehaviour:
     name: Woman in Red
     sentences:
     - '"Good for you?"'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &92222385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5360,7 +5363,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 911182049}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10920,6 +10923,9 @@ MonoBehaviour:
     name: Woman in Red
     sentences:
     - "\"He was my boss, I'm here to assist in the investigation.\"\r"
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &496874890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13381,6 +13387,11 @@ MonoBehaviour:
   femmeTrigger: 0
   mobCanvas: {fileID: 1786282177739136519}
   mobTrigger: 0
+  manCanvas: {fileID: 0}
+  manTrigger: 0
+  makeItActive:
+    m_PersistentCalls:
+      m_Calls: []
   triggerObj: {fileID: 711596497}
   cameraUser: {fileID: 1323749432}
 --- !u!135 &711596500
@@ -13969,6 +13980,61 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1585718309028915629, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309028915629, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309028915629, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309194232019, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309194232019, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309263203335, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309263203335, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309538705863, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309538705863, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585718309538705863, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927035421472444231, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00024414062
+      objectReference: {fileID: 0}
     - target: {fileID: 2606200034826879392, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: sprintSpeed
@@ -14340,10 +14406,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -68
       objectReference: {fileID: 0}
+    - target: {fileID: 4054395415017226789, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4054395415017226790, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699889396508284839, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801373583193678352, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -14369,6 +14445,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169951693719872846, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169951693802549343, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 7348326385085989057, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -14468,6 +14554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720857644640591700, guid: 01f2857e67b687e4e95e5d4e17cce949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7720857644640591701, guid: 01f2857e67b687e4e95e5d4e17cce949,
         type: 3}
@@ -14819,13 +14910,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9ce083ea102b949ac2e73a49f8c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmMenu: {fileID: 0}
   firstDrop: {fileID: 1303134352}
   secondDrop: {fileID: 167820015}
   thirdDrop: {fileID: 668314019}
   winText: {fileID: 69971007}
-  firstValue: Gun
-  secondValue: Paperboy
-  thirdValue: Pinkslip
+  firstSolution:
+  - 
+  - 
+  - 
+  secondSolution:
+  - 
+  - 
+  - 
+  thirdSolution:
+  - 
+  - 
+  - 
+  fourthSolution:
+  - 
+  - 
+  - 
+  fifthSolution:
+  - 
 --- !u!4 &747737312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 7ab9477d5cf3586459f990896b2ed4b6,
@@ -15952,6 +16059,9 @@ MonoBehaviour:
     - "[\"And now that he's dead?\"]\r\r\nA flare in her eyes, she didn't expect
       that so soon, \"Well now... I suppose I am an American businessman.\" She laughs
       silently at this premise.\r"
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &839096511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16261,7 +16371,7 @@ PrefabInstance:
     - target: {fileID: 4935782654594863883, guid: fab11424c2050234abb05d7a1cbe097c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4935782654594863883, guid: fab11424c2050234abb05d7a1cbe097c,
         type: 3}
@@ -16569,6 +16679,9 @@ MonoBehaviour:
     sentences:
     - '"Uh yeah I mean-- won''t get that promotion just standing here gawking, eh?"
       there seems to be a certain truth in what he''s saying.'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &917050213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16961,6 +17074,9 @@ MonoBehaviour:
     - '"Oy, why didn''t you just say so, eh?" his suspicion subsides once he realizes
       you''re with the press, "What''s your name then, could''ve peddled a headline
       of yours."'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &944064300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18356,6 +18472,9 @@ MonoBehaviour:
     name: Paper Boy
     sentences:
     - He whistles loudly, "No sirree-- not a peep!" This question was easy for him.
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1171700415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20411,6 +20530,9 @@ MonoBehaviour:
     - "After a moment with your hand outstretched for a closing handshake, she mercifully
       speaks.\r\n\"Gina Afluette. Charmed.\" The immediate tension has passed, but
       you can feel your error as she gingerly shakes your hand.\r"
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1413083269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20584,6 +20706,9 @@ MonoBehaviour:
     - He immediately is rustling through his own paper, looking for your name, which
       you're sure he won't find, "Everyone calls me Reggie or uh... Reg," he says
       without fanfare.
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1420491242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26618,6 +26743,9 @@ MonoBehaviour:
     name: Paper Boy
     sentences:
     - '"Seeya, Mister."'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1552665806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28373,6 +28501,9 @@ MonoBehaviour:
     sentences:
     - '"Oh, I work for her, and I suppose now even moreso. Always a nice lady that
       one, if a bit intimidating."'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1676593394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30985,6 +31116,11 @@ MonoBehaviour:
   femmeTrigger: 0
   mobCanvas: {fileID: 1786282177739136519}
   mobTrigger: 0
+  manCanvas: {fileID: 0}
+  manTrigger: 0
+  makeItActive:
+    m_PersistentCalls:
+      m_Calls: []
   triggerObj: {fileID: 1927989404}
   cameraUser: {fileID: 1323749432}
 --- !u!135 &1927989407
@@ -35919,6 +36055,11 @@ MonoBehaviour:
   femmeTrigger: 0
   mobCanvas: {fileID: 1786282177739136519}
   mobTrigger: 0
+  manCanvas: {fileID: 0}
+  manTrigger: 0
+  makeItActive:
+    m_PersistentCalls:
+      m_Calls: []
   triggerObj: {fileID: 1984480038}
   cameraUser: {fileID: 1323749432}
 --- !u!135 &1984480041
@@ -36220,6 +36361,9 @@ MonoBehaviour:
       would be. Though...\" she slows and her jaw sets, \"I think I should leave
       conjecture to your kind.\"\r"
     - "She seems to have locked down, you should try another angle.\r"
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2014771288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37428,6 +37572,9 @@ MonoBehaviour:
     name: Mobster
     sentences:
     - '"Don''t have anything more to say."'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1691939214297641374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37520,6 +37667,9 @@ MonoBehaviour:
     name: Mobster
     sentences:
     - Her face breaks out in a sadistic grin, "Sure, what the hell?"
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!222 &1786282177074421508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38227,6 +38377,9 @@ MonoBehaviour:
     name: Mobster
     sentences:
     - A confident character leans up against the stony wall behind herself.
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1786282178300752807
 GameObject:
   m_ObjectHideFlags: 0
@@ -39330,6 +39483,9 @@ MonoBehaviour:
     sentences:
     - '"Can''t say I do. Just gettin'' paid to keep a door shut. Maybe if I''d have
       been paid a bit more I''d keep my trap shut too."'
+  onConvoEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6909557726291032290
 MonoBehaviour:
   m_ObjectHideFlags: 0
