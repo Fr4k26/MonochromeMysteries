@@ -106,7 +106,7 @@ public class LadderBehaviour : MonoBehaviour
         if (onLadder == true)
         {
             ladderSource.PlayOneShot(climbingSounds[Random.Range(0, climbingSounds.Length)], 0.55f);
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.5f);
         }
     }
 }
