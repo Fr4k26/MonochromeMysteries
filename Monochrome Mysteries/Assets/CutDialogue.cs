@@ -14,7 +14,7 @@ public class CutDialogue : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
-    void DialogueCut()
+    public void DialogueCut()
     {
         diagMan.paperTalking.SetBool("isTalking", false);
         diagMan.femTalking.SetBool("isTalking", false);

@@ -287,7 +287,6 @@ public class DialgoueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        playerController.canmove = true;
 
         paperAnimator.SetBool("isOpen", false);
         femAnimator.SetBool("isOpen", false);
@@ -349,7 +348,6 @@ public class DialgoueManager : MonoBehaviour
 
         stillTalking = false;
 
-        playerController.canmove = true;
         if(currentTrigger != null)
         {
             currentTrigger.onConvoEnd.Invoke();
