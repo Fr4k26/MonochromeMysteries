@@ -25,6 +25,7 @@ public class ButtonFunctions : MonoBehaviour
     void start()
     {
         menuChoice = 0;
+        GameObject oldMusic = GameObject.FindGameObjectWithTag("Music Source");
     }
 
     public void openGameScreen()
@@ -82,6 +83,7 @@ public class ButtonFunctions : MonoBehaviour
         if (gameStart == false)
         {
             var panelFader = GameObject.Find("Fade Transition").GetComponent<CanvasGroup>();
+            //GameObject oldMusic = GameObject.Find("Music Source");
             gameStart = true;
             StartCoroutine(Fadein(panelFader, panelFader.alpha, 1));
             buttonSound.PlayOneShot(menuFeedback[0]);
