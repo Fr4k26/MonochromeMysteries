@@ -1,8 +1,10 @@
-﻿/************************************************************************************************
+
+﻿
+/************************************************************************************************
 // File Name:   Trigger.cs
-// Author:      Adrian Frak 
-// Description: This script contains what the trigger does when the player enters it, which mainly
-                involves activating the canvas so the dialogue can be triggered.
+// Author:      Adrian Frak
+// Description: This script is for managing the canvas elements associated with each character
+//              when the player approaches them in order to start a conversation.
 ************************************************************************************************/
 using System.Collections;
 using System.Collections.Generic;

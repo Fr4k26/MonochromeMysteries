@@ -1,9 +1,8 @@
-﻿/************************************************************************************************
-// File Name:   AddingOptions.cs
-// Author:      Adrian Frak and David Suriano
-// Description: Contains the functions to be able to add dialogue options for the NPC's as well as adding dialogue options 
-                when the player has taken a picture of something.
-************************************************************************************************/
+﻿
+// Author:      Adrian Frak
+// Description: This script is for managing new choices given to the player in dialogue with
+//              different characters, referencing the Dialogue Manager and the Player.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

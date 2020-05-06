@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   CameraLook.cs
+// Author:      Jamey Colleen
+// Description: This script is made to properly control the direction the camera is always pointing
+//              in accordance with the player's transform.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

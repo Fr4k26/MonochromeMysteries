@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   PlayerController.cs
+// Authors:     Jamey Colleen (40%), David Suriano (45%), and Jake Hyland (15%)
+// Description: Contains the functions allowing the Player to control their avatar and limits
+//              them from moving under certain conditions. Originally written by Jamey, with
+//              significant updates for movement from David, and sound-specific code from Jake.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -100,7 +108,8 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(nextStep());
                 Vector3 moveDir = new Vector3(moveHorizontal * newMoveSpeed, 0f, moveVertical * newMoveSpeed);
-                if(!Physics.Raycast(transform.position, transform.TransformDirection(moveDir), .5f))//If you aren't going to run into something
+                Vector3 feet = transform.position + new Vector3(0, -.75f, 0);
+                if(!Physics.Raycast(feet, transform.TransformDirection(moveDir), .5f))//If you aren't going to run into something
                 {
                     //transform.Translate(moveDir);
                     //playerRB.MovePosition(transform.position);

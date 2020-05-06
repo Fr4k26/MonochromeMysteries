@@ -1,8 +1,7 @@
-﻿/************************************************************************************************
-// File Name:   DialogueTrigger.cs
-// Author:      Adrian Frak 
-// Description: Contains the script that triggers the dialogue when the player enters the trigger.
-************************************************************************************************/
+﻿
+// Author:      Adrian Frak
+// Description: This script is for activating dialogue between the player and the characters.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;

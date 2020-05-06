@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿
+/************************************************************************************************
+// File Name:   CameraController.cs
+// Authors:     Jamey Colleen (40%), David Suriano (50%), and Jake Hyland (10%)
+// Description: Contains a significant number of referenced images, audio, textures, and related
+//              variables necessary to allow the player to use the camera and all its features,
+//              as well as the journal. Written originally by Jamey, then refactored by David
+//              and updated considerably. Audio functionality added by Jake.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +34,6 @@ public class CameraController : MonoBehaviour
     public GameObject journalUI;
     public GameObject optionsUI;
 
-    private Flash flash;
     private Texture2D bodyShotTexture;
     private Texture2D paperShotTexture;
     private Texture2D blackmailShotTexture;
@@ -134,27 +143,27 @@ public class CameraController : MonoBehaviour
                 textUI.SetActive(false);
             }
 
-            if(!briefcaseFound)
-            briefcaseObj.GetComponent<Renderer>().material = briefcaseEM;
-            if(!bodyFound)
-            chalkObj.GetComponent<Renderer>().material = chalkEM;
-            if(!tommygunFound)
-            tommyObj.GetComponent<Renderer>().material = tommyEM;
+            if (!briefcaseFound)
+                briefcaseObj.GetComponent<Renderer>().material = briefcaseEM;
+            if (!bodyFound)
+                chalkObj.GetComponent<Renderer>().material = chalkEM;
+            if (!tommygunFound)
+                tommyObj.GetComponent<Renderer>().material = tommyEM;
             if (!deadCameraFound)
-            deadcamObj.GetComponent<Renderer>().material = deadcamEM;
+                deadcamObj.GetComponent<Renderer>().material = deadcamEM;
             if (!bloodFound)
-            bloodObj.GetComponent<Renderer>().material = bloodEM;
+                bloodObj.GetComponent<Renderer>().material = bloodEM;
             if (!cardFound)
-            cardObj.GetComponent<Renderer>().material = cardEM;
+                cardObj.GetComponent<Renderer>().material = cardEM;
             if (!blackmailFound)
-            blackmailObj.GetComponent<Renderer>().material = blackmailEM;
-            if(!tommygunHolesFound)
+                blackmailObj.GetComponent<Renderer>().material = blackmailEM;
+            if (!tommygunHolesFound)
             {
                 holesObj1.GetComponent<Renderer>().material = holesEM;
                 holesObj2.GetComponent<Renderer>().material = holesEM;
                 holesObj3.GetComponent<Renderer>().material = holesEM;
             }
-            if(!gunFound)
+            if (!gunFound)
             {
                 gunObj1.GetComponent<Renderer>().material = gunEM;
                 gunObj2.GetComponent<Renderer>().material = gunEM;
@@ -192,7 +201,7 @@ public class CameraController : MonoBehaviour
             gunObj3.GetComponent<Renderer>().material = gunNonEM;
             gunObj4.GetComponent<Renderer>().material = gunNonEM;
         }
-        if (Input.GetMouseButtonDown(2) && cameraLens) //If you scroll while you're in camera mode change the field of view
+        if ((Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Z)) && cameraLens) //If you press MMB or Z while you're in camera mode change the field of view
         {
             camera.fieldOfView -= 25;
 
@@ -215,7 +224,7 @@ public class CameraController : MonoBehaviour
             bloodBool = true;
         }*/
             ;
-        if (Input.GetKeyDown(KeyCode.Tab))//If you hit tab, open the journal
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.J))//If you hit tab, open the journal
         {
             if (journalUI != null)
             {

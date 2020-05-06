@@ -1,9 +1,9 @@
-﻿/************************************************************************************************
-// File Name:   Dialogue.cs
-// Author:      Adrian Frak 
-// Description: Contains the script of how to write dialogue within the hierarchy for Unity, which
-                contains the dialogue for the game.
-************************************************************************************************/
+﻿
+// Author:      Adrian Frak
+// Description: This script is for managing the basic instantiation of dialogue in a character's
+//              UI display and controlling the size for each display.
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

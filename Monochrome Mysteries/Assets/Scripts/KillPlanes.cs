@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   KillPlanes.cs
+// Author:      Jake Hyland
+// Description: Contains the two functions called to reset the Player's position if they manage
+//              to escape the level's geometry.
+************************************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
