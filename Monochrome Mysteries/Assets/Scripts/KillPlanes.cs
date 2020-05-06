@@ -23,9 +23,9 @@ public class KillPlanes : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collide");
-        if (GetComponent<Collider>().tag == "Player")
+        if (other.tag == "Player")
         {
+            Debug.Log("collide");
             playerTransform.transform.position = respawnPoint.transform.position;
         }
     }
