@@ -14,6 +14,7 @@ public class AddingOptions : MonoBehaviour
     DialgoueManager manager;
     DialogueTrigger trigger;
     CameraController controller;
+    public bool introEnd = false;
     // Start is called before the first frame update
 
     private void Start()
@@ -34,8 +35,15 @@ public class AddingOptions : MonoBehaviour
 
     public void AddOptionCam()
     {
-       addOptions.SetActive(true);
+        
+      addOptions.SetActive(true);
+    
 
+    }
+
+    public void IntroEnded()
+    {
+        introEnd = true;
     }
         
 }

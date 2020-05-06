@@ -11,7 +11,6 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public UnityEvent onConvoEnd;
-    public bool didIntroEnd;
 
     public void TriggerDialogue()
     {
@@ -20,8 +19,5 @@ public class DialogueTrigger : MonoBehaviour
       DialgoueManager.currentTrigger = this;
     }
 
-    public void IntroEnd()
-    {
-        didIntroEnd = true;
-    }
+
 }

@@ -69,12 +69,12 @@ public class CameraController : MonoBehaviour
     public Material chalkNonEM, blackmailNonEM, cardNonEM, briefcaseNonEM, tommyNonEM, gunNonEM, bloodNonEM, holesNonEM, deadcamNonEM;//Non-emissive version of evidence materials
     public Material chalkEM, blackmailEM, cardEM, briefcaseEM, tommyEM, gunEM, bloodEM, holesEM, deadcamEM;//Emissive version of evidence materials
     public GameObject chalkObj, blackmailObj, cardObj, briefcaseObj, tommyObj, gunObj1, gunObj2, gunObj3, gunObj4, bloodObj, holesObj1, holesObj2, holesObj3, deadcamObj;//Objectives
-    public DialogueTrigger trigger;
+    public AddingOptions option;
 
     void Start()
     {
         playerController = playerObject.GetComponent<PlayerController>();
-        trigger = FindObjectOfType<DialogueTrigger>();
+        option = FindObjectOfType<AddingOptions>();
         killerOptions = new List<string>();
         weaponOptions = new List<string>();
         motiveOptions = new List<string>();
@@ -328,7 +328,7 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(bodyShotTexture, "Victim", "Killer", bodyImage, "Outline of Victim", body, bodyFound);
                             
-                                bodyFound = true;
+                            bodyFound = true;
  
                            
                             chalkObj.GetComponent<Renderer>().material = chalkNonEM;
@@ -338,7 +338,7 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(paperShotTexture, "Paperboy", "Killer", paperboyImage, "Paperboy", paperboy, paperboyFound);
                             
-                                paperboyFound = true;
+                            paperboyFound = true;
                             
                             
                         }
@@ -355,6 +355,8 @@ public class CameraController : MonoBehaviour
                             FoundEvidence(cardShotTexture, "Communist Membership Card", "Motive", cardImage, "Communist Party Membership Card", card, cardFound);
                            
                             cardFound = true;
+                            
+                           
                             cardObj.GetComponent<Renderer>().material = cardNonEM;
                             cardObj.GetComponent<AudioSource>().volume = 0f;
                         }
