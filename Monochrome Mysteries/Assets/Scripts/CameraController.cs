@@ -56,6 +56,10 @@ public class CameraController : MonoBehaviour
     public GameObject winText;
     public Text evidenceFoundText; //The text that appears when you find a piece of evidence
 
+    public Material chalkNonEM, blackmailNonEM, cardNonEM, briefcaseNonEM, tommyNonEM, gunNonEM, bloodNonEM, holesNonEM, deadcamNonEM;//Non-emissive version of evidence materials
+    public Material chalkEM, blackmailEM, cardEM, briefcaseEM, tommyEM, gunEM, bloodEM, holesEM, deadcamEM;//Emissive version of evidence materials
+    public GameObject chalkObj, blackmailObj, cardObj, briefcaseObj, tommyObj, gunObj1, gunObj2, gunObj3, gunObj4, bloodObj, holesObj1, holesObj2, holesObj3, deadcamObj;//Objectives
+
     void Start()
     {
         playerController = playerObject.GetComponent<PlayerController>();
@@ -126,6 +130,34 @@ public class CameraController : MonoBehaviour
             {
                 textUI.SetActive(false);
             }
+
+            if(!briefcaseFound)
+            briefcaseObj.GetComponent<Renderer>().material = briefcaseEM;
+            if(!bodyFound)
+            chalkObj.GetComponent<Renderer>().material = chalkEM;
+            if(!tommygunFound)
+            tommyObj.GetComponent<Renderer>().material = tommyEM;
+            if (!deadCameraFound)
+            deadcamObj.GetComponent<Renderer>().material = deadcamEM;
+            if (!bloodFound)
+            bloodObj.GetComponent<Renderer>().material = bloodEM;
+            if (!cardFound)
+            cardObj.GetComponent<Renderer>().material = cardEM;
+            if (!blackmailFound)
+            blackmailObj.GetComponent<Renderer>().material = blackmailEM;
+            if(!tommygunHolesFound)
+            {
+                holesObj1.GetComponent<Renderer>().material = holesEM;
+                holesObj2.GetComponent<Renderer>().material = holesEM;
+                holesObj3.GetComponent<Renderer>().material = holesEM;
+            }
+            if(!gunFound)
+            {
+                gunObj1.GetComponent<Renderer>().material = gunEM;
+                gunObj2.GetComponent<Renderer>().material = gunEM;
+                gunObj3.GetComponent<Renderer>().material = gunEM;
+                gunObj4.GetComponent<Renderer>().material = gunEM;
+            }
         }
         if (Input.GetMouseButtonUp(1))//If you let go of the mouse
         {
@@ -140,6 +172,22 @@ public class CameraController : MonoBehaviour
             {
                 textUI.SetActive(true);
             }
+
+            briefcaseObj.GetComponent<Renderer>().material = briefcaseNonEM;
+            chalkObj.GetComponent<Renderer>().material = chalkNonEM;
+            tommyObj.GetComponent<Renderer>().material = tommyNonEM;
+            deadcamObj.GetComponent<Renderer>().material = deadcamNonEM;
+            bloodObj.GetComponent<Renderer>().material = bloodNonEM;
+            cardObj.GetComponent<Renderer>().material = cardNonEM;
+            blackmailObj.GetComponent<Renderer>().material = blackmailNonEM;
+
+            holesObj1.GetComponent<Renderer>().material = holesNonEM;
+            holesObj2.GetComponent<Renderer>().material = holesNonEM;
+            holesObj3.GetComponent<Renderer>().material = holesNonEM;
+            gunObj1.GetComponent<Renderer>().material = gunNonEM;
+            gunObj2.GetComponent<Renderer>().material = gunNonEM;
+            gunObj3.GetComponent<Renderer>().material = gunNonEM;
+            gunObj4.GetComponent<Renderer>().material = gunNonEM;
         }
         if (Input.GetMouseButtonDown(2) && cameraLens) //If you scroll while you're in camera mode change the field of view
         {
@@ -267,6 +315,7 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(bodyShotTexture, "Victim", "Killer", bodyImage, "Outline of Victim", body, bodyFound);
                             bodyFound = true;
+                            chalkObj.GetComponent<Renderer>().material = chalkNonEM;
                         }
                         else if (name.Equals("Paperboy"))
                         {
@@ -277,41 +326,54 @@ public class CameraController : MonoBehaviour
                         {
                             FoundEvidence(blackmailShotTexture, "Blackmail Note", "Motive", blackmailImage, "Soaked Blackmail Note", blackmail, blackmailFound);
                             blackmailFound = true;
+                            blackmailObj.GetComponent<Renderer>().material = blackmailNonEM;
                         }
                         else if (name.Equals("Membership Card"))
                         {
                             FoundEvidence(cardShotTexture, "Communist Membership Card", "Motive", cardImage, "Communist Party Membership Card", card, cardFound);
                             cardFound = true;
+                            cardObj.GetComponent<Renderer>().material = cardNonEM;
                         }
                         else if (name.Equals("Briefcase"))
                         {
                             FoundEvidence(briefcaseShotTexture, "Briefcase", "Motive", briefcaseImage, "Large Briefcase", briefcase, briefcaseFound);
                             briefcaseFound = true;
+                            briefcaseObj.GetComponent<Renderer>().material = briefcaseNonEM;
                         }
                         else if (name.Equals("Tommygun"))
                         {
                             FoundEvidence(tommyShotTexture, "Tommygun", "Weapon", tommygunImage, "Freshly Fired Tommygun", tommygun, tommygunFound);
                             tommygunFound = true;
+                            tommyObj.GetComponent<Renderer>().material = tommyNonEM;
                         }
                         else if (name.Equals("Tommygun Bulletholes"))
                         {
                             FoundEvidence(tommyShotHolesTexture, "Tommygun Bulletholes", "N/A", tommygunHolesImage, "Bloodless Bulletholes", tommygunHoles, tommygunHolesFound);
                             tommygunHolesFound = true;
+                            holesObj1.GetComponent<Renderer>().material = holesNonEM;
+                            holesObj2.GetComponent<Renderer>().material = holesNonEM;
+                            holesObj3.GetComponent<Renderer>().material = holesNonEM;
                         }
                         else if (name.Equals("Revolver"))
                         {
                             FoundEvidence(gunShotTexture, "Revolver", "Weapon", gunImage, "Discarded Revolver", gun, gunFound);
                             gunFound = true;
+                            gunObj1.GetComponent<Renderer>().material = gunNonEM;
+                            gunObj2.GetComponent<Renderer>().material = gunNonEM;
+                            gunObj3.GetComponent<Renderer>().material = gunNonEM;
+                            gunObj4.GetComponent<Renderer>().material = gunNonEM;
                         }
                         else if (name.Equals("Blood Spatter"))
                         {
                             FoundEvidence(bloodShotTexture, "Blood", "N/A", bloodImage, "Victim's Blood", blood, bloodFound);
                             bloodFound = true;
+                            bloodObj.GetComponent<Renderer>().material = bloodNonEM;
                         }
                         else if (name.Equals("Bloody Camera"))
                         {
                             FoundEvidence(deadCameraTexture, "Bloody Camera", "Motive", deadCameraImage, "Bloody Camera", deadCamera, deadCameraFound);
                             deadCameraFound = true;
+                            deadcamObj.GetComponent<Renderer>().material = deadcamNonEM;
 
                         }
                         else if (name.Equals("Femme Fatale Character"))
