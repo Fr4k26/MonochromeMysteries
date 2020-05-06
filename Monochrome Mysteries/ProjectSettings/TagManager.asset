@@ -13,6 +13,7 @@ TagManager:
   - PageCheck
   - Mob Boss
   - Businessman
+  - Kill
   layers:
   - Default
   - TransparentFX
