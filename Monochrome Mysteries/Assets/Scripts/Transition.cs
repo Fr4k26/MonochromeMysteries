@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class Transition : MonoBehaviour
 {
-    public float fadingDuration = 1.2f;
+    public float fadingDuration = 2.2f;
 
     // Start is called before the first frame update
     void Start()
