@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/************************************************************************************************
+// File Name:   CutDialogue.cs
+// Authors:     David Suriano
+// Description: Run via buttons, makes sure that if you end a conversation you can move again
+//              and that all animations stop.
+************************************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
