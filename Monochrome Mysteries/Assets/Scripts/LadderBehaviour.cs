@@ -52,7 +52,6 @@ public class LadderBehaviour : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            print("Escaped first hitbox.");
             justEscaped = true;
             Invoke("ResetEscape", .1f);
         }
@@ -61,19 +60,16 @@ public class LadderBehaviour : MonoBehaviour
     void ResetEscape()
     {
         justEscaped = false;
-        print("Can now collide again.");
     }
 
     private void OnTriggerEnter(Collider other)//You have entered the ladder's primarily hit box
     {
         if (other.gameObject == player && !onLadder && !justEscaped)
         {
-            print("Entered ladder, sticking.");
             StickToLadder();
         }
         else if(other.gameObject == player && onLadder && !justEscaped)
         {
-            print("Entered ladder 2, kicking off.");
             KickOffLadder();
         }
     }
