@@ -30,6 +30,7 @@ public class LadderBehaviour : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        landing = gameObject.transform.GetChild(1).gameObject;
         ladderSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
     }
 
@@ -81,9 +82,11 @@ public class LadderBehaviour : MonoBehaviour
         ladderNoise = true;
         onLadder = true;
         justOnLadder = false;
+
+        landing.SetActive(false);
+
         player.GetComponent<PlayerController>().canClimb = true;
         player.GetComponent<PlayerController>().canmove = false;
-        player.GetComponent<Rigidbody>().isKinematic = false;
         player.GetComponent<Rigidbody>().useGravity = false;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -94,9 +97,11 @@ public class LadderBehaviour : MonoBehaviour
         ladderNoise = false;
         onLadder = false;
         justOnLadder = true;
+
+        landing.SetActive(true);
+
         player.GetComponent<PlayerController>().canClimb = false;
         player.GetComponent<PlayerController>().canmove = true;
-        player.GetComponent<Rigidbody>().isKinematic = true;
         player.GetComponent<Rigidbody>().useGravity = true;
     }
 
