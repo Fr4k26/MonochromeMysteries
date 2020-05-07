@@ -493,7 +493,7 @@ public class CameraController : MonoBehaviour
     //If the title has been on the screen for 2 seconds, turn it off
     IEnumerator EvidenceTextReset(string evidenceTitle)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
         if ("Found: " + evidenceTitle == evidenceFoundText.text || "Already Found: " + evidenceTitle == evidenceFoundText.text)
         {
             evidenceFoundText.text = "";

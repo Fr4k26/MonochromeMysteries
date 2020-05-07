@@ -1,6 +1,6 @@
 ﻿/************************************************************************************************
 // File Name:   LadderBehaviour.cs
-// Authors:     David Suriano (70%), Jamey Colleen (10%) & Jake Hyland (20%)
+// Authors:     David Suriano (60%), Jamey Colleen (20%) & Jake Hyland (20%)
 // Description: Contains references to the Player in order to allow them to move up and down the
 //              ladders (Jamey), the controlling methods for entering and exiting that state (David),
 //              as well as play sounds when climbing is taking place (Jake).
