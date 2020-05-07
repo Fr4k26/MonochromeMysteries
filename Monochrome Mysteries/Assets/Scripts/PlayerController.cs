@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         lastYPos = GetComponent<Rigidbody>().transform.position.y;
         camera = FindObjectOfType<CameraCollision>().gameObject;
         stepSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+        StartCoroutine(turnCursor());
     }
 
     // Handle frame-based events
@@ -138,14 +139,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-        /*private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
+{
+    if (collision.gameObject.tag == "Ground")
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canClimb = false;
-            canmove = true;
-        }
-    }*/
+        canClimb = false;
+        canmove = true;
+    }
+}*/
+
+    IEnumerator turnCursor()
+    {
+        yield return new WaitForSeconds(0.265f);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     public void ReloadScene()
     {

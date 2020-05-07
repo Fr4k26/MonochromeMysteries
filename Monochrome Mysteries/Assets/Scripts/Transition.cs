@@ -11,13 +11,15 @@ using UnityEngine.UI;
 
 public class Transition : MonoBehaviour
 {
-    public float fadingDuration = 2.2f;
+    public float fadingDuration = 2.65f;
 
     // Start is called before the first frame update
     void Start()
     {
         var startPanel = GameObject.Find("Fade-In Panel").GetComponent<CanvasGroup>();
         StartCoroutine(Fade(startPanel, startPanel.alpha, 0));
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator Fade(CanvasGroup startPanel, float starting, float end)

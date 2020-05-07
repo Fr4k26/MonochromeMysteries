@@ -138,6 +138,8 @@ public class ButtonFunctions : MonoBehaviour
                     StartCoroutine(BlackFade(panelFader2, panelFader2.alpha, 1));
                     yield return new WaitForSeconds(0.850f);
                     asyncLoad.allowSceneActivation = true;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
 
             }
